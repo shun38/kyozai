@@ -1,0 +1,289 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>ノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="SQL.html">SQL</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page0');">SQL</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">SQL2</a>
+  </div>
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+<div class="contents" id="page0">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+&nbsp;&nbsp;第1章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 第2章<br>
+<ol class="table_of_contents">
+<li><a href="#a1">データベース作成</a><br></li>
+<li><a href="#a2">データベースを表示</a><br></li>
+<li><a href="#a3">データベース削除</a><br></li>
+<li><a href="#a4">使用するデータベースの指定</a><br></li>
+<li><a href="#a5">テーブルとカラムの作成</a><br></li>
+<li><a href="#a6">テーブルの削除</a><br></li>
+<li><a href="#a7">テーブル一覧の表示</a><br></li>
+<li><a href="#a8">テーブルの名前の変更</a><br></li>
+<li><a href="#a9">一時テーブルの作成</a><br></li>
+<li><a href="#a10">カラムの表示</a><br></li>
+<li><a href="#a11">カラムの削除</a><br></li>
+</ol>
+<ol class="table_of_contents2">
+<li><a href="#a12">テーブルの中身を消す</a><br></li>
+<li><a href="#a13">テーブルにカラムを追加</a><br></li>
+<li><a href="#a14">プライマリーキーの設定</a><br></li>
+<li><a href="#a15">プライマリーキーの追加</a><br></li>
+<li><a href="#a16">カラムに初期値を設定</a><br></li>
+<li><a href="#a17">カラムのデータ型を変更する</a><br></li>
+<li><a href="#a18">カラム名とデータ型をまとめて変更する</a><br></li>
+<li><a href="#a19">指定したカラムをテーブルの先頭に移動</a><br></li>
+<li><a href="#a20">新しいカラムを、指定したカラムの後に追加</a><br></li>
+<li><a href="#a21">新しいカラムを、テーブルの最初に追加</a><br></li>
+<li><a href="#a22">テーブルのカラムにデータを追加</a><br></li>
+<li><a href="#a23">指定したカラムのデータを表示する。</a><br></li>
+<li><a href="#a23.5">外部キーの追加・削除</a><br></li>
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+&nbsp;&nbsp;第3章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 第4章<br>
+<ol class="table_of_contents">
+<li><a href="#a24">作成済みユーザーの確認</a><br></li>
+<li><a href="#a25">ユーザーの作成</a><br></li>
+<li><a href="#a26">特権ユーザーの作成</a><br></li>
+<li><a href="#a27">ユーザーのパスワード変更</a><br></li>
+<li><a href="#a28">ユーザーの削除</a><br></li>
+<li><a href="#a29">DBを限定して権限を与える</a><br></li>
+<li><a href="#a30">権限の付与</a><br></li>
+<li><a href="#a31">データベースを指定してログイン</a><br></li>
+<li><a href="#a32">ユーザ権限の確認</a><br></li>
+<li><a href="#a33">文字コードをUTF-8にする</a><br></li>
+</ol>
+<ol class="table_of_contents2">
+<li><a href="#a34">レコードの検索</a><br></li>
+<li><a href="#a35">WHERE句での絞り込み</a><br></li>
+<li><a href="#a36">UPDATEでカラムのデータを更新する</a><br></li>
+<li><a href="#a37">REPLACEで文字列を置換して更新</a><br></li>
+<li><a href="#a38">DELETEでデータを削除する</a><br></li>
+<li><a href="#a39">ポートを確認する</a><br></li>
+<li><a href="#a40"></a><br></li>
+<li><a href="#a41"></a><br></li>
+<li><a href="#a42"></a><br></li>
+<li><a href="#a43"></a><br></li>
+<!-- <li><a href="#a44"></a><br></li>
+<li><a href="#a45"></a><br></li>
+<li><a href="#a46"></a><br></li>
+<li><a href="#a47"></a><br></li> -->
+</ol>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<hr style="border:0.3px dashed #87CEEB;">
+<!----------------------------------------------->
+<h2 id="a1">データベース作成</h2>
+<div class="srcdiv">
+<ol>
+<li>> CREATE DATABASE <span class="span_py_red">データベース名</span>;</li>
+</ol>
+</div>
+CREATE DATABASEでデータベースを作成する事を意味します。<br>
+それぞれの単語はスペースで区切ることで別の言葉だと認識されます。<br>
+このSQLを実行すると、指定したデータベース名のデータベースが作成されます。<br>
+<div class="srcdiv">
+<ol>
+<li>> CREATE DATABASE <span class="span_py_red">testDB</span>;</li>
+</ol>
+</div>
+例えば上記のSQL文を実行することで"testDB"というデータベースが作成されます。<br>
+<!----------------------------------------------->
+<h2 id="a2">データベースを表示</h2>
+<div class="srcdiv">
+<ol>
+<li>>SHOW DATABASES;</li>
+</ol>
+</div>
+このSQL文を実行すると、作成したデータベースを表示させる事ができます。<br>
+SHOW文では指定した情報を表示させることができます。<br>
+<!----------------------------------------------->
+<h2 id="a3">データベース削除</h2>
+<div class="srcdiv">
+<ol>
+<li>> DROP DATABASE <span class="span_py_red">データベース名</span>;</li>
+</ol>
+</div>
+このSQL文を実行すると、作成したデータベースを削除する事ができます。<br>
+指定したデータベースがない場合、綴りを間違えた場合にエラーが起きます。<br>
+SQL文が間違っていないか、削除するデータベースがあるかを確認しましょう。<br>
+DROP文では指定した情報を削除することができます。<br>
+<!----------------------------------------------->
+<h2 id="a4">使用するデータベースの指定</h2>
+<div class="srcdiv">
+<ol>
+<li>USE <span class="span_py_red">データベース名</span>;</li>
+</ol>
+</div>
+このSQL文を実行すると、Database changed　と表示され、左の文字が<br>
+<u>Mariadb [データベース名]></u><br>
+となったら完了です。<br>
+TESTという部分は自身で作ったデータベースが表示されていればOKです。<br>
+・useコマンドの実行結果
+<div class="img_center">
+<img src="img/linux/005.jpg"><br>
+</div>
+<!----------------------------------------------->
+<h2 id="a5">テーブルとカラムの作成</h2>
+<h2 id="a6">テーブルの削除</h2>
+<h2 id="a7">テーブル一覧の表示</h2>
+<h2 id="a8">テーブルの名前の変更</h2>
+<h2 id="a9">一時テーブルの作成</h2>
+<h2 id="a10">カラムの表示</h2>
+<h2 id="a11">カラムの削除</h2>
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page1">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol id="table_of_contents">
+<li><a href="#web1">データ抽出</a><br></li>
+<li><a href="#web2">正規化</a><br></li>
+<li><a href="#web3">練習問題</a><br></li>
+<li><a href="#web4">練習問題2</a><br></li>
+</ol>
+<br><br><br><br><br><br>
+
+<h2 id="web1">データ抽出</h2>
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+
+<img src="img/temp/001.jpg">
+
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+
+SQL文を入力してデータを抽出してみましょう。<br>
+<br>
+
+
+
+
+<hr style="border:0.3px dashed #87CEEB;">
+
+<h2 id="web2">正規化</h2>
+正規化とは？<br>
+データベースに保存されているデータを使用しやすくするために、ルールに基づいて整理・変形すること。<br>
+正規化を行うことで、データの追加・更新・削除に伴う不整合や喪失が起きるのを防ぐことができ、
+メンテナンスの効率性を高めていくことができます。<br>
+正規化を正しく行っておけば、データベース運用時に発生する問題を未然に防止することができます。<br>
+そのため、運営コストを削減するためにも正規化の必要性が謳われているのです。<br>
+<br>
+<span style="color:#aa4411">第1正規化</span><br>
+テーブルの中に複数の値を持つようなデータ項目を含まないという条件を満たすように整理する。<br>
+<span style="color:#aa4411">第2正規化</span><br>
+第1正規化後のテーブルに、主キーの一部の項目だけに従属するような項目を含めないように整理する。<br>
+<span style="color:#aa4411">第3正規化</span><br>
+第2正規化後のテーブルに、主キー以外の項目に従属するような項目がなくなるように整理する。<br>
+<h2>非正規なデータの状態</h2>
+正規化されていないテーブルはその中に繰り返しの項目が存在しています。<br>
+・正規化されていないテーブル(表1-1)<br>
+<img src="img/SQL/s001.jpg"width="99%"height="15%">
+<br>
+商品名が変更になった時に1つ1つデータを直していくのか1社からの複数の注文があった場合、
+このテーブルは右に長くなってしまいます。<br>
+また、売り上げの合計がデータベース上のデータと実データでは合わないという場合に、
+この様なテーブルから間違いを探すのは至難の技です。<br>
+・正規化の方法<br>
+<span style="color:#aa4411">第1正規化</span><br>
+テーブルの中に複数の値を持つようなデータ項目を含まないという条件を満たすように整理する。<br>
+繰り返しの項目が存在する非正規形から、繰り返し部分を取り除いていきます。<br>
+非正規形の表の横方向に伸びた繰り返し部分を切り離して、重複をなくしていくのが第１正規化です。<br>
+例えば、先ほどの表１のテーブルの商品名から数量までの項目の繰り返しを切り離した形は以下のようになります。<br>
+・第1正規化後の表2-1と表2-2<br>
+<img src="img/SQL/s002.jpg"width="800"height="200">
+正規化前の乱雑なテーブルを受注Noと顧客の情報がまとめられた表1と、
+各注文で、どの商品がどのような商品がどの程度購入されたのかを示す表2に分けています。<br>
+このように第1正規化が完了したテーブルを「第1正規形」と言います。<br>
+繰り返し部分が別になっただけでもテーブルが見やすくなり、情報の管理がしやすくなると思います。<br>
+しかし、より管理しやすくするために、まだまだテーブルに手を加えていける部分が存在します。<br>
+<span style="color:#aa4411">第2正規化</span><br>
+第1正規化後のテーブルに、主キーの一部の項目だけに従属するような項目を含めないように整理する。<br>
+データをより管理しやすくするために、第1正規形のテーブルで主キーの一部だけに従属している部分を分離します。この方法を第2正規化といいます。<br>
+表2-2を第2正規化し、第２正規形のテーブルにしたものは以下のようになります。<br>
+・表3-1と表3-2<br>
+<img src="img/SQL/s003.jpg"width="800"height="250">
+
+データを特定するために使われるカギとなるデータに付属しているデータの繰り返しを整理します。<br>
+<span style="color:#aa4411">第3正規化</span><br>
+第2正規化後のテーブルに、主キー以外の項目に従属するような項目がなくなるように整理する。<br>
+第2正規系でデータの冗長性を取り除きましたが、まだ改良の予知があります。<br>
+例えば顧客の会社名が変わったとき、表2-1のように顧客Noと顧客名をすべての注文に記入していた場合は、
+いちいちすべての会社名を変えていかなければなりません<br>
+この顧客名は主キーである受注Noがわからずとも、顧客コードさえわかっていれば特定できる情報です。<br>
+そのため表2-1から顧客名を以下のように分離させていきます。<br>
+<img src="img/SQL/s003.jpg"width="800"height="250">
+第3正規化まで終えると、このように冗長性が排除され、データの整合性を保ちやすくなり、
+管理効率が上がります。<br>
+
+・関数従属性<br>
+
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+
+
+
+<script>
+'use strict'
+document.getElementById("page0").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

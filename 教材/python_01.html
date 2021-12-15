@@ -1,0 +1,275 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>ノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="python_01.html">Python</a>
+  </div>
+
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">導入</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page2');">基礎</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page3');">機械学習</a>
+  </div>
+
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+
+<div class="contents" id="page1">
+
+
+<h2>Pythonとは</h2>
+
+<div class="srcdiv">
+<ol>
+
+</ol>
+</div>
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page2">
+  もくじ<br>
+  <hr style="border:0.3px dashed #87CEEB;">
+  &nbsp;&nbsp;第1章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+   第2章<br>
+  <ol id="table_of_contents">
+  <li><a href="#a1">データ定義・出力</a><br></li>
+  <li><a href="#a2">データ型</a><br></li>
+  <li><a href="#a3">データ操作</a><br></li>
+  <li><a href="#a4">配列応用</a><br></li>
+  <li><a href="#a5">繰り返し文</a><br></li>
+  <li><a href="#a6">条件分岐</a><br></li>
+  <li><a href="#a7">関数</a><br></li>
+  <li><a href="#a8">リスト</a><br></li>
+  <li><a href="#a9">辞書型</a><br></li>
+  <li><a href="#a10">クラスとオブジェクト</a></li>
+  </ol>
+  <ol id="table_of_contents">
+  <li><a href="#a11">ファイル操作</a><br></li>
+  <li><a href="#a12">エクセル操作</a><br></li>
+  <li><a href="#a13">モジュール</a><br></li>
+  <li><a href="#a14">標準関数</a><br></li>
+  <li><a href="#a15">描画</a><br></li>
+  <li><a href="#a16">botを作る</a><br></li>
+  <li><a href="#a17">テキストゲームを作る</a><br></li>
+  <li><a href="#a18">外部ライブラリ</a><br></li>
+  <li><a href="#a19">問題</a><br></li>
+  <li><a href="#a20">課題</a><br></li>
+</ol>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+  <h2 id="a1">データ定義・出力</h2>
+
+<!------------------------------------->
+<div class="srcdiv">
+<ol>
+<li> num <span class="span_py_pink">=</span> <span class="span_py_oarnge">1</span> <span class="span_py_comment"></span></li>
+<li> words <span class="span_py_pink">=</span> <span class="span_py_yellowgreen">"そうめん"</span> <span class="span_py_comment"></span></li>
+<li> arr <span class="span_py_pink">=</span> [<span class="span_py_yellowgreen">"1"</span>,<span class="span_py_oarnge">1</span>,<span class="span_py_yellowgreen">"a"</span>,<span class="span_py_oarnge">128</span>] <span class="span_py_comment"></span></li>
+<li> arrindex <span class="span_py_pink">=</span> [<span class="span_py_oarnge">0</span>,<span class="span_py_oarnge">1</span>,<span class="span_py_oarnge">2</span>,<span class="span_py_oarnge">3</span>,<span class="span_py_oarnge">4</span>,<span class="span_py_oarnge">5</span>,<span class="span_py_oarnge">6</span>] <span class="span_py_comment"></span></li>
+<li></li>
+<li> <span class="span_py_skyblue">print</span>(num)<span class="span_js_comment">#1</li>
+<li> <span class="span_py_skyblue">print</span>(words)<span class="span_js_comment">#2</li>
+<li> <span class="span_py_skyblue">print</span>(arr)<span class="span_js_comment">#3</li>
+<li> <span class="span_py_skyblue">print</span>(arrindex)<span class="span_js_comment">#4</li>
+</ol>
+</div>
+・Result<br>
+<div class="srcdiv">
+<ol>
+<li>1<span class="span_py_comment"></span></li>
+<li>そうめん<span class="span_py_comment"></span></li>
+<li>['1', 1, 'a', 128]<span class="span_py_comment"></span></li>
+<li>[0, 1, 2, 3, 4, 5, 6]<span class="span_py_comment"></span></li>
+</ol>
+</div>
+
+<!-- <table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table> -->
+<!------------------------------------->
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;配列</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<div class="srcdiv">
+<ol>
+<!-- <li>>  <span class="span_py_comment"></span></li> -->
+<li>arr <span class="span_py_pink">=</span> [<span class="span_py_oarnge">25</span>,<span class="span_py_oarnge">50</span>,<span class="span_py_oarnge">75</span>,<span class="span_py_oarnge">100</span>]</li>
+<li><span class="span_py_skyblue">print</span>(arr[<span class="span_py_oarnge">0</span>])<span class="span_js_comment">#1</span></li>
+<li><span class="span_py_skyblue">print</span>(arr[<span class="span_py_oarnge">2</span>])<span class="span_js_comment">#2</span></li>
+<li><span class="span_py_skyblue">print</span>(arr[<span class="span_py_oarnge">3</span>])<span class="span_js_comment">#3</span></li>
+<li>out <span class="span_py_pink">=</span> arr[<span class="span_py_oarnge">0</span>]<span class="span_py_pink">+</span>arr[<span class="span_py_oarnge">2</span>]</li>
+<li><span class="span_py_skyblue">print</span>(out)<span class="span_js_comment">#4</span></li>
+<li>out <span class="span_py_pink">=</span> arr[<span class="span_py_oarnge">1</span>]<span class="span_py_pink">+</span>arr[<span class="span_py_oarnge">3</span>]</li>
+<li><span class="span_py_skyblue">print</span>(out)<span class="span_js_comment">#5</span></li>
+<li>out <span class="span_py_pink">=</span> arr[<span class="span_py_oarnge">0</span>]<span class="span_py_pink">*</span>arr[<span class="span_py_oarnge">3</span>]</li>
+<li><span class="span_py_skyblue">print</span>(out)<span class="span_js_comment">#6</span></li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li>25<span class="span_py_comment"></span></li>
+<li>75<span class="span_py_comment"></span></li>
+<li>100<span class="span_py_comment"></span></li>
+<li>100<span class="span_py_comment"></span></li>
+<li>150<span class="span_py_comment"></span></li>
+<li>2500<span class="span_py_comment"></span></li>
+</ol>
+</div>
+<!--
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table> -->
+<!------------------------------------->
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;入力データを受け取る</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<div class="srcdiv">
+<ol>
+<li>inputdata = input()<span class="span_py_comment">#変数名を指定して、input関数で文字列を受け取ります。</span></li>
+<li>inpd = input("データを入力してください>")<span class="span_py_comment">()の中に文字を記述することで、文字を表示させられます。</span></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_py_comment"></span></li>
+</ol>
+</div>
+<!--
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table> -->
+<!------------------------------------->
+<h2 id="a2">データ出力</h2>
+<br>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;配列の中身を順番に出力</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<div class="srcdiv">
+<ol>
+<li>arr</span> <span class="span_py_pink">=</span> [<span class="span_py_yellowgreen">"チ"</span>,<span class="span_py_yellowgreen">"ョ"</span>,<span class="span_py_yellowgreen">"コ"</span>,<span class="span_py_yellowgreen">"レ"</span>,<span class="span_py_yellowgreen">"ー"</span>,<span class="span_py_yellowgreen">"ト"</span>,]</li>
+<li>loop</span><span class="span_py_pink">=</span><span class="span_py_oarnge">0</span></li>
+<li>out</span><span class="span_py_pink">=</span><span class="span_py_yellowgreen">""</span></li>
+<li><span class="span_py_pink">for</span> i <span class="span_py_pink">in</span> <span class="span_py_skyblue">range</span>(<span class="span_py_skyblue">len</span>(arr)):</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;out<span class="span_py_pink">+=</span>arr</span>[loop</span>]</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;loop<span class="span_py_pink">+=</span><span class="span_py_oarnge">1</span></li>
+<li><span class="span_py_skyblue">print</span>(out)<span class="span_py_comment"></span></li>
+</ol>
+</div>
+<span class="span_py_">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_py_comment"></span></li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_py_comment"></span></li>
+</ol>
+</div>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+<!------------------------------------->
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<div class="srcdiv">
+<ol>
+<li>>  <span class="span_py_comment"></span></li>
+</ol>
+</div>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+<!------------------------------------->
+
+  <div class="top_box">
+    <a href="#top"align="right">トップへ戻る</a></div>
+    <br>
+  </div>
+
+<div class="contents" id="page3">
+
+<h2></h2>
+
+<div class="srcdiv">
+<ol>
+
+</ol>
+</div>
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<script>
+'use strict'
+document.getElementById("page3").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

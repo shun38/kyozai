@@ -1,0 +1,1116 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>ノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="python_01.html">Javascript</a>
+  </div>
+
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">導入</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page2');">基礎</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page3');">サンプル</a>
+  </div>
+
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+
+<div class="contents" id="page1">
+
+
+<h2>Javascriptとは</h2>
+<span class="Vertical_sensation">
+&nbsp;Javascriptはインタプリタ式の高級言語に分類されるプログラム言語です。<br>
+&nbsp;従って、ソースプログラムが、1行ずつマシン語に変換されながら実行されます。<br>
+</span>
+<img src="img/js/j001.png"width="800"height="450">
+<!-- <hr style="border:0.3px dashed #777E7B;"> -->
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;インタプリタとは？&nbsp;&nbsp;&nbsp;~interpreter~</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<span class="Vertical_sensation">
+人間に分かりやすい高水準プログラミング言語(高級言語)で書かれたプログラムを、<br>
+コンピュータが解釈・実行できる形式に変換しながら同時に少しずつ実行していくソフトウェア<br>
+英語の意味を日本語にすると「通訳者」<br>
+</span>
+<!-- <hr style="border:0.3px dashed #b07d0f;">
+
+<!-- <div class="box7">
+&nbsp;●インタプリタとは？
+<p>人間に分かりやすい高水準プログラミング言語(高級言語)で書かれたプログラムを、<br>
+コンピュータが解釈・実行できる形式に変換しながら同時に少しずつ実行していくソフトウェア<br>
+英語の意味を日本語にすると「通訳者」</p>
+</div> -->
+
+<!-- <div class="srcdiv">
+<ol>
+
+</ol>
+</div> -->
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;開発経緯&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+JavaScriptは1990年半ばに開発されたプログラム言語です。<br>
+当時のウェブページは文字情報や画像を表示するだけの静的なものが殆どでしたが、
+そのWebページをより動的でインタラクティブ(対話的)なものにすることを目的に、
+Javascriptが開発されました。JavaScriptを活用することで、Webブラウザでさまざまなプログラムを
+実行させることが可能になります。<br>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;名前の由来は？&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+名前の由来は、当時インターネットを中心に大きな注目を集めていたオブジェクト指向のプログラム言語、
+Javaです。これにScriptをくっつけてJavaScriptという名前になりました。<br>
+スクリプトは、人間が読み書きしやすいプログラム言語で書かれたプログラム(ソースコード)を即座に実行できるようなものの事です。<br>
+スクリプト言語は人間が実行するまでにコンパイル(実行できるようにソースコードを機会が実行しやすい状態に変換する作業)をする必要がありません。<br>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;どこで実行される？&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+JavaScriptのソースコードは通常のテキスト形式です。<br>
+JavaScriptはHTMLのファイル内に書き込むか、jsファイル(拡張子が.jsのテキストファイル)として、
+別に作成しHTMLファイルから読み込みます。<br>
+そして、JavascriptがくっついているHTMLファイルをブラウザで開き、それをブラウザの内部に用意されているインタプリタで解析し実行します。<br>
+JavaScriptに対応したWebブラウザがあれば、WindowsやmacOS、Linuxなど、OSを問わず同じように実行することができます。<br>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;プログラミング言語とは&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+コンピュータに対する命令語と記述方法を定義したものがプログラミング言語です。<br>
+例えば日本語では、<u>これ</u> <u>は</u> <u>りんご</u> <u>です。</u>と言いますが、言葉を出す順番や、りんごが何を示すかなどの定義が同じように、プログラミング言語にもあるという事です。<br>
+例)print(書き出しをする命令文)<br>
+例)function(関数を定義する)<br>
+例)足し算には+を使う。<br>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;マシン語と高級言語&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+プログラミング言語は、<font color="#b00"><b>マシン語</b></font>と<font color="#b00"><b>高級言語</b></font>に大別されます。<br>
+コンピュータでは、CPU(Central Processing Unit,中央処理装置)という部分で演算を行い、プログラムを動かしたりタスクの処理をしています。<br>
+CPUが理解できるのはマシン語(機械語)だけです。マシン語は2進数、つまり1と0の並びだけで表され、人間がそれを見て内容を把握することは困難です。<br>
+また、CPUの種類によってマシン語は異なります。<br>
+コンピュータが進化するにつれて、人間にとってよりわかりやすい、扱いやすい形式のプログラム言語が考え出されました。そのような言語のことを高級言語と言います。<br>
+勿論Javascriptも高級言語の1つです。<br>
+
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;インタプリンタ式とコンパイラ方式&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+高級言語で記述されたプログラムを<u>ソースコード</u>と言います。<br>
+ソースコードはそのままではCPUが理解できないので実行するためにマシン語に変換する必要があります。<br>
+<small><small><small><br></small></small></small>
+ソースコードの時点では、テキストデータですが、マシン語へ変換をする事で、CPUの処理手順の纏まりとしてのデータにする事ができます。つまり、コンパイルによって実行ファイルを作成します。<br>
+その変換方式は、<font color="#b00"><b>インタプリタ式</b></font>と<font color="#b00"><b>コンパイラ式</b></font>に大別されます。<br>
+<small><small><small><br></small></small></small>
+前者は「インタプリタ」という種類のソフトウェアがソースコードを1行ずつ解釈しながら実行する方式で、後者は「コンパイラ」と呼ばれるソフトウェアを使用して、
+ソースコードをオブジェクトファイルと呼ばれるマシン語のファイルに一括変換する方式です。<br>
+<small><small><small><br></small></small></small>
+●インタプリタ式の言語 PHP,JavaScript,Ruby,Python...<br>
+●コンパイラ式の言語 C言語,C++,C#,Java,Go言語...<br>
+<small><small><small><br></small></small></small>
+インタプリタ式の言語を<font color="#b00"><b>インタプリタ言語</b></font>と言い、コンパイラ式のプログラム言語の事を<font color="#b00"><b>コンパイラ言語</b></font>と言います。<br>
+<small><small><small><br></small></small></small>
+&nbsp;インタプリタ言語はソースコードをそのまま実行環境に読み込ませ実行することができるので、すぐに実行でき、デバッグ(プログラムの欠陥・バグなどを発見し、修正する事)をしやすい特徴があります。
+しかし、実行中に1行ずつ機械語に変換しながら実行するので、コンパイラ言語に比べ、実行速度が遅いという特徴があります。<br>
+&nbsp;コンパイル言語はプログラムの実行速度が早いのが特徴です。あらかじめ機械語に翻訳してあるファイルで実行するため、インタプリタ型言語に比べて実行速度が早いです。<br>
+<small><small><small><br></small></small></small>
+<img src="img/js/j004.png"width="800"height="450">
+<br>
+<small><small><small><br></small></small></small>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;パース&nbsp;&nbsp;&nbsp;~parse~&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<small><small><small><br></small></small></small>
+コンピュータプログラムの機能・処理の1つで、一定の書式や文法にしたがって記述されたデータを解析し、
+プログラムで扱えるようなデータ構造の集合体に変換することを<font color="#b00"><b>パース</b></font>と言います。<br>
+コンパイラがプログラムのソースコードを機械語に変換するために構文などを解析することや、
+webブラウザがHTMLファイルを表示するためにタグの構造や属性、値などを解析して表示可能なデータ構造に変換することなどを指します。<br>
+<small><small><small><br></small></small></small>
+HTMLや、JavaScriptも上から順に解析が行われます。沢山のデータを表示させるページで、表示に時間がかかる事が想定される場合は、特にパースの概念を持っておくべきでしょう。<br>
+例えばJavaScriptよりも先にcssを読み込ませたいという時は、cssが優先的に読み込まれるよう、上部に読み込むという宣言を記述します。<br>
+・例
+<div class="srcdiv">
+  <ol>
+    <li>&lt<span class="span_js_red">script </span><span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text/javascript"</span><span class="span_js_oarnge"> src</span>=<span class="span_js_yellowgreen">"Javascript.js"</span>&gt;&lt/<span class="span_js_red">script</span>&gt;</li>
+    <li>&lt;<span class="span_js_red">link</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"style.css"</span> <span class="span_js_oarnge">rel</span>=<span class="span_js_yellowgreen">"stylesheet"</span>&gt;</li>
+    <li><span class="span_js_comment">/*この場合jsファイルが優先的に読み込まれます。jsファイルが読み込み終わるまでcssが適用されません*/</span></li>
+  </ol>
+</div>
+<div class="srcdiv">
+  <ol>
+    <li>&lt;<span class="span_js_red">link</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"style.css"</span> <span class="span_js_oarnge">rel</span>=<span class="span_js_yellowgreen">"stylesheet"</span>&gt;</li>
+    <li>&lt<span class="span_js_red">script </span><span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text/javascript"</span><span class="span_js_oarnge"> src</span>=<span class="span_js_yellowgreen">"Javascript.js"</span>&gt;&lt/<span class="span_js_red">script</span>&gt;</li>
+    <li><span class="span_js_comment">/*この場合cssファイルが優先的に読み込まれます。jsファイルが読み込まれる前にcssの適用が行われます*/</span></li>
+  </ol>
+</div>
+<br>
+
+<!-- <hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;パ&nbsp;&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+ -->
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page2">
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+&nbsp;&nbsp;第1章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+ 第2章<br>
+<ol class="table_of_contents">
+<li><a href="#a1">変数</a><br></li>
+<li><a href="#a2">変数の値を出力</a><br></li>
+<li><a href="#a3">文字列の連結</a><br></li>
+<li><a href="#a4">alertメソッド</a><br></li>
+<li><a href="#a5">console.log()メソッド</a><br></li>
+<li><a href="#a6">コメントアウト</a><br></li>
+<li><a href="#a7">whireメソッドでHTMLに書き込む</a><br></li>
+<li><a href="#a8"></a><br></li>
+<li><a href="#a9"></a><br></li>
+<li><a href="#a10"></a></li>
+</ol>
+表示切り替え
+動的に色を変える
+クリックして音を鳴らす
+スコープ
+演算子
+繰り返し文 for
+繰り返し文 while
+条件分岐
+配列
+関数
+例外処理
+正規表現
+グローバル関数
+dateオブジェクト
+mathオブジェクト
+consoleオブジェクト
+ajaxを使った非同期通信
+イベント処理
+
+
+
+<ol class="table_of_contents">
+<li><a href="#a11"></a><br></li>
+<li><a href="#a12"></a><br></li>
+<li><a href="#a13"></a><br></li>
+<li><a href="#a14"></a><br></li>
+<li><a href="#a15"></a><br></li>
+<li><a href="#a16"></a><br></li>
+<li><a href="#a17"></a><br></li>
+<li><a href="#a18"></a><br></li>
+<li><a href="#a19"></a><br></li>
+<li><a href="#a20"></a><br></li>
+</ol>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+  <h2>データ宣言</h2>
+
+  <hr style="border:0.3px dashed #777E7B;">
+  <font size="4"face='arial black'・><b>&nbsp;&nbsp;変数</b></font><br>
+  <hr style="border:0.3px dashed #777E7B;">
+
+  <div class="srcdiv">
+  <ol>
+  <li><span class="span_js_pink">var</span> <span class="span_js_oarnge">変数名</span>;<span class="span_js_comment">　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//再宣言、再代入が可能</span></li>
+  <li><span class="span_js_pink">let</span> <span class="span_js_oarnge">変数名</span>;<span class="span_js_comment">　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//再宣言ができない</span></li>
+  <li><span class="span_js_pink">const</span> <span class="span_js_oarnge">変数名</span><span class="span_js_pink">=</span><span class="span_js_oarnge">初期値</span>;<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;//再宣言再代入ができない</span></li>
+  </ol>
+  </div>
+変数は中身の値を変えられる数の事です。<br>
+
+Javascriptには3種類の変数の型があり、それぞれ違う仕様となっています。<br>
+
+それではJavaScriptで変数を作っていきましょう。<br>
+Javascriptのソースはjsファイルを作成して、それを参照すればHTML上に読み込み扱うことができますが、
+今回はHTMLファイルの中に直接記述していきます。<br>
+・外部JSファイルの参照例<br>
+<div class="srcdiv">
+  <ol>
+    <li>&lt<span class="span_js_red">script </span><span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text/javascript"</span><span class="span_js_oarnge"> src</span>=<span class="span_js_yellowgreen">"TestScript01.js"</span>&gt;&lt/<span class="span_js_red">script</span>&gt;</li>
+    <li><span class="span_js_comment">//同じディレクトリ内の"TestScript01.js"を読み込む</span></li>
+    <li>&lt<span class="span_js_red">script </span><span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text/javascript"</span><span class="span_js_oarnge"> src</span>=<span class="span_js_yellowgreen">"js/TestScript02.js"</span>&gt;&lt/<span class="span_js_red">script</span>&gt;</li>
+    <li><span class="span_js_comment">//同じディレクトリ内にあるjsというフォルダの中の"TestScript02.js"を読み込む</span></li>
+    <li>&lt<span class="span_js_red">script </span><span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text/javascript"</span><span class="span_js_oarnge"> src</span>=<span class="span_js_yellowgreen">"../TestScript03.js"</span>&gt;&lt/<span class="span_js_red">script</span>&gt;</li>
+    <li><span class="span_js_comment">//上のディレクトリに上がって"TestScript03.js"を読み込む</span></li>
+    <!-- <li></li> -->
+    <!-- <li>&lt/<span class="span_js_red">script</span>&gt;</li> -->
+  </ol>
+</div>
+・ScriptタグでHTMLに直接スクリプトを埋め込む<br>
+<div class="srcdiv">
+<ol>
+<li>&lt<span class="span_js_red">script</span>&gt;</li>
+<li></li>
+<li>&lt/<span class="span_js_red">script</span>&gt;</li>
+</ol>
+</div>
+
+<br>
+スクリプトタグを記述することで、上のソースコードの1行目の開始タグから3行目の終了タグの間の文字をJavascriptの
+ソースコードとして認識させられます。改行しても終了タグまでスクリプトの記述と認識されます。<br>
+それでは早速ソースコードを記述していきましょう。<br>
+
+<br>
+・HTMLソースコード<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">&lt;!---HTML---&gt;</span></li>
+<li>&lt;<span class="span_js_red">html</span>&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">body</span>&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"variable_view_01"</span>&gt;</li>
+<li><span class="span_js_comment">&lt;-- ここに結果を表示していきます。--&gt;</span></li>
+<li>&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li></li>
+<li>&lt;/<span class="span_js_red">body</span>&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">script</span>&gt;</li>
+<li></li>
+<li><span class="span_js_comment">&lt;!-- ここにスクリプトを記述します --&gt;</span></li>
+<li></li>
+<li>&lt;/<span class="span_js_red">script</span>&gt;</li>
+<li></li>
+<li><span class="span_js_comment">&lt;!-- scriptタグの中にjavascriptを記述していきます。--&gt;</span></li>
+<li></li>
+<!-- <li>&lt;&gt;  <span class="span_js_comment"></span></li> -->
+<li>&lt;/<span class="span_js_red">html</span>&gt;</li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'・><b>&nbsp;&nbsp;記述方式</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li>ステートメント;<span class="span_js_comment">//ステートメントの末尾にはセミコロン「;」を付けます。</span></li>
+<li></li>
+<li><span class="span_js_pink">メソッド</span>{<span class="span_js_comment">//波括弧 {} の中をブロックと言います。</li>
+<li>ステートメント;</li>
+<li>}</li>
+<!-- <li></li>
+<li></li>
+<li></li> -->
+</ol>
+</div>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'・><b>&nbsp;&nbsp;変数に格納された数を出力</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li><span class="span_js_pink">var</span> num;</li>
+<li>num<span class="span_js_pink"> = </span><span class="span_js_oarnge">2</span></li>
+<li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_01"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_oarnge">
+<div id="variable_view_01">
+</div>
+</span>
+</li>
+</ol>
+</div>
+
+<script>
+var num;
+num = 2
+// num = num**(num*5)
+var sampleArea = document.getElementById("variable_view_01");
+sampleArea.innerHTML = num;
+</script>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;文字を出力</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li><span class="span_js_pink">var</span> num;</li>
+<li>out <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"カレーは辛ぇ"</span></li>
+<li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_02"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_yellowgreen">
+<div id="variable_view_02">
+</div>
+</span>
+</li>
+</ol>
+</div>
+
+<script>
+var num;
+out = "カレーは辛ぇ"
+var sampleArea = document.getElementById("variable_view_02");
+sampleArea.innerHTML = out;
+</script>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;文字列の連結</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li><span class="span_js_pink">var</span> num;</li>
+<li>out <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"おはよう"</span></li>
+<li>out <span class="span_js_pink">+=</span> <span class="span_js_yellowgreen">"ございます"</span></li>
+<li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_03"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_yellowgreen">
+<div id="variable_view_03">
+</div>
+</span>
+</li>
+</ol>
+</div>
+
+<script>
+var num;
+out2 = "おはよう"
+out2 += "ございます"
+var sampleArea = document.getElementById("variable_view_03");
+sampleArea.innerHTML = out2;
+</script>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;alertメソッド</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li><span class="span_js_skyblue">alert</span>(<span class="span_js_yellowgreen">"Hello World"</span>);</li>
+<li><span class="span_js_skyblue">alert</span>(<span class="span_js_oarnge">3</span><span class="span_js_pink">+</span><span class="span_js_oarnge">1</span>);</li>
+</ol>
+</div>
+ページを読み込んだ時にメッセージボックスが表示されます。<br>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;console.log()メソッド</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li><span class="span_js_yellow">console</span>.<span class="span_js_skyblue">log</span>(<span class="span_js_yellowgreen">"console"</span>)<span class="span_js_comment">//consoleという文字がウェブコンソールに出力されます</span></li>
+<li><span class="span_js_yellow">console</span>.<span class="span_js_skyblue">log</span>(out)<span class="span_js_comment">//outという変数がウェブコンソールに出力されます</span></li>
+</ol>
+</div>
+ページを読み込んだ時にメッセージボックスが表示されます。<br>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;エラー</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+<br>
+作成したプログラム内にブラウザが理解できないステートメント(コード)があると、プログラムはそこで停止し、
+それ以降のステートメントは実行されません。エラーメッセージの表示はwebブラウザによって異なります。<br>
+例えばメソッドの名前を間違えていたり、作成していない変数名を指定したり、記述方法が間違っていたりすると、そこでプログラムの実行が停止します。<br>
+例えば、GoogleChromeで、エラーログを見るときは、アドレスバー右側のGoogleChrome設定ボタン > その他のツール > デベロッパーツール > と進み、
+コンソール(console)タブの画面でエラーメッセージを見ることができます。右クリックで検証か、F12キーを押すことでも開けます。<br>
+<br>
+・よくあるエラーメッセージ<br>
+syntax error 構文エラー<br>
+なんとか is not defined なんとかが定義されていない<br>
+文字列として扱う以外では、全角スペースは使用できません。必ず半角スペースを使いましょう。<br>
+<br>
+エラーが出るステートメントの例<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li><span class="span_js_skyblue">alart</span>(<span class="span_js_yellowgreen">"Hello World"</span>)</li>
+</ol>
+</div>
+<br>
+at ファイル名:エラーの行<br>
+というフィードバックがあるので簡単にエラーの発生場所が特定できます。<br>
+sourceタブから、ブラウザで読み込んだソースコードの全体を見ることができます。<br>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;コメントアウト</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li><span style="background-color:#0077ff;">alert("Hello World")</span><span class="span_js_comment">//←コメントアウトしたい部分を選択します</span> </li>
+<li><span class="span_js_comment">//選択状態でCtrl + / を押すとコメントアウトされます</span></li>
+<li><span class="span_js_comment">//同じようにコメントアウトされた部分に対して使用すると解除されます。</span></li>
+<li><span class="span_js_comment">/*</span></li>
+<li><span class="span_js_comment">このようにすると閉じるまで複数行をコメントアウトできます。</span></li>
+<li><span class="span_js_comment">*/</span></li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_comment">
+<div id="variable_view_03">
+//alert("Hello World")
+</div>
+</span>
+</li>
+</ol>
+</div>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;HTMLに書き込む(whireメソッド)</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+whileメソッドはHTMLドキュメントに文字列を出力するメソッドです。<br>
+このメソッドを使うことでWebページにHTMLのタグや文字を出力することが可能です。<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li></li>
+<li>&lt;<span class="span_js_red">script</span>&gt;</li>
+<li><span class="span_js_pink">function</span> <span class="span_js_skyblue">whilefunc</span>(){<span class="span_js_comment">//shilefuncという関数を宣言</span></li>
+<li><span class="span_js_pink">var</span> html <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'トマト&lt;br&gt;'</span>;<span class="span_js_comment">//htmlという変数を宣言して、トマト&lt;br&gt;という文字列を格納する。</span></li>
+<li>html <span class="span_js_pink">+=</span> <span class="span_js_yellowgreen">'マトマ&lt;br&gt;'</span>;<span class="span_js_comment">//html変数にマトマ&lt;br&gt;という文字列を連結する</span></li>
+<li>html <span class="span_js_pink">+=</span> <span class="span_js_yellowgreen">'トマト&lt;br&gt;'</span>;<span class="span_js_comment">//html変数にトマト&lt;br&gt;という文字列を連結する</span></li>
+<li><span class="span_js_red">document</span>.<span class="span_js_skyblue">write</span>(html);<span class="span_js_comment">//ドキュメントに対してwiriteメソッドでhtml変数に格納された値を書き込む</span></li>
+<li>}</li>
+<li><span class="span_js_skyblue">whilefunc</span>()<span class="span_js_comment">//宣言した関数の呼び出し</span></li>
+<li>&lt;/<span class="span_js_red">script</span>&gt;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果↓</span></li>
+</ol>
+</div>
+
+<script>
+function whilefunc(){
+var html = 'トマト<br>';
+html += 'マトマ<br>';
+html += 'トマト<br>';
+document.write(html);
+}
+whilefunc()
+</script>
+<br>
+・jsファイルを作成して、htmlファイルで読み込み、関数名を呼び出すことで、複数ページで統一の表示をさせる事などができます<br>
+例えばヘッダーを作成して、複数ページで共通のデザインを表示させるとき、変更を加えた際は全ページを修正しなければいけませんが、
+この方法を取る事で、jsファイル内の記述を変更するだけで全ページに適用されます。<br>
+ただ、クライアント側で動作するので、あまり推奨されません。<br>
+
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;表示切り替えその1</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">html</span>&gt;</li>
+<li>&lt;<span class="span_js_red">head</span>&gt;</li>
+<li>&lt;<span class="span_js_red">title</span>>テスト&lt;/<span class="span_js_red">title</span>&gt;</li>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li>.<span class="span_js_oarnge">button</span>{</li>
+<li>&nbsp;&nbsp;border: <span class="span_js_oarnge">0.5px</span> solid #000;</li>
+<li>&nbsp;&nbsp;border-radius: <span class="span_js_oarnge">5px</span>;</li>
+<li>&nbsp;&nbsp;width: <span class="span_js_oarnge">70px</span>;</li>
+<li>&nbsp;&nbsp;margin: <span class="span_js_oarnge">1px</span>;</li>
+<li>&nbsp;&nbsp;padding: <span class="span_js_oarnge">2px</span>;</li>
+<li>&nbsp;&nbsp;text-align: center</li>
+<li>}</li>
+<li>.<span class="span_js_oarnge">box</span>{</li>
+<li>&nbsp;&nbsp;width: <span class="span_js_oarnge">100px</span>;</li>
+<li>&nbsp;&nbsp;float: left;</li>
+<li>}</li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+<li>&lt;<span class="span_js_red">meta</span> <span class="span_js_oarnge">charset</span>=<span class="span_js_yellowgreen">"utf-8"</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">head</span>&gt;</li>
+<li>&lt;<span class="span_js_red">body</span>&gt;</li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"box"</span>></li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button</span>"&gt;&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page1');"</span>&gt;表示"あ"&lt;/<span class="span_js_red">a</span>&gt;&lt;<span class="span_js_red">br</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button</span>"&gt;&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page2');"</span>&gt;表示"い"&lt;/<span class="span_js_red">a</span>&gt;&lt;<span class="span_js_red">br</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button</span>"&gt;&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page3');"</span>&gt;表示"う"&lt;/<span class="span_js_red">a</span>&gt;&lt;<span class="span_js_red">br</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button</span>"&gt;&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page4');"</span>&gt;表示"え"&lt;/<span class="span_js_red">a</span>&gt;&lt;<span class="span_js_red">br</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button</span>"&gt;&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page5');"</span>&gt;表示"お"&lt;/<span class="span_js_red">a</span>&gt;&lt;<span class="span_js_red">br</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">div</span>></li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"box"</span>></li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"page1"</span>&gt;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button"</span>&gt;あ&lt;/<span class="span_js_red">div</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"page2"</span>&gt;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button"</span>&gt;い&lt;/<span class="span_js_red">div</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"page3"</span>&gt;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button"</span>&gt;う&lt;/<span class="span_js_red">div</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"page4"</span>&gt;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button"</span>&gt;え&lt;/<span class="span_js_red">div</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"page5"</span>&gt;&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"button"</span>&gt;お&lt;/<span class="span_js_red">div</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">body</span>&gt;</li>
+<li>&lt;<span class="span_js_red">script</span>&gt;</li>
+<li><span class="span_js_pink">let</span> <span class="span_js_skyblue">disp</span> <span class="span_js_pink">= function</span>(value){</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">let</span> dispitem <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(value);</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">if</span>(<span class="span_js_red">dispitem</span>.<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">==</span> <span class="span_js_yellowgreen">"none"</span>){</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">dispitem</span>.<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"block"</span>;</li>
+<li>&nbsp;&nbsp;} <span class="span_js_pink">else</span> {</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">dispitem</span>.<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"none"</span>;</li>
+<li>&nbsp;&nbsp;}</li>
+<li>}</li>
+<li>&lt;/<span class="span_js_red">script</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">html</span>&gt;</li>
+<!-- <li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_03"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li> -->
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果↓&nbsp;&nbsp;左のオブジェクトをクリックすることで右のオブジェクトの表示を切り替えます。</span></li>
+</ol>
+</div>
+<style>
+.button{
+  border: 0.5px solid #000;
+  border-radius: 7px;
+  width: 70px;
+  margin: 1px;
+  padding: 2px;
+  text-align: center
+}
+.box{
+  margin: 5px;
+  width: 100px;
+  float: left;
+}
+</style>
+<div class="box">
+<div class="button"><a onclick="disp2('vpage1');">表示"あ"</a><br></div>
+<div class="button"><a onclick="disp2('vpage2');">表示"い"</a><br></div>
+<div class="button"><a onclick="disp2('vpage3');">表示"う"</a><br></div>
+<div class="button"><a onclick="disp2('vpage4');">表示"え"</a><br></div>
+<div class="button"><a onclick="disp2('vpage5');">表示"お"</a><br></div>
+</div>
+<div class="box">
+<div id="vpage1"><div class="button">あ</div></div>
+<div id="vpage2"><div class="button">い</div></div>
+<div id="vpage3"><div class="button">う</div></div>
+<div id="vpage4"><div class="button">え</div></div>
+<div id="vpage5"><div class="button">お</div></div>
+</div>
+<script>
+let disp2 = function(value){
+  let dispitem2 = document.getElementById(value);
+  if(dispitem2.style.display == "none"){
+    dispitem2.style.display = "block";
+  } else {
+    dispitem2.style.display = "none";
+  }
+}
+</script>
+<br><br><br><br><br><br><br>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;表示切り替えその2</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//ソースコード</span></li>
+<li>&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"#"</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page1');"</span>&gt;ページ1&lt;/<span class="span_js_red">a</span>&gt;</li>
+<li>&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"#"</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page2');"</span>&gt;ページ2&lt;/<span class="span_js_red">a</span>&gt;</li>
+<li>&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"#"</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"disp('page3');"</span>&gt;ページ3&lt;/<span class="span_js_red">a</span>&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"contents"</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">'page1"</span>&gt;ページ1&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"contents"</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">'page2"</span>&gt;ページ2&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"contents"</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">'page3"</span>&gt;ページ3&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">script</span>&gt;</li>
+<li><span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"page1"</span>).<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"block"</span>;</li>
+<li><span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"page2"</span>).<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"none"</span>;</li>
+<li><span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"page3"</span>).<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"none"</span>;</li>
+<li><span class="span_js_pink">let</span> <span class="span_js_skyblue">disp</span> <span class="span_js_pink">=</span> <span class="span_js_pink">function</span>(value){</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">let</span> contents <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementsByClassName</span>(<span class="span_js_yellowgreen">"contents"</span>);</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">for</span>(<span class="span_js_pink">let</span> content <span class="span_js_pink">of</span> contents){</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">content</span>.<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"none"</span>;</li>
+<li>&nbsp;&nbsp;}</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">let</span> dispitem <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(value);</li>
+<li>&nbsp;&nbsp;<span class="span_js_red">dispitem</span>.<span class="span_js_red">style</span>.<span class="span_js_red">display</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"block"</span>;</li>
+<li>}</li>
+<li>&lt;/<span class="span_js_red">script</span>&gt;</li>
+<!-- <li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_03"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li> -->
+</ol>
+</div>
+
+<div id="target" class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果↓</span></li>
+</ol>
+</div>
+
+<a href="#target" onclick="disp3('v2page1');"><div class="button">表示1</div></a>
+<a href="#target" onclick="disp3('v2page2');"><div class="button">表示2</div></a>
+<a href="#target" onclick="disp3('v2page3');"><div class="button">表示3</div></a>
+
+<div class="contents3" id="v2page1"><div class="button">1</div></div>
+<div class="contents3" id="v2page2"><div class="button">2</div></div>
+<div class="contents3" id="v2page3"><div class="button">3</div></div>
+
+<script>
+'use strict'
+document.getElementById("v2page1").style.display = "block";
+document.getElementById("v2page2").style.display = "none";
+document.getElementById("v2page3").style.display = "none";
+let disp3 = function(value){
+  let contents3 = document.getElementsByClassName("contents3");
+  for(let content3 of contents3){
+    content3.style.display = "none";
+  }
+  let dispitem3 = document.getElementById(value);
+  dispitem3.style.display = "block";
+}
+</script>
+<!-- <script>
+ </script> -->
+
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;表示切り替えその3</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"obj=document.getElementById('example1').style; obj.display=</span></li>
+<li><span class="span_js_yellowgreen">(obj.display=='none')?'block':'none';"</span>&gt;</li>
+<li>&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"open_button"</span> <span class="span_js_oarnge">style</span>=<span class="span_js_yellowgreen">"</span>cursor: pointer;<span class="span_js_yellowgreen">"</span>&gt;</li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"box3"</span>&gt;クリックする所&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">a</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"example1"</span> <span class="span_js_oarnge">style</span>=<span class="span_js_yellowgreen">"</span>clear: both;<span class="span_js_yellowgreen">"</span>&gt;表示&lt;<span class="span_js_red">br</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li><span class="span_js_comment">//結果</span></li>
+</ol>
+</div>
+
+<div onclick="obj=document.getElementById('example1').style; obj.display=(obj.display=='none')?'block':'none';"><a class="open_button" style="cursor: pointer;"><div class="box3">クリックする所</div></a></div>
+<div id="example1" style="clear: both;">
+表示<br>
+</div>
+<br><br>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;動的に色を変える</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li>&lt;!DOCTYPE html&gt;</li>
+<li>&lt;<span class="span_js_red">html</span> <span class="span_js_oarnge">lang</span>=<span class="span_js_yellowgreen">"ja"</span>&gt;</li>
+<li>&lt;<span class="span_js_red">head</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">meta</span> <span class="span_js_oarnge">charset</span>=<span class="span_js_yellowgreen">"utf-8"</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">title</span>&gt;sample&lt;/<span class="span_js_red">title</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">style</span>&gt;</li>
+<li>&nbsp;&nbsp;#<span class="span_js_skyblue">div1</span> {</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;width: <span class="span_js_oarnge">100px</span>;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;height: <span class="span_js_oarnge">100px</span>;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;background-color: <span class="span_js_oarnge">blue</span>;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;border-color: <span class="span_js_oarnge">blue</span>;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;border-width: <span class="span_js_oarnge">2px</span>;</li>
+<li>&nbsp;&nbsp;}</li>
+<li>&nbsp;&nbsp;&lt;/<span class="span_js_red">style</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">head</span>&gt;</li>
+<li>&lt;<span class="span_js_red">body</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"div1"</span>&gt;<span class="span_js_red">div1</span>&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&nbsp;&nbsp;赤(R)：&lt;<span class="span_js_red">input</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"r"</span> <span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text"</span> <span class="span_js_oarnge">value</span>=<span class="span_js_yellowgreen">"255"</span>&gt;&lt;<span class="span_js_red">br</span>&gt;</li>
+<li>&nbsp;&nbsp;緑(G)：&lt;<span class="span_js_red">input</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"g"</span> <span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text"</span> <span class="span_js_oarnge">value</span>=<span class="span_js_yellowgreen">"0"</span>&gt;&lt;<span class="span_js_red">br</span>&gt;</li>
+<li>&nbsp;&nbsp;青(B)：&lt;<span class="span_js_red">input</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"b"</span> <span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text"</span> <span class="span_js_oarnge">value</span>=<span class="span_js_yellowgreen">"0"</span>&gt;</li>
+<li>&nbsp;&nbsp;&lt;<span class="span_js_red">input</span> <span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"button"</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"button1"</span> <span class="span_js_oarnge">value</span>=<span class="span_js_yellowgreen">"背景色を指定"</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"func1()"</span>&gt;</li>
+<li>&nbsp;&nbsp;</li>
+<li>&lt;/<span class="span_js_red">body</span>&gt;</li>
+<li>&lt;<span class="span_js_red">script</span> <span class="span_js_oarnge">language</span>=<span class="span_js_yellowgreen">"javascript"</span> <span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"text/javascript"</span>&gt;</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">const</span> <span class="span_js_oarnge">r</span> <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">'r'</span>);</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">const</span> <span class="span_js_oarnge">g</span> <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">'g'</span>);</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">const</span> <span class="span_js_oarnge">b</span> <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">'b'</span>);</li>
+<li>&nbsp;&nbsp;</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">const</span> <span class="span_js_oarnge">func1</span> <span class="span_js_pink">=</span> () <span class="span_js_pink">=></span> {</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">const</span> <span class="span_js_oarnge">red</span> <span class="span_js_pink">=</span> <span class="span_js_yellow">Number</span>.<span class="span_js_skyblue">parseInt</span>(<span class="span_js_red">r</span>.<span class="span_js_red">value</span>);</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">const</span> <span class="span_js_oarnge">green</span> <span class="span_js_pink">=</span> <span class="span_js_yellow">Number</span>.<span class="span_js_skyblue">parseInt</span>(<span class="span_js_red">g</span>.<span class="span_js_red">value</span>);</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">const</span> <span class="span_js_oarnge">blue</span> <span class="span_js_pink">=</span> <span class="span_js_yellow">Number</span>.<span class="span_js_skyblue">parseInt</span>(<span class="span_js_red">b</span>.<span class="span_js_red">value</span>);</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">'div1'</span>).<span class="span_js_red">style</span>.<span class="span_js_red">backgroundColor</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">`rgb(</span>
+<span class="span_js_red">${</span>red<span class="span_js_red">}</span>, <span class="span_js_red">${</span>green<span class="span_js_red">}</span>, <span class="span_js_red">${</span>blue<span class="span_js_red">}</span><span class="span_js_yellowgreen">`</span>;</li>
+<li>}</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_skyblue">func1</span>();</li>
+<li>&lt;/<span class="span_js_red">script</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">html</span>&gt;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+</ol>
+</div>
+
+<style>
+  #div1 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-color: blue;
+    border-width: 2px;
+  }
+</style>
+</head>
+<div class="box">
+<div id="div1">div1</div>
+赤(R)：<input id="r" type="text" value="255"><br>
+緑(G)：<input id="g" type="text" value="0"><br>
+青(B)：<input id="b" type="text" value="0"><br><br>
+<input type="button" id="button1" value="背景色を指定" onclick="func1()">
+</div>
+<script language="javascript" type="text/javascript">
+  const r = document.getElementById('r');
+  const g = document.getElementById('g');
+  const b = document.getElementById('b');
+
+  const func1 = () => {
+    const red = Number.parseInt(r.value);
+    const green = Number.parseInt(g.value);
+    const blue = Number.parseInt(b.value);
+    document.getElementById('div1').style.backgroundColor = `rgb(${red}, ${green}, ${blue}`;
+  }
+
+  func1();
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>クリックして音を鳴らす&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">button</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"b1"</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"clk()"</span>>音01&lt;/<span class="span_js_red">button</span>&gt;</li>
+<li>&lt;<span class="span_js_red">button</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"b2"</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"clk()"</span>>音02&lt;/<span class="span_js_red">button</span>&gt;</li>
+<li>&lt;<span class="span_js_red">button</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"b3"</span> <span class="span_js_oarnge">onclick</span>=<span class="span_js_yellowgreen">"clk()"</span>>音03&lt;/<span class="span_js_red">button</span>&gt;</li>
+<li>&lt;<span class="span_js_red">script</span>&gt;</li>
+<li><span class="span_js_pink">function</span> <span class="span_js_skyblue">clk</span>(e){</li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">/// 要素IDを取得する</span></li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">var</span> e <span class="span_js_pink">=</span> e <span class="span_js_pink">||</span> <span class="span_js_red">window</span>.<span class="span_js_red">event</span>;</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">var</span> elem <span class="span_js_pink">=</span> <span class="span_js_red">e</span>.<span class="span_js_red">target</span> <span class="span_js_pink">||</span> <span class="span_js_red">e</span>.<span class="span_js_red">srcElement</span>;</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">var</span> elemId <span class="span_js_pink">=</span> <span class="span_js_red">elem</span>.<span class="span_js_red">id</span>;</li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">/// 要素IDに応じて処理を変える</span></li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">switch</span>(elemId){</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">case</span> <span class="span_js_yellowgreen">'b1'</span>:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">var</span> my_audio <span class="span_js_pink">= new</span> <span class="span_js_yellow">Audio</span>(<span class="span_js_yellowgreen">"SE/touch_SE01.wav"</span>);</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">my_audio</span>.<span class="span_js_red">currentTime</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">0</span>;  <span class="span_js_comment">//再生開始位置を先頭に戻す</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">my_audio</span>.<span class="span_js_skyblue">play</span>();  <span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//サウンドを再生</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">break</span>;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">case</span> <span class="span_js_yellowgreen">'b2'</span>:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">var</span> my_audio <span class="span_js_pink">= new</span> <span class="span_js_yellow">Audio</span>(<span class="span_js_yellowgreen">"SE/touch_SE02.wav"</span>);</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">my_audio</span>.<span class="span_js_red">currentTime</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">0</span>;  <span class="span_js_comment">//再生開始位置を先頭に戻す</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">my_audio</span>.<span class="span_js_skyblue">play</span>();  <span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//サウンドを再生</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">break</span>;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">case</span> <span class="span_js_yellowgreen">'b3'</span>:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">var</span> my_audio <span class="span_js_pink">= new</span> <span class="span_js_yellow">Audio</span>(<span class="span_js_yellowgreen">"SE/touch_SE03.wav"</span>);</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">my_audio</span>.<span class="span_js_red">currentTime</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">0</span>;  <span class="span_js_comment">//再生開始位置を先頭に戻す</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_red">my_audio</span>.<span class="span_js_skyblue">play</span>();  <span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//サウンドを再生</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_pink">break</span>;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+<li>}</li>
+<li>&lt;/<span class="span_js_red">script</span>></li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_yellowgreen">
+</span>
+</li>
+</ol>
+</div>
+<!-- <div class="sound_btn"id="sound_btn01"onclick="sound01();">
+再生する01
+</div>
+<div class="sound_btn"id="sound_btn02"onclick="sound01();">
+再生する02
+</div>
+<style>
+.sound_btn{
+  border: solid 1px;
+  padding: 50px;
+  text-align: center;
+  margin: 10px;
+  width: 100px;
+  height: 50px;
+}
+</style> -->
+<!-- <script type="text/javascript">
+    window.onload = function() {
+        var my_audio = new Audio("SE/touch_SE01.wav");
+            //ボタンにクリックイベントを設定
+            document.getElementById("sound_btn01").onclick = function() {
+                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+                my_audio.play();  //サウンドを再生
+            }
+    }
+</script> -->
+
+
+<!-- <script>
+setInterval(() => {
+  clk('b2')
+ }, 500);
+</script> -->
+
+<button id="b1" onclick="clk()">音01</button>
+<button id="b2" onclick="clk()">音02</button>
+<button id="b3" onclick="clk()">音03</button>
+<script>
+function clk(e){
+  /// 要素IDを取得する
+  var e = e || window.event;
+  var elem = e.target || e.srcElement;
+  var elemId = elem.id;
+
+  /// 要素IDに応じて処理を変える...
+  switch(elemId){
+    case 'b1':
+      var my_audio = new Audio("SE/touch_SE01.wav");
+      my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+      my_audio.play();  //サウンドを再生
+      break;
+    case 'b2':
+      var my_audio = new Audio("SE/touch_SE02.wav");
+      my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+      my_audio.play();  //サウンドを再生
+      break;
+    case 'b3':
+      var my_audio = new Audio("SE/touch_SE03.wav");
+      my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+      my_audio.play();  //サウンドを再生
+      break;
+  }
+}
+</script>
+
+<script>
+// function sound01(e){
+//   /// 要素IDを取得する
+//   let e = e || window.event;
+//   let elem = e.target || e.srcElement;
+//   let elemId = elem.id;
+//
+//   /// 要素IDに応じて処理を変える...
+//   switch(elemId){
+//     case 'sound_btn01':
+//       var my_audio = new Audio("SE/touch_SE01.wav");
+//       my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+//       my_audio.play();  //サウンドを再生
+//       break;
+//     case 'sound_btn02':
+//       var my_audio = new Audio("SE/touch_SE02.wav");
+//       my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+//       my_audio.play();  //サウンドを再生
+//       break;
+//     /// 以下略...
+//   }
+// }
+
+// let sound01 = function(value){
+//   let soundbtn = document.getElementById(value);
+//   // alert(soundbtn)
+//   console.log(soundbtn)
+//   if(soundbtn == "sound_btn01"){
+//     var my_audio = new Audio("SE/touch_SE01.wav");
+//     my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+//     my_audio.play();  //サウンドを再生
+//   }
+//   if(soundbtn == "sound_btn02"){
+//     var my_audio = new Audio("SE/touch_SE02.wav");
+//     my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+//     my_audio.play();  //サウンドを再生
+//   }
+//   else {
+//     console.log("失敗")
+//   }
+//
+// }
+</script>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li></li>
+<li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_03"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_yellowgreen">
+<div id="variable_view_03">
+</div>
+</span>
+</li>
+</ol>
+</div>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li></li>
+<li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_03"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_yellowgreen">
+<div id="variable_view_03">
+</div>
+</span>
+</li>
+</ol>
+</div>
+<!------------------------------------>
+<hr style="border:0.3px dashed #777E7B;">
+<font size="4"face='arial black'><b>&nbsp;&nbsp;</b></font><br>
+<hr style="border:0.3px dashed #777E7B;">
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//Javascriptのソースコード</span></li>
+<li></li>
+<li>out <span class="span_js_pink">=</span></li>
+<li><span class="span_js_pink">var</span> sampleArea <span class="span_js_pink">=</span> <span class="span_js_red">document</span>.<span class="span_js_skyblue">getElementById</span>(<span class="span_js_yellowgreen">"variable_view_03"</span>);</li>
+<li><span class="span_js_red">sampleArea</span>.<span class="span_js_red">innerHTML</span> <span class="span_js_pink">=</span> num;</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">//結果</span></li>
+<li>
+<span class="span_js_yellowgreen">
+<div id="variable_view_03">
+</div>
+</span>
+</li>
+</ol>
+</div>
+
+<script>
+var num;
+
+var sampleArea = document.getElementById("variable_view_02");
+sampleArea.innerHTML = out;
+</script>
+
+
+
+
+
+<div class="srcdiv">
+<ol>
+<li>>  <span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+
+  <div class="top_box">
+    <a href="#top"align="right">トップへ戻る</a></div>
+    <br>
+  </div>
+
+<div class="contents" id="page3">
+
+
+
+
+<div class="top_box">
+<a href="#top"align="right">トップへ戻る</a></div>
+<br>
+
+</div>
+
+</div>
+<script>
+'use strict'
+document.getElementById("page2").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

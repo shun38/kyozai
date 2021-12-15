@@ -1,0 +1,790 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>ノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="linux_01.html">CSS</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page0');">CSSとは</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">基礎</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page2');">実践1</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page3');">実践2</a>
+  </div>
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+<div class="contents" id="page0">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol id="table_of_contents">
+<li><a href="#set1"></a><br></li>
+<li><a href="#set2"></a><br></li>
+<li><a href="#set3"></a><br></li>
+<li><a href="#set4"></a><br></li>
+<li><a href="#set5"></a><br></li>
+<li><a href="#set6"></a><br></li>
+<li><a href="#set7"></a><br></li>
+<li><a href="#set8"></a><br></li>
+<li><a href="#set9"></a><br></li>
+<!-- <li><a href="#set10"></a><br></li> -->
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page1">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol id="table_of_contents">
+<li><a href="#web1">CSSとは</a><br></li>
+<li><a href="#web2">CSSの記述</a><br></li>
+<li><a href="#web3">セレクタ一覧</a><br></li>
+<li><a href="#web4">プロパティ一覧</a><br></li>
+<li><a href="#web5">プロパティ一覧</a><br></li>
+<!-- <li><a href="#web1"></a><br></li>
+<li><a href="#web1"></a><br></li> -->
+</ol>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+
+<img src="img/css/001.jpg">
+
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+
+
+<h2 id="web1">CSSとは</h2>
+CSS (Cascading Style Sheets) は、ウェブページのスタイルを設定するコードです。<br>
+CSSはプログラム言語でもマークアップ言語でもなく、スタイルシート言語です。<br>
+CSSはHTML要素を指定したスタイルに表示させる事ができます。<br>
+
+・外部CSSファイルを読み込む<br>
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">link</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"styles/style.css"</span> <span class="span_js_oarnge">rel</span>=<span class="span_js_yellowgreen">"stylesheet"</span>&gt;</li>
+<li><span class="span_js_comment">/*htmlファイルと同じフォルダ内にあるstylesフォルダの中のstyle.cssを読み込みます*/</span></li>
+<li>&lt;<span class="span_js_red">link</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"style.css"</span> <span class="span_js_oarnge">rel</span>=<span class="span_js_yellowgreen">"stylesheet"</span>&gt;</li>
+<li><span class="span_js_comment">/*htmlファイルと同じフォルダ内にあるstyle.cssを読み込みます*/</span></li>
+</ol>
+</div>
+
+・HTMLにstyleタグで直接書き込む<br>
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li></li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+</ol>
+</div>
+スタイルタグを記述することで、上のソースコードの1行目の開始タグから3行目の終了タグの間の文字をcssのソースコードとして認識させられます。改行しても終了タグまでスタイルの記述と認識されます。<br>
+
+<img src="img/css/c001.png"width="800em"height="430em">
+
+<hr style="border:0.3px dashed #777E7B;">
+●セレクター(selector)<br>
+<hr style="border:0.3px dashed #777E7B;">
+ここにはスタイルを設定するhtml要素名を記述します。<br>
+タグ名をそのまま入れると、タグに適用され、クラス名、id名などでも指定することができます。<br>
+クラス名は複数に対して付与します。同じスタイルを複数の要素に適用したい時にクラスを使います。<br>
+idは固有に識別できる指標として扱うので、1つの要素に対してのみ付与します。<br>
+<hr style="border:0.3px dashed #777E7B;">
+●宣言(declaration)<br>
+<hr style="border:0.3px dashed #777E7B;">
+color: red;やmargin: 3px;の様な要素に対してスタイルを記述した部分の事です。<br>
+<hr style="border:0.3px dashed #777E7B;">
+●プロパティ(Property)<br>
+<hr style="border:0.3px dashed #777E7B;">
+html要素をスタイル付けするための属性です。<br>
+この部分でhtml要素に対してどのようなスタイルを指定するのかを決めます。<br>
+必ず記述の後に(:)コロンを付けます。<br>
+<hr style="border:0.3px dashed #777E7B;">
+●プロパティ値<br>
+<hr style="border:0.3px dashed #777E7B;">
+html要素に与えられたプロパティの度合の指定や、外観の選択をします。<br>
+<hr style="border:0.3px dashed #777E7B;">
+
+
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li>.<span class="span_js_oarnge">test_box1</span>{border: solid <span class="span_js_oarnge">1px</span>;width: <span class="span_js_oarnge">500px</span>;height: <span class="span_js_oarnge">200px</span>;}</li>
+<li>.<span class="span_js_oarnge">test_box2</span>{margin: <span class="span_js_oarnge">30px</span>; padding: <span class="span_js_oarnge">20px</span>;border: solid <span class="span_js_oarnge">1px</span>;height: <span class="span_js_oarnge">50%</span>;}</li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"test_box1"</span>&gt;</li>
+<li>&lt;<span class="span_js_red">div</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"test_box2"</span>&gt;</li>
+<li>文章コンテンツ1&lt;<span class="span_js_red">br</span>&gt;</li>
+<li>文章コンテンツ2&lt;<span class="span_js_red">br</span>&gt;</li>
+<li>文章コンテンツ3&lt;<span class="span_js_red">br</span>&gt;</li>
+<li>文章コンテンツ4&lt;<span class="span_js_red">br</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">div</span>&gt;</li>
+</ol>
+</div>
+
+・表示<!--マージン-->
+<style>
+.test_box1{border: solid 1px;width: 500px;height: 200px;margin:10px;}
+.test_box2{margin: 30px; padding: 20px;border: solid 1px;height: 50%;}
+</style>
+<div class="test_box1">
+<div class="test_box2">
+文章コンテンツ1<br>
+文章コンテンツ2<br>
+文章コンテンツ3<br>
+文章コンテンツ4<br>
+</div>
+</div>
+
+<h2 id="web1">CSSの記述</h2>
+<img src="img/css/c002.png"width="800em"height="430em">
+●構文<br>
+<hr style="border:0.3px dashed #777E7B;">
+宣言内ではコロンを使用してプロパティと値を分割する必要がある。<br>
+値を設定した後は必ず;(セミコロン)で区切る必要がある。<br>
+{}で囲った部分がセレクタ(スタイル適用対象)に対するスタイルの宣言部分となります。<br>
+
+
+
+<h2 id="web1">セレクタ一覧</h2>
+
+スタイルを適用する対象を指定するセレクタ（selector）には以下のものがあります。<br>
+ブラウザの種類やバージョンによって対応していない場合があるので注意してください。<br>
+
+<style>
+.standard-table{
+border-collapse: collapse;
+width: 100%;
+border: 1px solid #333333;
+font-size: 90%;
+line-height: 1.5;
+}
+.standard-table th {
+    border: 1px solid #333333;
+    padding: 5px;
+    background-color: #CCCCFF;
+  }
+  /* table,tbody,tr,th,td{
+    border: solid 1px #333333;
+  }
+  td{
+    border: solid 1px #333333;
+  } */
+</style>
+
+<table class="standard-table">
+<tbody><tr><th>名前</th><th>セレクタの書式</th><th>スタイルを適用する対象</th><th>使用例</th></tr>
+<tr><th>要素型セレクタ</th><td><a>要素名</a></td><td> 要素名で指定した要素 </td><td>p {color:blue;}</td></tr>
+<tr><th>全称セレクタ</th><td><a>*</a></td><td>すべての要素</td><td>* {color:blue;}</td></tr>
+<tr><th>classセレクタ</th><td><a>要素名.クラス名</a></td><td>クラス名を付けた要素</td><td>p.sample {color:blue;}</td></tr>
+<tr><th>idセレクタ</th><td><a>要素名#id名</a></td><td>id名を付けた要素</td><td>div#sample {color:blue;}</td></tr>
+<tr><th rowspan="7">擬似クラス</th><td><a>要素名:link</a></td><td>未訪問のリンク</td><td>a:link {color:blue;}</td></tr>
+<tr><td><a>要素名:visited</a></td><td>訪問済のリンク</td><td>a:visited {color:blue;}</td></tr>
+<tr><td><a>要素名:hover</a></td><td>カーソルが乗っている要素</td><td>a:hover {color:blue;}</td></tr>
+<tr><td><a>要素名:active</a></td><td>クリック中の要素</td><td>a:active {color:blue;}</td></tr>
+<tr><td><a>要素名:focus</a></td><td>フォーカスされている要素</td><td>input:focus {background:blue;}</td></tr>
+<tr><td><a>要素名:lang</a></td><td>特定の言語を指定した要素</td><td>p:lang(en) {color:blue;}</td></tr>
+<tr><td><a>要素名:first-child</a></td><td>要素内の最初の子要素</td><td>p:first-child {color:blue;}</td></tr>
+<tr><th rowspan="4">擬似要素</th><td><a>要素名:first-line</a></td><td>要素の最初の一行</td><td>p:first-line {color:blue;}</td></tr>
+<tr><td><a>要素名:first-letter</a></td><td>要素の最初の一文字</td><td>p:first-letter {color:blue;}</td></tr>
+<tr><td><a>要素名:before</a></td><td>要素の直前</td><td>blockquote:before {content:"『";}</td></tr>
+<tr><td><a>要素名:after</a></td><td>要素の直後</td><td>blockquote:after {content:"』";}</td></tr>
+<tr><th rowspan="3">属性セレクタ</th><td><a>要素名[属性名]</a></td><td>特定の属性を持つ指定要素</td><td>a[target] {color:blue;}</td></tr>
+<tr><td><a>要素名[属性名= "属性値"]</a></td><td>特定の属性値を持つ指定要素</td><td>a[target="_blank"] {color:blue;}</td></tr>
+<tr><td><a>要素名[属性名~= "属性値"]</a></td><td>属性値候補と一致した要素</td><td>p[class~="sample"] {color:blue;}</td></tr>
+<tr><th>複数のセレクタ</th><td><a>セレクタ,セレクタ</a></td><td>複数のセレクタ</td><td>h1, h2 {color:blue;}</td></tr>
+<tr><th>子孫セレクタ</th><td><a>セレクタ セレクタ</a></td><td>下の階層の子孫要素</td><td>p strong {color:blue;}</td></tr>
+<tr><th>子セレクタ</th><td><a>セレクタ&gt;セレクタ</a></td><td>直下の階層の子要素</td><td>p &gt; strong {color:blue;}</td></tr>
+<tr><th>隣接セレクタ</th><td><a>セレクタ+セレクタ</a></td><td>直後に隣接している要素</td><td>h1 + p {color:blue;}</td></tr>
+</tbody></table>
+
+<h2 id="web2">cssの値と単位</h2>
+CSSで使用されるすべてのプロパティには、特定の値または組み合わせのみが許可されています。<br>
+今回は一般的な値と単位について見ていきます。<br>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_red">h1</span>{</li>
+<li>&nbsp;&nbsp;color: <span class="span_js_oarnge">black</span>;</li>
+<li>&nbsp;&nbsp;background-color: <span class="span_js_skyblue">rgb</span>(<span class="span_js_oarnge">197</span>,<span class="span_js_oarnge">93</span>,<span class="span_js_oarnge">161</span>);</li>
+<li>}</li>
+</ol>
+</div>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Unit</th>
+   <th scope="col">名前</th>
+   <th scope="col">換算</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>cm</code></td>
+   <td>Centimeters センチメートル</td>
+   <td>1cm = 96px/2.54</td>
+  </tr>
+  <tr>
+   <td><code>mm</code></td>
+   <td>Millimeters ミリメートル</td>
+   <td>1mm = 1/10 cm</td>
+  </tr>
+  <tr>
+   <td><code>Q</code></td>
+   <td>Quarter-millimeters 1/4 ミリメートル</td>
+   <td>1Q = 1/40 1cm</td>
+  </tr>
+  <tr>
+   <td><code>in</code></td>
+   <td>Inches インチ</td>
+   <td>1in = 2.54cm = 96px</td>
+  </tr>
+  <tr>
+   <td><code>pc</code></td>
+   <td>Picas パイカ</td>
+   <td>1pc = 1in の 1/6</td>
+  </tr>
+  <tr>
+   <td><code>pt</code></td>
+   <td>Points ポイント</td>
+   <td>1pt = 1in の 1/72</td>
+  </tr>
+  <tr>
+   <td><code>px</code></td>
+   <td>Pixels ピクセル</td>
+   <td>1px =&nbsp; 1in の 1/96</td>
+  </tr>
+ </tbody>
+</table>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Unit</th>
+   <th scope="col">関係先</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>em</code></td>
+   <td>親要素のフォントサイズ.</td>
+  </tr>
+  <tr>
+   <td><code>ex</code></td>
+   <td>その要素のフォントの文字 "x" の高さ</td>
+  </tr>
+  <tr>
+   <td><code>ch</code></td>
+   <td>その要素のフォントの文字 "0" の幅</td>
+  </tr>
+  <tr>
+   <td><code>rem</code></td>
+   <td>ルート要素のフォントサイズ</td>
+  </tr>
+  <tr>
+   <td><code>lh</code></td>
+   <td>その要素の line-hight プロパティと同じ</td>
+  </tr>
+  <tr>
+   <td><code>vw</code></td>
+   <td>ビューポート幅の 1%</td>
+  </tr>
+  <tr>
+   <td><code>vh</code></td>
+   <td>ビューポート高さの 1%</td>
+  </tr>
+  <tr>
+   <td><code>vmin</code></td>
+   <td>ビューポート幅と高さの小さい方の 1%</td>
+  </tr>
+  <tr>
+   <td><code>vmax</code></td>
+   <td>ビューポート幅と高さの大きい方の 1%</td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="srcdiv">
+<ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</div>
+
+
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page2">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+&nbsp;&nbsp;第1章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 第2章<br>
+<ol class="table_of_contents">
+<li><a href="#a1">直線を敷く</a><br></li>
+<li><a href="#a2">文字の横幅を変える</a><br></li>
+<li><a href="#a3">文字の縦幅を変える</a><br></li>
+<li><a href="#a4">文字色を変える</a><br></li>
+<li><a href="#a5">ブロックの場所を操る</a><br></li>
+<li><a href="#a6">ボーダー(外枠)</a><br></li>
+<li><a href="#a7">滑らかにスタイルを変える</a><br></li>
+<li><a href="#a8">ドロップダウンメニュー</a><br></li>
+<li><a href="#a9">ハンバーガーメニュー</a><br></li>
+<li><a href="#a10">画面サイズに合わせてレスポンシブ対応</a><br></li>
+<li><a href="#a11">ラベルデザイン</a><br></li>
+<li><a href="#a12">余白を指定する</a><br></li>
+</ol>
+<ol class="table_of_contents2">
+<li><a href="#a13">フォントの変更</a><br></li>
+<li><a href="#a14">aタグの中の文字の下線を消す</a><br></li>
+<li><a href="#a15">点線を表示させる</a><br></li>
+<li><a href="#a16">背景画像を固定する</a><br></li>
+<li><a href="#a17">文字に背景色を付ける</a><br></li>
+<li><a href="#a18">図形を描画</a><br></li>
+<li><a href="#a19">見出しデザイン</a><br></li>
+<li><a href="#a20">カーソルを合わせたときに色を変える</a><br></li>
+<li><a href="#a21">影を付ける</a><br></li>
+<li><a href="#a22">中央揃え右揃え左揃え</a><br></li>
+<li><a href="#a23">htmlタグの中に記述</a><br></li>
+<li><a href="#a23">サイトのcssを読み取る</a><br></li>
+<li><a href="#a24">背景色の指定・透過色</a><br></li>
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="a1">直線を敷く</h2>
+
+<div class="srcdiv"><!--htmlソース-->
+<ol>
+<li>&lt;<span class="span_js_red">hr</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"hr_ClassName"</span>><span class="span_js_comment">&lt;!--HTMLソース--></span></li>
+</ol>
+</div>
+
+<div class="srcdiv"><!--直線スタイル-->
+<ol>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li>.<span class="span_js_oarnge">hr_ClassName</span> {</li>
+<li>border-top: <span class="span_js_oarnge">1px</span> solid #<span class="span_js_oarnge">333</span>;</li>
+}</li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+</ol>
+</div>
+<hr style="border-top:1px solid #333;">
+
+<div class="srcdiv"><!--二重線スタイル-->
+<ol>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li>.<span class="span_js_oarnge">hr_ClassName</span> {</li>
+<li>border-top: <span class="span_js_oarnge">4px</span> double #<span class="span_js_oarnge">333</span>;</li>
+}</li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+</ol>
+</div>
+<hr style="border-top:4px double #333;">
+
+<div class="srcdiv"><!--ドット線スタイル-->
+  <ol>
+    <li>&lt;<span class="span_js_red">style</span>&gt;</li>
+    <li>.<span class="span_js_oarnge">hr_ClassName</span> {</li>
+      <li>border-top: <span class="span_js_oarnge">4px</span> dotted #<span class="span_js_oarnge">333</span>;</li>
+    }</li>
+    <li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+  </ol>
+</div>
+<hr style="border-top:4px dotted #333;">
+
+<div class="srcdiv"><!--緑紫ダッシュ線スタイル-->
+  <ol>
+    <li>&lt;<span class="span_js_red">style</span>&gt;</li>
+    <li>.<span class="span_js_oarnge">hr_ClassName</span> {</li>
+      <li>border-top: <span class="span_js_oarnge">4px</span> dashed #<span class="span_js_oarnge">333</span>;</li>
+      <li>background-color: #<span class="span_js_oarnge">faa</span>;</li>
+    }</li>
+    <li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+  </ol>
+</div>
+<hr class="hr_01"><!--表示html緑紫線-->
+<style>/*表示指定スタイル*/
+.hr_01{
+border-top: 10px dashed #7c0;
+background-color: #70c;}
+</style>
+
+<div class="srcdiv"><!--水色ダッシュ線スタイル-->
+<ol>
+<li>&lt;<span class="span_js_red">hr</span> <span class="span_js_oarnge">style</span>=<span class="span_js_yellowgreen">"</span>border:<span class="span_js_oarnge">0.3px</span> dashed #<span class="span_js_oarnge">87CEEB</span>;<span class="span_js_yellowgreen">"</span>></li>
+</ol>
+</div>
+・表示
+<br>
+<hr style="border:0.3px dashed #87CEEB;"><!--表示水色ダッシュ線-->
+<br>
+
+<div class="srcdiv"><!--黒ダッシュ線スタイル-->
+<ol>
+<li>&lt;<span class="span_js_red">hr</span> <span class="span_js_oarnge">style</span>=<span class="span_js_yellowgreen">"</span>border:<span class="span_js_oarnge">0.3px</span> dashed #<span class="span_js_oarnge">777E7B</span>;<span class="span_js_yellowgreen">"</span>></li>
+</ol>
+</div>
+・表示
+<br>
+<hr style="border:0.3px dashed #777E7B;"><!--表示黒色ダッシュ線-->
+<br>
+
+<h2 id="a2">文字の横間隔を変える</h2>
+
+<div class="srcdiv"><!--ソース-->
+<ol>
+<li>&lt;<span class="span_js_red">span</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"spacing_span"</span>&gt;</li>
+<li>123 あいう カキク</li>
+<li>&lt;/<span class="span_js_red">span</span>&gt;</li>
+<li>&lt;<span class="span_js_red">br</span>&gt;</li>
+<li>123 あいう カキク</li>
+<li></li>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li>.<span class="span_js_oarnge">spacing_span</span> {</li>
+<li>letter-spacing: <span class="span_js_oarnge">3px</span>;</li>
+<li>}</li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+</ol>
+</div>
+
+・表示<br>
+<span class="spacing_span01">
+123 あいう カキク
+</span>
+<br>
+<span class="spacing_span02">
+123 あいう カキク
+</span>
+<style>
+.spacing_span01 {
+letter-spacing: 3px;
+margin: 3px;
+}
+.spacing_span02 {
+letter-spacing: 0px;
+margin: 3px;
+}
+</style>
+
+
+<h2 id="a3">文字の立幅を変える</h2>
+<h2 id="a4">文字色を変える</h2>
+
+<div class="srcdiv"><!--ソース-->
+<ol>
+<li>&lt;<span class="span_js_red">span</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"FontColor_TestSpan"</span>&gt;</li>
+<li>テスト</li>
+<li>&lt;/<span class="span_js_red">span</span>&gt;</li>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li>.<span class="span_js_oarnge">FontColor_TestSpan</span> {</li>
+<li>color: #<span class="span_js_oarnge">abcdef</span>;</li>
+}</li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+</ol>
+</div>
+<div class="srcdiv"><!--ソース-->
+<ol>
+<li>&lt;<span class="span_js_red">font</span> <span class="span_js_oarnge">color</span>=<span class="span_js_yellowgreen">"#abcdef"</span>&gt;テスト2&lt;/<span class="span_js_red">span</span>&gt;</li>
+</ol>
+</div>
+表示<br>
+<span class="FontColor_TestSpan">
+テスト
+</span><br>
+<style>
+.FontColor_TestSpan {
+color: #abcdef;
+}
+</style>
+<font color="#abcdef">テスト2</span>
+
+<span color="#f00"></span>
+
+<h2 id="a5">ブロックの場所を操る</h2>
+<h2 id="a6">ボーダー(外枠)</h2>
+<h2 id="a7">滑らかにスタイルを変える</h2>
+<h2 id="a8">ドロップダウンメニュー</h2>
+<h2 id="a9">ハンバーガーメニュー</h2>
+<h2 id="a10">画面サイズに併せてレスポンシブ対応</h2>
+<h2 id="a11">ラベルデザイン</h2>
+<h2 id="a12">余白を指定する</h2>
+<h2 id="a13">フォントの変更</h2>
+<h2 id="a14">aタグの文字の下線を消す</h2>
+
+<div class="srcdiv"><!--ソース-->
+<ol>
+<li>&lt;<span class="span_js_red">style</span>&gt;</li>
+<li><span class="span_js_red">a</span> {</li>
+<li>text-decoration: none;</li>
+}</li>
+<li>&lt;/<span class="span_js_red">style</span>&gt;</li>
+</ol>
+</div>
+
+<h2 id="a15">点線を表示させる</h2>
+<h2 id="a16">背景画像を固定する</h2>
+<h2 id="a17">文字に背景色をつける</h2>
+
+<div class="srcdiv"><!--ソース-->
+<ol>
+<li>&lt;<span class="span_js_red">span</span> <span class="span_js_oarnge">style</span>=<span class="span_js_yellowgreen">"</span>background-color:#<span class="span_js_oarnge">ee0000</span><span class="span_js_yellowgreen">"</span>&gt;</li>
+</ol>
+</div>
+
+<span style="background-color:#ee0000;">ラーメン</span>
+
+<h2 id="a18">図形を描画</h2>
+<h2 id="a19">見出しデザイン</h2>
+<h2 id="a20">カーソルを合わせたときに色を変える</h2>
+
+
+<div class="srcdiv"><!--ソース-->
+<ol>
+<li>.<span class="span_js_oarnge">Class_Name</span>:<span class="span_js_oarnge">hover</span>{</li>
+<li>&nbsp;&nbsp;transition: <span class="span_js_oarnge">0.5s</span>;</li>
+<li>&nbsp;&nbsp;background-color: #<span class="span_js_oarnge">ccc</span>;</li>
+<li>&nbsp;&nbsp;color: #<span class="span_js_oarnge">222</span>;</li>
+<li>}</li>
+</ol>
+</div>
+
+<style>
+
+.hover_test01{
+  background-color: #fff;
+  color: #000;
+  width: 100px;
+  height: 100px;
+  border: solid 1px #000;
+  float: left;
+  margin: 10px;
+  overflow: hidden;
+  transition-property:background,width;
+  transition-duration:0.5s;transition-timing-function:ease;
+}
+.hover_test01C{
+  background-color: #fff;
+  color: #000;
+  width: 80px;
+  height: 80px;
+  border: solid 1px #000;
+  float: left;
+  margin: 8px;
+  transition-property:background,width;
+  transition-duration:0.5s;transition-timing-function:ease;
+}
+
+#hover_test01:hover{
+  transition: 0.5s;
+  background-color: #ccc;
+  color: #222;
+}
+#hover_test02:hover{
+  transition: 0.5s;
+  background-color: #ccc;
+  width:120px;
+  color: #222;
+}
+#hover_test03:hover #hover_test03C{
+  transition: 0.6s;
+  background-color: #f00;
+  color: #222;
+  margin: 100px;
+}
+#hover_test03{
+  background-color: rgb(0,0,0,0);
+  color: #222;
+}
+#hover_test04:hover{
+  transition: 1s;
+  background-color: #ccc;
+  color: #222;
+  width: 100px;
+  border-radius: 100px;
+}
+#hover_test05:hover{
+  transition: 0.6s;
+  background-color: #ccc;
+  width:220px;
+  color: #222;
+}
+
+.test_block{
+  width: 100%;
+  height: 300px;
+  border: 1px solid #000;
+  background-color: #eee;
+}
+</style>
+<div class="test_block">
+<div class="hover_test01"id="hover_test01">
+</div>
+<div class="hover_test01"id="hover_test02">
+</div>
+<div class="hover_test01"id="hover_test03">
+<div class="hover_test01C"id="hover_test03C">
+</div>
+</div>
+<div class="hover_test01"id="hover_test04">
+</div>
+<div class="hover_test01"id="hover_test05">
+</div>
+</div>
+
+<h2 id="a21">影を付ける</h2>
+<h2 id="a22">中央ぞろえ右揃え左揃え</h2>
+
+<div class="srcdiv"><!--ソース-->
+<ol>
+<li></li>
+<li>&lt;<span class="span_js_red"></span>&gt;</li>
+</ol>
+</div>
+
+<h2 id="a23">サイトのcssを読み取る</h2>
+
+
+
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page3">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+&nbsp;&nbsp;第3章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 第4章<br>
+<ol class="table_of_contents">
+<li><a href="#b1"></a><br></li>
+<li><a href="#b2"></a><br></li>
+<li><a href="#b3"></a><br></li>
+<li><a href="#b4"></a><br></li>
+<li><a href="#b5"></a><br></li>
+<li><a href="#b6"></a><br></li>
+<li><a href="#b7"></a><br></li>
+<li><a href="#b8"></a><br></li>
+<li><a href="#b9"></a><br></li>
+<li><a href="#b10"</a><br></li>
+<li><a href="#b11"</a><br></li>
+<li><a href="#b12"</a><br></li>
+</ol>
+<ol class="table_of_contents2">
+<li><a href="#b13"></a><br></li>
+<li><a href="#b14"></a><br></li>
+<li><a href="#b15"></a><br></li>
+<li><a href="#b16"></a><br></li>
+<li><a href="#b17"></a><br></li>
+<li><a href="#b18"></a><br></li>
+<li><a href="#b19"></a><br></li>
+<li><a href="#b20"></a><br></li>
+<li><a href="#b21"></a><br></li>
+<li><a href="#b22"></a><br></li>
+<li><a href="#b23"></a><br></li>
+<li><a href="#b23"></a><br></li>
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="b1"></h2>
+
+
+<h2 id="b2"></h2>
+<h2 id="b3"></h2>
+<h2 id="b4"></h2>
+<h2 id="b5"></h2>
+<h2 id="b6"></h2>
+<h2 id="b7"></h2>
+<h2 id="b8"></h2>
+<h2 id="b9"></h2>
+<h2 id="b10"></h2>
+<h2 id="b11"></h2>
+<h2 id="b12"></h2>
+<h2 id="b13"></h2>
+<h2 id="b14"></h2>
+<h2 id="b15"></h2>
+<h2 id="b16"></h2>
+<h2 id="b17"></h2>
+<h2 id="b18"></h2>
+<h2 id="b19"></h2>
+<h2 id="b20"></h2>
+<h2 id="b21"></h2>
+<h2 id="b22"></h2>
+<h2 id="b23"></h2>
+
+
+
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+
+
+
+<script>
+'use strict'
+document.getElementById("page2").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+あ
+<script>
+window.onload = function(){
+  //1000ミリ秒（1秒）毎に関数「showNowDate()」を呼び出す
+  setInterval("showNowDate()", 1000);
+}
+
+//現在時刻を表示する関数
+function showNowDate(){
+  var dt = new Date();
+  // document.write(dt);
+  var my_audio = new Audio("SE/touch_SE02.wav");
+  my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+  my_audio.play();  //サウンドを再生
+}
+</script>

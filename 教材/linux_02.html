@@ -1,0 +1,510 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>ノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="linux_01.html">CentOS7</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">1</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page2');">2</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page3');">3</a>
+ </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page4');">4</a>
+ </div>
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+
+<div class="contents" id="page1">
+
+
+<h2>webサーバー</h2>
+
+
+<div class="srcdiv">
+<ol>
+
+</ol>
+</div>
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page2">
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents">
+<li><a href="#a1">環境設定</a><br></li>
+<li><a href="#a2">telnet</a><br></li>
+<li><a href="#a3">c</a><br></li>
+<li><a href="#a4">d</a><br></li>
+</ol>
+<br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+  <h2 id="a1">環境設定</h2>
+
+<hr style="border:0.3px dashed #87CEEB;">
+追加パッケージのインストール<br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+・ファイアウォール自動起動解除の設定<br>
+<div class="srcdiv">
+<ol>
+<li>su - #管理者権限に移行</li>
+<li>setenforce 0</li>
+<li>systemctl stop firewalld</li>
+<li>systemctl disable firewalld</li>
+<li>systemctl stop NetworkManager</li>
+<li>systemctl disable NetworkManager</li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+SELinux Linux OSのセキュリティ機能<br>
+<hr style="border:0.3px dashed #87CEEB;">
+getenforce SE Linuxの状態を表示<br>
+setenforce SE Linuxの状態を設定<br>
+・systemctl Linuxシステムの管理用コマンド<br>
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">start<br></td>
+    <td style="text-align:left"width="300"><サービス> サービスの開始<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">stop<br></td>
+    <td style="text-align:left"width="300"><サービス> サービスの停止<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">restart<br></td>
+    <td style="text-align:left"width="300"><サービス> サービスの再起動<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">enable<br></td>
+    <td style="text-align:left"width="300"><サービス> サービスの自動起動をON<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">diasable<br></td>
+    <td style="text-align:left"width="300"><サービス> サービスの自動起動をOFF<br></td>
+  </tr>
+</table>
+<br>
+
+・ネットワークマネージャーを再起動<br>
+<div class="srcdiv">
+<ol>
+<li>systemctl restart network</li>
+</ol>
+</div>
+<br>
+管理->仮想マシン設定に行く。<br>
+接続済みにチェックを入れ、ISOイメージファイルを使用していることを確認<br>
+<br>
+・selinuxの無効化<br>
+<div class="srcdiv">
+<ol>
+<li>vi /etc/selinux/config</li>
+<li>SELINUX=enforcing -> SELINUX=disable<span class="span_js_comment">#disableに変更する</span></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+vi Linuxのテキストエディタ
+<hr style="border:0.3px dashed #87CEEB;">
+初期状態:コマンドモード<br>
+「:」+コマンド<br>
+:q 終了<br>
+:w ファイルへ書き込み<br>
+:w! 強制的にファイルへの書き込み<br>
+:wq! ファイルに強制書き込みして終了<br>
+:set number 行番号を表示<br>
+ホスト名 cp2.com<br>
+<br>
+
+・ISOのファイルのマウントをやり直す<br>
+<div class="srcdiv">
+<ol>
+<li>umount /dev/sr0<span class="span_js_comment">#アンマウント(マウント解除)</span></li>
+<li>mkdir /media/CentOS<span class="span_js_comment">#メイクディレクトリ(ディレクトリの作成)</span></li>
+<li>mount /dev/sr0 /media/CentOS<span class="span_js_comment">#新規マウント</span></li>
+</ol>
+</div>
+
+・samba,telnetなどの追加パッケージのインストール<br>
+<div class="srcdiv">
+<ol>
+<li>yum --disablerepo=\* --enablerepo=c7-media install -y ftp httpd samba-client sendmail-cf sendmail telnet-server telnet xinetd</li>
+</ol>
+</div>
+
+・実行コマンドの履歴を見る・指定して再び実行する<br>
+<div class="srcdiv">
+<ol>
+<li>history</li>
+<li>!(実行したコマンドの順番)</li>
+<li></li>
+</ol>
+</div>
+
+・何かのインストール<br>
+<div class="srcdiv">
+  <ol>
+    <li>http://www.rpmfind.net/linux/epel/7/x86_64/Packages/l/libc-client-2007f-16.el7.x86_64.rpm</li>
+    <li>http://rpmfind.net/linux/epel/7/x86_64/Packages/u/uw-imap-2007f-16.el7.x86_64.rpm</li>
+  </ol>
+</div>
+
+・ディレクトリの移動<br>
+<div class="srcdiv">
+<ol>
+<li>cs /root</li>
+<li>cd .<span class=span_js_comment>#.が現在のディレクトリを表すので、この場合ディレクトリは変わらない</span></li>
+<li>cd ../<span class=span_js_comment>#../1つディレクトリを戻る</span></li>
+<li>ls</li>
+<li>cd ダウンロード(downlords)</li>
+</ol>
+</div>
+
+・何かのインストール<br>
+<div class="srcdiv">
+<ol>
+<li>rpm -ivh uw-imap-2007f-16.el7.x86_64.rpm libc-client-2007f-16.el7.x86_64.rpm<span class="span_js_comment">#タブキーで保管しましょう。</span></li>
+</ol>
+</div>
+
+・telnetの設定<br>
+<div class="srcdiv">
+<ol>
+<li>systemctl start telnet.socket<span class="span_js_comment">#telnet.socketというサービスを開始する。</span></li>
+<li>systemctl enable telnet.socket<span class="span_js_comment">#telnet.socketというサービスを以降自動起動する。</span></li>
+<li>systemctl is-enabled telnet.socket<span class="span_js_comment">#自動起動確認</span></li>
+</ol>
+</div>
+
+・ipop3の設定の変更<br>
+<div class="srcdiv">
+<ol>
+<li>vi /etc/xinetd.d/ipop3</li>
+<li><span class="span_js_comment">設定変更</span></li>
+<li>disable =yesをコメントアウト</li>
+</ol>
+</div>
+
+・xinetdの起動と自動起動<br>
+<div class="srcdiv">
+<ol>
+<li>systemctl start xinetd</li>
+<li>systemctl enable xinetd</li>
+</ol>
+</div>
+
+・メールサーバーの設定<br>
+<div class="srcdiv">
+<ol>
+<li>cd /etc/mail</li>
+<li>cp -p sendmail.cf sendmail.cf.original<span class="span_js_comment">#オリジナルファイルの保存</span></li>
+<li>vi sendmail.cf</li>
+<li></li>
+<li>viを起動したらコマンドモードで:139を実行し、</li>
+<li>C{w}cp2.com<span class="span_js_comment">#(設定したドメイン名を入力)</span></li>
+<li>viを起動したらコマンドモードで:264を実行し、</li>
+<li>0 DaemonPort0ptions=Port=smtp,Addr=(IPアドレス), Name=MTA<span class="span_js_comment">#コメントアウトをする(#を先頭に付ける)</span></li>
+</ol>
+</div>
+
+・ドメイン名の確認・変更<br>
+<div class="srcdiv">
+<ol>
+<li>hostname<span class="span_js_comment">#ホストネーム.ドメイン名</span></li>
+<li>vim /etc/resolv.conf<span class="span_js_comment">#ドメイン名の設定ファイルを開く</span></li>
+</ol>
+</div>
+
+・設定ファイルの確認（差分の表示<br>
+<div class="srcdiv">
+<ol>
+<li>diff sendmail.cf.original sendmail.cf</li>
+<li><span class="span_js_comment">#変更箇所が変更されているかを確認します。</span></li>
+</ol>
+</div>
+・ドメインを設定<br>
+<div class="srcdiv">
+<ol>
+<li>ip addr(ip確認ができる)<span class="span_js_comment">#ens33のinetの行のipを使います。(192.168.217.131)</span></li>
+<li>hostname(ホスト名の表示)</li>
+<li>vi hosts</li>
+<li><span class="span_js_comment">#最後に行を追加し、「ホスト名 ドメイン名 ホスト名」と指定する。</span></li>
+</ol>
+</div>
+
+
+<div class="srcdiv">
+<ol>
+<li>yum install vsftpd<span class="span_js_comment">#vsftpdのインストール</span></li>
+<li>cd /etc/vsftpd<span class="span_js_comment">#ディレクトリの変更</span></li>
+<li>cp -p vsftpd.conf vsftpd.conf.original<span class="span_js_comment">#オリジナルを作成</span></li>
+<li>vi vsftpd.conf<span class="span_js_comment">#ディレクトリを指定してvsftpdの設定ファイルをviで開く</span></li>
+<li>vi /etc/vsftpd/vsftpd.conf<span class="span_js_comment">#現在いるディレクトリからの指定、上からの指定ができる。</span></li>
+pwd<span class="span_js_comment">#ディレクトリの確認</span></li>
+</ol>
+</div>
+
+・設定ファイルの変更
+<div class="srcdiv">
+<ol>
+<li>:82<span class="span_js_comment">#行の指定移動</span></li>
+<li>ascii_upload_enable=YES<span class="span_js_comment">#コメントアウトを外す</span></li>
+<li>ascii_download_enable=YES<span class="span_js_comment">#コメントアウトを外す</span></li>
+<li><span class="span_js_comment">#閉じたら以下のコマンドで変更の確認をしましょう。</span></li>
+<li>diff vsftpd.conf.original vsftpd.conf</li>
+</ol>
+</div>
+
+・vsftpd、httpdサービスの起動設定<br>
+<div class="srcdiv">
+<ol>
+<li>systemctl start vsftpd.service</li>
+<li>systemctl enable vsftpd.service</li>
+<li>systemctl start httpd.service</li>
+<li>systemctl enable httpd.service</li>
+<li>systemctl status vsftpd.service</li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li>cd /etc/selinux/<span class="span_js_comment">#</span></li>
+<li>cp -p config config.original<span class="span_js_comment">#オリジナルファイルの作成</span></li>
+<li>vi config<span class="span_js_comment">#disableになっていればOK</span></li>
+<li>diff config.original config<span class="span_js_comment">#変更の確認</span></li>
+</ol>
+</div>
+
+・シャットダウンコマンド<br>
+<div class="srcdiv">
+<ol>
+<li>shutdown -h now<span class="span_js_comment">#今すぐシャットダウンがされます。</span></li>
+<li>shutdown -r now<span class="span_js_comment">#今すぐ再起動がされます。</span></li>
+<li><span class="span_js_comment">#</span></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+windowsからの接続確認<br>
+<hr style="border:0.3px dashed #87CEEB;">
+TCP/IPモジュールの動作確認<br>
+ping 127.0.0.1<br>
+(ping 192.168.217.131)<br>
+<br>
+追加確認、ルータを介してインターネット接続をしている場合<br>
+・ルータまでの接続確認とルータの動作確認<br>
+<div class="srcdiv">
+<ol>
+<li>ping <ルータのIPアドレス><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<a href="https://www.ugtop.com/spill.shtml">><u>プロバイダの情報確認</u></a><br>
+<br>
+・プロバイダDNSまでの接続確認<br>
+<div class="srcdiv">
+<ol>
+<li>ping <プロバイダのDNSサーバの名前><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+・インターネット上のサーバとの接続確認<br>
+<div class="srcdiv">
+<ol>
+<li>ping <インターネット上のサーバのホスト名><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+・コマンドプロンプトでネットの状態確認<br>
+<div class="srcdiv">
+<ol>
+<li>netstat<span class="span_js_comment">#状態を表示</span></li>
+</ol>
+</div>
+
+<h2 id="a2">TelnetでCentosに接続する</h2>
+tera termというオープンソースのリモートログオンクライアントソフトをダウンロードします。<br>
+<a href="https://forest.watch.impress.co.jp/library/software/utf8teraterm/download_10868.html"><u>ダウンロードリンク</u></a><br>
+<br>
+ダウンロードしたら、起動し、ホストにはCentOSのIPアドレスを入力。サービスはtelnetを選択し、OKで起動します。<br>
+まずはログインユーザーを問われるのでcentosに登録してあるユーザー名を入力し、エンターを押し実行します。<br>
+実行したらPassword:という文字が左側に出ます。文字を入力しても表示されないので、間違えないようにパスワードを入力しましょう。<br>
+実行したら以下の様になっている筈です。<br>
+<img src="img/linux/cent_01.jpg"><br>
+これでcentosへリモートで操作ができるようになりました。<br>
+
+
+
+・ロケールの表示<br>
+<div class="srcdiv">
+<ol>
+<li>locale -a | grep ja<span class="span_js_comment">#</span></li>
+</ol>
+</div>
+
+・文字コードの変更<br>
+<div class="srcdiv">
+<ol>
+<li>export LNAG=ja_JP.UTF-8<span class="span_js_comment">#</span></li>
+<li><span class="span_js_comment">#</span></li>
+<li><span class="span_js_comment">#</span></li>
+</ol>
+</div>
+
+<!-- <table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table> -->
+・linuxの環境設定を行う。<br>
+<div class="srcdiv">
+<ol>
+<li>export 変数名 = 値</li>
+</ol>
+</div>
+
+・環境変数の表示<br>
+<div class="srcdiv">
+<ol>
+<li>env</li>
+</ol>
+</div>
+
+・catコマンド<br>
+<div class="srcdiv">
+<ol>
+<li>cat ファイル名</li>
+</ol>
+</div>
+<br>
+「>」リダイレクト演算子<br>
+コマンド >　ファイル名<br>
+「コマンド」の出力結果を「ファイル名」<br>
+の名前をつけて保存<br>
+<br>
+
+・実行中のプロセスを表示。<br>
+<div class="srcdiv">
+<ol>
+<li>ps -el | more</li>
+</ol>
+</div>
+・ファイルの中身をスクロールなどが利用可能な形式で表示<br>
+<div class="srcdiv">
+<ol>
+<li>ps -el | less</li>
+</ol>
+</div>
+-r(リカー支部)は再帰的にコマンドを実行するという意味合いが強い。(コマンドによっては違う)<br>
+-f(フォース(力))は強制的にというオプション<br>
+<br>
+
+linuxシステムにおけるファイルの属性<br>
+-rwx rwx rwx<br>
+-はファイルの種類、このファイルの所有者、グループの権限、その他。<br>
+「-」 普通のファイル<br>
+「d」 ディレクトリ<br>
+「l」 シンボリック<br>
+r(read読み込み)w(write書き込み)x(execution実行)<br>
+<br>
+・chmodコマンド-ファイルの権限を変更<br>
+<div class="srcdiv">
+<ol>
+<li>chmod 権限の値 対象ファイル名</li>
+<li>chmod 664 filex</li>
+</ol>
+</div>
+6(rwx 110 rw-)6(rwx 110 rw-)4(rwx 100 r--)<br>
+<br>
+
+
+<hr style="border:0.3px dashed #87CEEB;">
+FTPを使ってみる<br>
+<hr style="border:0.3px dashed #87CEEB;">
+・<br>
+<div class="srcdiv">
+<ol>
+<li>ftp 192.168.0.1<span class="span_js_comment">#IPアドレス192.168.0.1のサーバへftp接続するコマンド。</span></li>
+</ol>
+</div>
+<img src="img/linux/cent_02.jpg"width="50%"height="50%"><br>
+ftpでログインができました。
+・<br>
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+
+
+<div class="top_box">
+<a href="#top"align="right">トップへ戻る</a></div>
+<br>
+</div>
+
+<div class="contents" id="page3">
+<h2>a</h2>
+
+
+
+<div class="top_box">
+<a href="#top"align="right">トップへ戻る</a></div>
+<br>
+</div>
+
+  <div class="contents" id="page4">
+    <h2>ファイルサーバー</h2>
+
+    <h2>ftpサーバー</h2>
+    <div class="top_box">
+      <a href="#top"align="right">トップへ戻る</a></div>
+      <br>
+    </div>
+
+<!--
+<div class="contents" id="page3">
+
+</div>
+-->
+<script>
+'use strict'
+document.getElementById("page2").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

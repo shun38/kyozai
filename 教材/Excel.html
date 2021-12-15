@@ -1,0 +1,109 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>エクセル</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="Excel.html">Excel</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page0');">あ</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">い</a>
+  </div>
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+<div class="contents" id="page0">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents">
+<li><a href="#set1"></a><br></li>
+<li><a href="#set2"></a><br></li>
+<li><a href="#set3"></a><br></li>
+<li><a href="#set4"></a><br></li>
+<li><a href="#set5"></a><br></li>
+<li><a href="#set6"></a><br></li>
+<li><a href="#set7"></a><br></li>
+<li><a href="#set8"></a><br></li>
+<li><a href="#set9"></a><br></li>
+<!-- <li><a href="#set10"></a><br></li> -->
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page1">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents">
+<li><a href="#web1"></a><br></li>
+<li><a href="#web2"></a><br></li>
+<li><a href="#web3"></a><br></li>
+<li><a href="#web4"></a><br></li>
+</ol>
+<br><br><br><br><br><br>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+
+<img src="img/temp/001.jpg">
+
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+
+
+
+<script>
+'use strict'
+document.getElementById("page1").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

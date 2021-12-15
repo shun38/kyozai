@@ -1,0 +1,1616 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>ノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="linux_01.html">linux</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page0');">環境構築</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">ウェブサバ</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page2');">デタベサバ</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page3');">基本操作</a>
+ </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page4');">ファイル</a>
+ </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page5');">vi使用法</a>
+ </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page6');">リモート</a>
+ </div>
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+<div class="contents" id="page0">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents">
+<li><a href="#set1">Virtualboxのインストール</a><br></li>
+<li><a href="#set2">linuxの初期設定</a><br></li>
+<li><a href="#set3">基本操作</a><br></li>
+<li><a href="#set4">内臓アプリ</a><br></li>
+<li><a href="#set5">atomのインストール</a><br></li>
+<li><a href="#set6">discordのインストール</a><br></li>
+<li><a href="#set7">OBSのインストール</a><br></li>
+<li><a href="#set8">Zoomのインストール</a><br></li>
+<li><a href="#set9">WSLのインストールと使用</a><br></li>
+<!-- <li><a href="#set10"></a><br></li> -->
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<h2 id="set1">Virtualboxのインストール</h2>
+<h2 id="set2">linuxの初期設定</h2>
+ディスプレイのサイズを変えられます。お好みの大きさに変更しましょう。<br>
+1.デスクトップ画面で右クリック<br>
+2.ディスプレイの設定をクリック<br>
+3.解像度 800x600(4;3)の欄をクリックすると、画面サイズが選択できます。<br>
+4.パソコンと画面サイズによって内容は変わりますが、1440x900か1280x800がおすすめです。<br>
+<br>
+ウィンドウの色を黒くすることで、目に優しい表示にすることが出来ます。<br>
+同じく右クリックで設定を表示させ、外観から暗いを設定することで、ウィンドウを黒くさせられます。<br>
+<br>
+タスクバーの位置と大きさを変更出来ます。<br>
+・net-toolパッケージのインストール<br>
+<div class="srcdiv">
+<ol>
+<li>sudo apt install net-tools<span class="span_js_comment">#このコマンドにより、ifconfigを実行出来るようにします。</li>
+</ol>
+</div>
+・ファイアーウォールの設定<br>
+<div class="srcdiv">
+<ol>
+<li>sudo ufw allow 20/tcp</li>
+<li>sudo ufw allow 21/tcp</li>
+<li>sudo ufw allow 40000:50000/tcp</li>
+<li>sudo ufw allow 990/tcp</li>
+<li>sudo ufw enable</li>
+</ol>
+</div>
+
+<h2 id="set3">基本操作</h2>
+<h2 id="set4">内臓アプリ</h2>
+<h2 id="set5">atomのインストール</h2>
+aptにリポジトリを登録し、インストールをしていきます。<br>
+以下のコマンドを実行し、atomをインストールしましょう。<br>
+<div class="srcdiv">
+<ol>
+<li>wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -</li>
+<li>sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'</li>
+<li>sudo apt update</li>
+<li>sudo apt install atom<span class="span_js_comment"></li>
+</ol>
+</div>
+アプリケーションが立ち上がります。<br>
+atomと検索するとatomが出てくる筈です。<br>
+便利なテキストエディタなので、ダウンロードしておきましょう<br>
+操作権限が与えられていないファイルを操作するとき、
+初期状態では毎回パスワードを2回尋ねられるので、権限を設定します。<br>
+
+・htmlフォルダに権限を付与<br>
+<div class="srcdiv">
+<ol>
+<li>sudo chown -R ユーザー名 /var/www<span class="span_js_comment">#指定したディレクトリの操作をユーザーに許可します。</span></li>
+</ol>
+</div>
+atomには便利なプラグインが用意されています。<br>
+個人的におすすめなプラグインを紹介します。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+日本語化プラグイン<br>
+<hr style="border:0.3px dashed #87CEEB;">
+japanese-menu<br>
+インストールすると、メニューバーの文字などが日本語化されます。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+拡張子別でアイコンを表示してくれるプラグイン<br>
+<hr style="border:0.3px dashed #87CEEB;">
+file-icons<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+ターミナルが動かせるプラグイン<br>
+<hr style="border:0.3px dashed #87CEEB;">
+platformio-ide-terminal<br>
+左下の+マークから起動し、pythonが入っている場合、pythonを下から出てきた画面で実行できます。<br>
+ubuntuでは以下のように入力することでpythonがインストールされます。<br>
+<div class="srcdiv">
+<ol>
+<li>sudo apt install -y python3-pip<span class="span_js_comment">#pythonインストールコマンド</span></li>
+<li>python3 ファイル名<span class="span_js_comment">#実行コマンド</span></li>
+</ol>
+</div>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+選択した文字と同じ文字をハイライト表示する<br>
+<hr style="border:0.3px dashed #87CEEB;">
+selection-highlight<br>
+ドラッグで選択した文字がハイライト表示されます。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+ドラッグで複数行選択<br>
+<hr style="border:0.3px dashed #87CEEB;">
+sublime-style-colum-selection
+Ctrl+Altを押しながらドラッグで選択するとカーソルが複数行に表示されます。<br>
+atomではデフォルトでCtrlを押しながらクリックをすることで複数個所の選択ができますが、<br>
+このプラグインにより、一瞬で複数行の選択ができる様になります。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+コードの整形プラグイン<br>
+<hr style="border:0.3px dashed #87CEEB;">
+atom beautify
+編集画面で右クリックから「Beauty editor contents」をクリックするだけで、ソースコードを整形してくれます。<br>
+改行がされていないjavascriptやcssを見やすくしたい時に役に立ちます。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+相対パスを入力補完する<br>
+<hr style="border:0.3px dashed #87CEEB;">
+autocomplete-paths<br>
+パスを入力るときに入力補完をしてくれます。<br>
+例えば、ファイルの参照部分で「./」で現在ディレクトリを示すと、
+現在ディレクトリ内のファイルが候補として出てきます。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+カラーコードに色をつけてくれるプラグイン<br>
+<hr style="border:0.3px dashed #87CEEB;">
+pigments<br>
+#fffaaaのようなカラーコードを認識し、文字の背景に色がつきます。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+atom内で検索をする<br>
+<hr style="border:0.3px dashed #87CEEB;">
+web-search<br>
+調べたい文字を選択し、みっぎクリックからweb-searchを選択することで、
+googleかwikiかという選択をするURLが表示されます。<br>
+選択をすることで、新しいウィンドウが表示され、指定したサイトで検索ができます。<br>
+<br>
+
+<h2  id="set6">discordのインストール</h2>
+ubuntu softwareからインストールします。<br>
+タスクバーに紙袋のようなアイコンがあるのでクリックします。<br>
+編集者のおすすめにあると思うので、そこからインストールします。<br>
+アプリ一覧に表示されれば、インストールが完了です。<br>
+<div class="srcdiv">
+<ol>
+<li>wget https://discordapp.com/api/download/canary?platform=linux<li>
+<li>sudo dpkg -i /path/to/discord-canary-0.0.11.deb<li>
+<li><li>
+</ol>
+</div>
+<h2 id="set7">OBSのインストール</h2>
+
+<div class="srcdiv">
+<ol>
+<li>sudo apt install ffmpeg<li>
+<li>sudo apt install v4l2loopback-dkms<li>
+<li>sudo add-apt-repository ppa:obsproject/obs-studio<li>
+<li>sudo apt update<li>
+<li>sudo apt install obs-studio<li>
+</ol>
+</div>
+
+<h2 id="set8">Zoomのインストール</h2>
+<div class="srcdiv">
+<ol>
+<li><a href="#"></a>https://zoom.us/download?os=linux<span class="span_js_comment">#公式サイトからzoomのdebファイルをダウンロードします。</span><li>
+<li>sudo apt install ./zoom_amd64.deb<span class="span_js_comment">#インストールをします。</span><li>
+</ol>
+</div>
+<h2 id="set9">WSLのインストールと使用</h2>
+windowsのコマンドプロンプトを管理者権限で立ち上げます。<br>
+
+・wslのインストール<br>
+<div class="srcdiv">
+<ol>
+<li>wsl --install<span class="span_js_comment">#wslのインストールコマンド</span></li>
+</ol>
+</div>
+<img src="img/linux/construction001.jpg">
+デフォルトでubuntuが一緒にインストールされます。<br>
+別のディストリビューションを使いたい場合は、下記のように-dオプションを使って指定可能です。<br>
+<br>
+・別のディストリビューションを追加<br>
+<div class="srcdiv">
+<ol>
+<li>wsl --install -d Debian<span class="span_js_comment">#Debianを追加</span></li>
+</ol>
+</div>
+
+<hr style="border:0.3px dashed #87CEEB;">
+wsl使用方法<br>
+<hr style="border:0.3px dashed #87CEEB;">
+スタートメニューから起動するか、ターミナルでアクセスして使います。<br>
+windowsを一度再起動したら、起動できます。<br>
+
+・WSLのシャットダウン<br>
+<div class="srcdiv">
+<ol>
+<li>wsl --shutdown<span class="span_js_comment">#シャットダウンコマンド</span></li>
+</ol>
+</div>
+
+
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page1">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents2">
+<li><a href="#web1">webサーバー</a><br></li>
+<li><a href="#web2">PHPの動作確認</a><br></li>
+<li><a href="#web3">ssl通信</a><br></li>
+<li><a href="#web4">index.htmlからファイルを移動する</a><br></li>
+</ol>
+<br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<h2 id="web1">webサーバー</h2>
+webサーバーを構築するには、パッケージのインストールが必要になります。<br>
+今回使うのはapache(アパッチ)と呼ばれる、オープンソースのクロスプラットフォームのWebサーバソフトウェアです。<br>
+クロスプラットフォームとは、異なるプラットフォーム、例えばWindows・macOS・Linuxなどのように、<br>
+仕様が全く異なる機械（ハードウェア）またはオペレーティングシステム）上で、
+同じ仕様のものを動かすことが出来るプログラム（ソフトウェア）です。<br>
+マルチプラットフォームとも呼ばれます。<br>
+・aptパッケージのアップデート<br>
+<div class="srcdiv">
+<ol>
+<li>sudo apt update</li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+<li>sudo apt upgrade</li>
+</ol>
+</div>
+<br>
+(コマンドの説明)<br>
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">sudo<br></td>
+    <td style="text-align:left"width="300">管理者権限でコマンドを実行するという指定<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">apt<br></td>
+    <td style="text-align:left"width="300">Linuxでソフトウェアの導入や管理、削除に用いられるパッケージ管理システムの一つ。<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">update<br></td>
+    <td style="text-align:left"width="300">アップデート(更新)<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">結果</r></td>
+    <td style="text-align:left"width="300">管理者権限でaptをアップデートする。<br></td>
+  </tr>
+</table>
+<br>
+<h2 id="web2">PHPの動作確認</h2>
+
+<div class="srcdiv">
+<ol>
+<li>sudo apt install apache2</li>
+</ol>
+</div>
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">sudo<br></td>
+    <td style="text-align:left"width="300">管理者権限でコマンドを実行するという指定<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">apt<br></td>
+    <td style="text-align:left"width="300">Linuxでソフトウェアの導入や管理、削除に用いられるパッケージ管理システムの一つ。<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">install<br></td>
+    <td style="text-align:left"width="300">インストール<br></td>
+  </tr>
+  <tr>
+  <tr>
+    <td style="text-align:left"width="50">apache2<br></td>
+    <td style="text-align:left"width="300">アパッチ2をインストール。<br>アパッチは世界的に最も普及しているWebサーバ（HTTPサーバ）ソフトウェアの一つ。<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">結果</r></td>
+    <td style="text-align:left"width="300">管理者権限でaptをアップデートする。<br></td>
+  </tr>
+</table>
+<div class="srcdiv">
+<ol>
+<li>sudo apt install software-properties-common</li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+<li>sudo add-apt-repository ppa:ondrej/php</li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+<li>sudo apt install php8.1</li>
+</ol>
+</div>
+これでPHPがインストールできました。<br>
+<hr style="border:0.3px dashed #87CEEB;">
+mariadbとphpの接続用パッケージのインストール<br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<div class="srcdiv">
+  <ol>
+    <li>sudo apt install php libapache2-mod-php php-mysql</li>
+  </ol>
+</div>
+<div class="srcdiv">
+<ol>
+<li>apt search php8.1 | grep php8.1<span class="span_js_comment">#phpのドライバを検索。ドライバの一覧が表示されます。</span></li>
+<li>sudo apt install php8.1-mysql<span class="span_js_comment">#mysqlドライバのインストール</span></li>
+<li>php -m<span class="span_js_comment">#インストールの確認をします。モジュールを表示し、pdo_mysqlがあればインストールができました</span></li>
+<li><span class="span_js_comment">#諸々のファイルは以下に作成されます。</span></li>
+<li>/usr/lib/php/20170718/pdo_mysql.so<span class="span_js_comment">soファイル</span></li>
+<li>/etc/php/8.1/mods-available/pdo_mysql.ini<span class="span_js_comment">設定ファイル</span></li>
+<li><span class="span_js_comment">PHPの確認</span></li>
+<li>sudo chown -R ユーザー名 /var/www<span class="span_js_comment">権限を取得</span></li>
+<li>echo '&lt;?php echo phpinfo();' &gt; /var/www/html/phpinfo.php<span class="span_js_comment">phpファイルの作成</span></li>
+</ol>
+</div>
+ここまで実行したら、apacheを再起動しましょう。<br>
+<div class="srcdiv">
+  <ol>
+    <li>sudo systemctl restart apache2</li>
+  </ol>
+</div>
+ブラウザでphpinfoファイルを開くと、このようにインストールされたモジュールの一覧が表示されたページになっています。<br>
+確認してみると、PDOのドライバもあるはずです。<br>
+F4でページ内の文字検索ができます。<br>
+<img src="img/linux/w001.jpg" width="99%" height="60%">
+設定ファイルはLoaded Configuration Fileという欄でディレクトリが記述されています。<br>
+<br>
+<a href="https://www.javadrive.jp/php/install/index5.html"><u>設定ファイルについて詳しく知る</u></a>
+
+<hr style="border:0.3px dashed #87CEEB;">
+mariadbとphpの接続をする<br>
+<hr style="border:0.3px dashed #87CEEB;">
+次はPHPファイルを作ってサーバーが動いているかを確認してみましょう。<br>
+<div class="srcdiv">
+<ol>
+<li>cd /var/www/html</li>
+<li>vi index.php</li>
+</ol>
+</div>
+apacheでの公開ディレクトリに行き、index.phpファイルを作成しました。<br>
+中身を書き加えて、IPアドレスを入力して書いた通りの表示になっているかを確認しましょう。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+データベース接続確認<br>
+<hr style="border:0.3px dashed #87CEEB;">
+以下のコードをphpファイルに記述します。<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">try</span> {</li>
+<li>$<span class="span_js_red">db</span> <span class="span_js_pink">=</span> <span class="span_js_pink">new</span> <span class="span_js_yellow">PDO</span>(<span class="span_js_yellowgreen">'mysql:dname=mydb;host=127.0.0.1;charset=utf8'</span>, <span class="span_js_yellowgreen">'ユーザー名'</span>,<span class="span_js_yellowgreen">'パスワード'</span>);</li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'接続成功'</span>;</li>
+<li>} <span class="span_js_pink">catch</span> (<span class="span_js_yellow">PDOException</span> $<span class="span_js_red">e</span>) {</li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'DB接続エラー: '</span> . $<span class="span_js_red">e</span><span class="span_js_pink">-></span><span class="span_js_skyblue">getMessage</span>();</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<br>
+接続が成功すると、接続成功という文字が表示され、失敗するとDB接続エラーと表示されます。<br>
+指定した名前のデータベースを作成していないと、エラーになります。<br>
+mariadbで、データーベースを作成し、その名前をmydbの部分に記述しましょう。<br>
+ユーザー名とパスワードはmariadb上で作成してあるものかrootを入れます。<br>
+データベースに接続できる権限がユーザーに付与されていなかった場合、以下のような表示が出ます。<br>
+
+<div class="srcdiv">
+<ol>
+<li>DB接続エラー: SQLSTATE[HY000] [1044] Access denied for user 'ユーザー名'@'ホスト名' to database 'DB名'</li>
+</ol>
+</div>
+・PHP側で接続IPを間違えている場合<br>
+<div class="srcdiv">
+<ol>
+<li>DB接続エラー: SQLSTATE[HY000] [2002] Connection refused</li>
+</ol>
+</div>
+・ドライバが無い場合<br>
+<div class="srcdiv">
+  <ol>
+    <li>DB接続エラー:cloud not find driver</li>
+  </ol>
+</div>
+<h2 id="web3">SSL通信(https化)</h2><br>
+<div class="srcdiv">
+<ol>
+<li>sudo a2enmod ssl</li>
+<li>sudo a2ensite default-ssl</li>
+<li>sudo service apache2 restart</li>
+</ol>
+</div>
+
+<h2 id="web4">index.htmlでファイルを移動できるようにする</h2>
+
+
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page2">
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents">
+<li><a href="#a1">データベースサーバー構築</a><br></li>
+<li><a href="#a2">セキュリティを高める</a><br></li>
+<li><a href="#a3">SQL</a><br></li>
+<li><a href="#a4">データ型</a><br></li>
+</ol>
+<br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+  <h2 id="a1">データベースサーバーを構築する</h2>
+
+データベースにも色々ありますが、今回はオープンソースでライセンスが無料の、"mariadb"を使います。<br>
+mariadbはMySQLから派生しているデータベースで、商用としてはあまり用いられることはありません。<br>
+それでは早速インストールしてみましょう。<br>
+ターミナルを起動しコマンドを実行していきます。<br>
+<br><hr style="border:0.3px dashed #87CEEB;">
+・aptパッケージのアップデート<br>
+<div class="srcdiv">
+<ol>
+<li>sudo apt update</li>
+</ol>
+</div>
+<br>
+(コマンドの説明)<br>
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">sudo<br></td>
+    <td style="text-align:left"width="300">管理者権限でコマンドを実行するという指定<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">apt<br></td>
+    <td style="text-align:left"width="300">Linuxでソフトウェアの導入や管理、削除に用いられるパッケージ管理システムの一つ。<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">update<br></td>
+    <td style="text-align:left"width="300">アップデート(更新)<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">結果</r></td>
+    <td style="text-align:left"width="300">管理者権限でaptをアップデートする。<br></td>
+  </tr>
+</table>
+<br><hr style="border:0.3px dashed #87CEEB;">
+・mariaDBのインストール<br>
+<div class="srcdiv">
+<ol>
+<li>sudo apt install mariadb-server</li>
+</ol>
+</div>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">sudo<br></td>
+    <td style="text-align:left"width="300">管理者権限でコマンドを実行するという指定<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">apt<br></td>
+    <td style="text-align:left"width="300">Linuxでソフトウェアの導入や管理、削除に用いられるパッケージ管理システムの一つ。<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">install<br></td>
+    <td style="text-align:left"width="300">インストール<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">mariadb-server<br></td>
+    <td style="text-align:left"width="300">mariadbのサーバー<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">結果<br></td>
+    <td style="text-align:left"width="300">管理者権限でaptを使いmariadb-serverをインストールする。<br></td>
+  </tr>
+</table>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+以下を入力し、バージョンが出力されれば正常にインストールが完了した事が確認できます。<br>
+mariadbがmysqlの派生だからなのか、mysqlと打っても認識されます。どちらかを実行しましょう。<br>
+・mariadbのバージョン確認
+<div class="srcdiv">
+<ol>
+<li>mysql --version</li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+<li>mariadb --version</li>
+</ol>
+</div>
+バージョンが表示されたらOKです。<br>
+これで無事にダウンロードが完了しました！<br>
+<br>
+<h2 id="a2">セキュリティを高める</h2>
+次に、安全に使用するためにセキュリティオプションを変更していきます。<br>
+このままではsudo mysqlというコマンドを実行するだけで誰でもmariadbに接続できるようになってしまうため、<br>
+例えばゲームのデータや顧客情報などをデータベースで扱っていた場合簡単に操作できてしまう状態です。<br>
+セキュリティ的に良くないので、セキュリティオプションを変更しパスワードを設定しましょう。<br>
+
+<div class="srcdiv">
+<ol>
+<li>sudo mysql <span class="span_js_comment">#mariadbの起動コマンド</span></li>
+<li>sudo mariadb <span class="span_js_comment">#mariadbの起動コマンド</span></li>
+<li><span class="span_js_comment">#MariaDB [(none)]> という文字の右側にSQLを入力していきます。</span></li>
+</ol>
+</div>
+
+<div class="srcdiv">
+<ol>
+<li>> exit <span class="span_js_comment">#mariadbの接続を切るコマンド</span></li>
+<li>> exit <span class="span_js_comment">#Byeという文字が帰ってきて左側の文字が元に戻れば脱出が完了しました。</span></li>
+</ol>
+</div>
+それではセキュリティオプションを変更して行きましょう。<br>
+・セキュリティオプションの変更コマンド
+<div class="srcdiv">
+<ol>
+<li>sudo mysql_secure_installation</li>
+</ol>
+</div>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">sudo<br></td>
+    <td style="text-align:left"width="300">管理者権限でコマンドを実行するという指定<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">mysql_secure_installation<br></td>
+    <td style="text-align:left"width="300">一連のプロンプトを表示し、セキュリティオプションを変更する<br></td>
+  </tr>
+</table>
+セットアップが1つ残っているので、Enterキーを押し、noneを示す。<br>
+すると以下のように出力されます。<br>
+<br>
+
+<div class="srcdiv">
+<ol>
+<li>NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB</li>
+    <li>SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!</li>
+<li></li>
+<li>In order to log into MariaDB to secure it, we'll need the current</li>
+<li>password for the root user.  If you've just installed MariaDB, and</li>
+<li>you haven't set the root password yet, the password will be blank,</li>
+<li>so you should just press enter here.</li>
+<li></li>
+<li>Enter current password for root (enter for none):</li>
+</ol>
+</div>
+1.最初はパスワードを設定していません、空なのでそのままエンター。<br>
+2.次にルートユーザーにパスワードを設定するかが尋ねられるのでy<br>
+3.次に設定するパスワードを入力します。表示がされないので間違えないように入力しましょう。<br>
+4.次も匿名のユーザーを消すのでy<br>
+5.リモート接続を排除するのでy<br>
+(補足)ちなみにssh接続ではローカルの扱いになるのでリモートで接続できる。<br>
+6.テストデータベースを削除するか尋ねられたらy<br>
+7.権限のテーブルをリロードをするのでy<br>
+<br>
+<div class="img_center">
+<img src="img/linux/001.jpg">
+</div>
+All doneと表示されたら、これでセキュリティオプションの設定は完了です。<br>
+権限のパスワードを変更する場合はこれをもう一度行います。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+権限を設定したので、今後は<u>mariadb</u>、<u>mysql</u>では接続ができません。<br>
+接続する場合は以下を入力します。<br>
+
+<div class="srcdiv">
+<ol>
+<li>> sudo mysql -u root -p <span class="span_js_comment">#実行したらパスワードを求められるので、パスワードを入力します。</span></li>
+</ol>
+</div>
+
+<br>
+・出力結果+Nを入力しEnter<br>
+<div class="srcdiv">
+<ol>
+  . . .
+  OK, successfully used password, moving on...
+
+  Setting the root password ensures that nobody can log into the MariaDB
+  root user without the proper authorisation.
+
+  Set root password? [Y/n] <span class="span_py_oarnge">N</span>
+</ol>
+</div>
+mariadbをスタートさせるコマンドは以下のコマンドです。<br>
+<div class="srcdiv">
+<ol>
+<li>sudo systemctl start mariadb</li>
+</ol>
+</div>
+実行し、パスワードを入力すると、実行され、結果は返ってきませんが、これで起動が出来ました。<br>
+<br>
+実行したら、startをstatusに変えて実行します。これでmariadbのステータス(状態)を表示できます。<br>
+Activeの右の文字が緑色になっていれば正常に動作しています。<br>
+<div class="srcdiv">
+<ol>
+<li>sudo systemctl status mariadb</li>
+</ol>
+</div>
+<div class="img_center">
+<img src="img/linux/002.jpg">
+</div>
+<br>
+※ctrl+Cを押すと抜け出せます。<br>
+このままだとlinuxをシャットダウンした際にmariadbが終了してしまうので、毎度スタートコマンドを<br>
+実行しなければいけませんがenableというコマンドを実行すると、次回以降自動で起動されます。<br>
+<br>
+以下が自動でmariadbを起動させるコマンドです。<br>
+<div class="srcdiv">
+<ol>
+<li>sudo systemctl enable mariadb</li>
+</ol>
+</div>
+<div class="img_center">
+<img src="img/linux/004.jpg"><br>
+</div>
+メッセージは返ってきませんが、特にエラー表示が出てこなければこれでエネーブルの設定も完了しました。
+<h2 id="a3">SQL文</h2>
+それでは少しSQL文について触れていきます。<br>
+・データベースの作成<br>
+<div class="srcdiv">
+<ol>
+<li>> CREATE DATABASE <span class="span_py_red">データベース名</span>;</li>
+</ol>
+</div>
+・データベースの削除<br>
+<div class="srcdiv">
+<ol>
+<li>> DROP DATABASE <span class="span_py_red">データベース名</span>;</li>
+</ol>
+</div>
+
+・データベースを表示<br>
+<div class="srcdiv">
+<ol>
+<li>>SHOW DATABASES;</li>
+</ol>
+</div>
+
+・データベースを参照(使用するデータベースの指定)<br>
+<div class="srcdiv">
+<ol>
+<li>USE <span class="span_py_red">データベース名</span>;</li>
+</ol>
+</div>
+ここではTESTというデータベース名のデータベースを使用していますが、<br>
+自身で作ったデータベース名を指定してください。<br><br>
+Database changed　と表示され、左の文字が <u>Mariadb [TEST]></u> となったら完了です。<br>
+TESTという部分は自身で作ったデータベースが表示されていればOKです。<br>
+<br>
+・useコマンドの実行結果
+<div class="img_center">
+<img src="img/linux/005.jpg"><br>
+</div>
+・テーブルの作成<br>
+このコマンドは使用するデータベースを指定してから実行します。<br>
+今回はIDと、パスワードと、氏名と、メールアドレスが扱われることを想定して、テーブルを作ってみます。<br>
+命名規則に基づくと後から見たときにすぐに理解できたり、チームで開発する時などに相手に伝わりやすいです。<br>
+なるべくわかりやすい名前にしましょう。<br>
+<div class="img_center">
+<img src="img/linux/006.jpg"width="100%"height="50%"><br>
+
+</div>
+例えばこういうデータベースが欲しかったとして、SQL文を入力していきます。<br><br>
+・テーブルとカラムの作成<br>
+<div class="srcdiv">
+<ol>
+<li>CREATE TABLE <span class="span_py_red">テーブル名</span>(<span class="span_js_skyblue">カラム名 </span><span class="span_js_yellowgreen">データ型</span>,<span class="span_js_skyblue"> カラム名 </span><span class="span_js_yellowgreen">データ型</span>, ...);</li>
+</ol>
+</div>
+・実際の作成文
+<div class="srcdiv">
+<ol>
+<li>CREATE TABLE user_information(ID int,Password varchar(100),Name varchar(20),mail varchar(30));</li>
+<li><span class="span_js_comment">#CREATE TABLEがテーブルを作るというSQLになります。</span></li>
+<li><span class="span_js_comment">#その後には、テーブルの名前を入力します。user_information(ユーザーの情報)というテーブル名をしています。</span></li>
+<li><span class="span_js_comment">#そして()の中に表で言う縦の情報、フィールド(列)の名前とデータ型を指定します。</span></li>
+<li><span class="span_js_comment"># ;を付けると実行されます。</span></li>
+</ol>
+</div>
+<div class="img_center">
+<img src="img/linux/007.jpg">
+</div><br>
+;で終了させるまでは、Enterで行を分けて記述する事ができます。<br>
+<br>
+ここでデータベースの用語を確認しておきましょう。<br>
+縦の列のことをカラムと言い、横行の事はレコードと言います。データが入っているマスをフィールドといいます。<br>
+<br>
+<div class="img_center">
+<img src="img/linux/009.png"width="70%"height="70%"><br>
+</div>
+<br>
+今作ったのが、user_informationという名前のユーザ情報のテーブルと、その中にIDという名前のカラム、
+Passwordという名前のカラム、Nameという名前のカラム、mailという名前のカラムで、それぞれに対応するデータ型を指定しました。<br>
+データ型には数値型、(そのフィールドには数値しか入力できない)と、文字列型(そのフィールドには文字列しか入力できない)と、
+日付型(そのフィールドには日付しか入力できない)と、テキスト型(そのフィールドにはテキストしか入力できない)があります。<br>
+<br><a href="#a4">>データ型を見る</a><br>
+<br>
+・テーブルの削除
+<div class="srcdiv">
+  <ol>
+    <li>DROP TABLE <span class="span_py_red">テーブル名</span>;<span class="span_js_comment">#テーブルの削除</span></li>
+    </ol>
+  </div>
+削除してよろしいですか？などの文言は一切出てこないので、うっかり重要なデータを削除してしまわないように注意しましょう。<br>
+<br>
+<div class="srcdiv">
+  <ol>
+    <li>SHOW TABLES;<span class="span_js_comment">#テーブル一覧の表示</span></li>
+    </ol>
+  </div>
+<img src="img/linux/008.jpg"><br>
+<br>
+TESTというデータベースのテーブル一覧を表示し、DROP文でt1というテーブルを消す事が出来ました。<br>
+<br>
+・テーブルの名前の変更<br>
+<div class="srcdiv">
+  <ol>
+    <li>ALTER TABLE <span class="span_py_red">テーブル名</span> RENAME <span class="span_js_skyblue">新しいテーブル名</span>;<span class="span_js_comment">#テーブル一覧の表示</span></li>
+    </ol>
+  </div>
+<br>
+・一時テーブルの作成<br>
+<div class="srcdiv">
+  <ol>
+    <li>CREATE TEMPORARY TABLE <span class="span_py_red">テーブル名</span> RENAME <span class="span_js_skyblue">新しいテーブル名</span>;<span class="span_js_comment">#テーブル一覧の表示</span></li>
+    </ol>
+  </div>
+Mariadbの接続を切ると、削除されます。接続を切ってから確認し、エラーが出れば削除が完了です。<br>
+<br>
+・カラムの表示<br>
+<div class="srcdiv">
+  <ol>
+    <li> SHOW COLUMNS FROM <span class="span_py_red">テーブル名</span>;<span class="span_js_comment">#カラム一覧を表示します。</span></li>
+    </ol>
+  </div>
+<br>
+・カラムの削除<br>
+<div class="srcdiv">
+  <ol>
+    <li> ALTER TABLE <span class="span_py_red">テーブル名</span> DROP <span class="span_js_skyblue">カラム名</span>;</li>
+    </ol>
+  </div>
+・テーブルの中身を消す<br>
+<div class="srcdiv">
+  <ol>
+    <li>TRUNCATE <span class="span_py_red">テーブル名</span>;</li>
+    </ol>
+  </div>
+<br>
+・テーブルにカラムを追加<br>
+<div class="srcdiv">
+  <ol>
+    <li> ALTER TABLE <span class="span_py_red">テーブル名</span> ADD <span class="span_js_skyblue">新規カラム名 </span> <span class="span_js_yellowgreen">データ型</span> オプション;<span class="span_js_comment">#オプションがない場合そのまま;で閉じます。</span></li>
+    </ol>
+  </div>
+<br>
+・プライマリーキーの設定<br>
+<div class="srcdiv">
+  <ol>
+    <li>CREATE TABLE <span class="span_py_red">テーブル名</span>(<span class="span_js_skyblue">カラム名(プライマリーキーに設定されるカラム) </span><span class="span_js_yellowgreen">データ型</span> PRIMARY KEY,<span class="span_js_skyblue"> カラム名 </span><span class="span_js_yellowgreen">データ型</span>);</li>
+    </ol>
+  </div>
+・プライマリーキーの追加<br>
+<div class="srcdiv">
+  <ol>
+    <li>ALTER TABLE <span class="span_py_red">テーブル名</span> ADD PRIMARY KEY (<span class="span_js_skyblue">カラム名</span>);</li>
+    </ol>
+  </div>
+・カラムに初期値を設定<br>
+<div class="srcdiv">
+  <ol>
+    <li>CREATE TABLE <span class="span_py_red">テーブル名</span>(<span class="span_js_skyblue">カラム名 </span><span class="span_js_yellowgreen">データ型</span> DEFAULT 初期値,<span class="span_js_skyblue"> カラム名 </span><span class="span_js_yellowgreen">データ型</span>);</li>
+    </ol>
+  </div>
+<br>
+・カラムのデータ型を変更する<br>
+<div class="srcdiv">
+  <ol>
+    <li>ALTER TABLE <span class="span_py_red">テーブル名 </span>MODIFY<span class="span_js_skyblue"> カラム名 </span><span class="span_js_yellowgreen">データ型</span>;</li>
+    </ol>
+  </div>
+<br>
+・カラム名とデータ型を纏めて変更する<br>
+<div class="srcdiv">
+  <ol>
+    <li>ALTER TABLE <span class="span_py_red">テーブル名 </span>CHANGE<span class="span_js_skyblue"> カラム名 新しいカラム名</span> <span class="span_js_yellowgreen">データ型</span>;</li>
+    </ol>
+  </div>
+・指定したカラムをテーブルの先頭に移動<br>
+<div class="srcdiv">
+  <ol>
+    <li>ALTER TABLE <span class="span_py_red">テーブル名 </span>MODIFY<span class="span_js_skyblue"> カラム名</span> <span class="span_js_yellowgreen">データ型</span>  FIRST;</li>
+    <li><span class="span_js_comment">データ型を入力しないとエラーになりますが、中の値を変えるとその値で適応されます。</span></li>
+    </ol>
+  </div>
+・新しいカラムを、指定したカラムの後に追加<br>
+<div class="srcdiv">
+  <ol>
+    <li>ALTER TABLE <span class="span_py_red">テーブル名</span> ADD<span class="span_js_skyblue"> カラム名</span><span class="span_js_yellowgreen"> データ型</span>  AFTER 指定したいカラム名;</li>
+    <li><span class="span_js_comment">データ型を入力しないとエラーになりますが、中の値を変えるとその値で適応されます。</span></li>
+    </ol>
+  </div>
+・新しいカラムを、テーブルの最初に追加<br>
+<div class="srcdiv">
+  <ol>
+    <li>ALTER TABLE <span class="span_py_red">テーブル名</span> ADD<span class="span_js_skyblue"> カラム名</span><span class="span_js_yellowgreen"> データ型</span>  FIRST;</li>
+    <li><span class="span_js_comment">データ型を入力しないとエラーになりますが、中の値を変えるとその値で適応されます。</span></li>
+    </ol>
+  </div>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+データ関連<br>
+<hr style="border:0.3px dashed #87CEEB;">
+・テーブルのカラムにデータを追加<br>
+<div class="srcdiv">
+  <ol>
+    <li> INSERT INTO <span class="span_py_red">テーブル名</span> VALUES (<span class="span_js_skyblue">"データ"</span>,<span class="span_js_skyblue">"データ"</span>,...);<span class="span_js_comment">#カラムの数分データを記述します。</span></li>
+    </ol>
+  </div>
+show columns from テーブル名;で表示した時の上から順にデータを記述していきます。<br>
+・テーブルのカラムにデータを追加その２<br>
+<div class="srcdiv">
+  <ol>
+    <li> INSERT INTO <span class="span_py_red">テーブル名</span> (<span class="span_js_skyblue">カラム名</span>,<span class="span_js_skyblue">カラム名</span>,...)VALUES (<span class="span_js_skyblue">"データ"</span>,<span class="span_js_skyblue">"データ"</span>,...);<span class="span_js_comment">#指定したカラムの数分データを記述します。</span></li>
+    </ol>
+  </div>
+<br>
+・指定したカラムのデータを表示する。<br>
+<div class="srcdiv">
+  <ol>
+    <li>SELECT <span class="span_js_skyblue"> カラム名</span>,<span class="span_js_skyblue"> カラム名</span>,... FROM<span class="span_py_red"> テーブル名</span>;</li>
+    </ol>
+  </div>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+ユーザー関連
+<hr style="border:0.3px dashed #87CEEB;">
+・作成済みユーザーの確認<br>
+<div class="srcdiv">
+<ol>
+<li>SELECT <span class="span_js_skyblue"> user</span>,<span class="span_js_skyblue">host</span> FROM<span class="span_js_skyblue"> mysql.user</span>;<span class="span_js_comment">#表が作成され、帰ってきます。</span></li>
+</ol>
+</div>
+<br>
+・ユーザーの作成<br>
+<div class="srcdiv">
+<ol>
+<li>CREATE USER <span class="span_js_skyblue"> 'ユーザー名'</span><span class="span_js_red">@</span><span class="span_js_skyblue">'ホスト名(localhost)'</span> IDENTIFIED BY<span class="span_js_skyblue"> 'パスワード'</span>;<span class="span_js_comment">#query OKが帰ってきます。</span></li>
+</ol>
+</div>
+<br>
+・特権ユーザーの作成<br>
+<div class="srcdiv">
+<ol>
+<li>GRANT ALL PRIVILEGES ON <span class="span_js_red">*</span>.<span class="span_js_red">*</span> TO <span class="span_js_skyblue">'ユーザー名'</span><span class="span_js_red">@</span><span class="span_js_skyblue">'ホスト名'</span> IDENTIFIED BY <span class="span_js_skyblue">'パスワード'</span> WITH GRANT OPTION;</li>
+<li>FLUSH PRIVILEGES;</li>
+</ol>
+</div>
+<br>
+・ユーザーのパスワード変更<br>
+<div class="srcdiv">
+<ol>
+<li>ALTER USER <span class="span_js_skyblue">'ユーザー名'</span><span class="span_js_red">@</span><span class="span_js_skyblue">'ホスト名'</span> identified by <span class="span_js_skyblue">'パスワード'</span>;<span class="span_js_comment">#方法1</span></li>
+<li>SET PASSWORD FOR ユーザー名<span class="span_js_red">@</span>ホスト<span class="span_js_red">=</span>PASSWORD(<span class="span_js_skyblue">'パスワード'</span>);<span class="span_js_comment">#方法2</span></li>
+</ol>
+</div>
+<br>
+・ユーザーの削除<br>
+<div class="srcdiv">
+<ol>
+<li>DROP USER ユーザー名<span class="span_js_red">@</span>ホスト名;</li>
+</ol>
+</div>
+<br>
+・DBを限定して権限を与える<br>
+<div class="srcdiv">
+<ol>
+<li>GRANT ALL PRIVILEGES ON dbname.<span class="span_js_red">*</span> TO ユーザー名@localhost;</li>
+</ol>
+</div>
+<br>
+・権限の付与<br>
+<div class="srcdiv">
+<ol>
+<li>GRANT ALL PRIVILEGES ON *.* TO test_user@localhost;</li>
+</ol>
+</div>
+<br>
+・データベースを指定してログイン<br>
+<div class="srcdiv">
+<ol>
+<li>mysql -u ユーザー名 データベース名;</li>
+</ol>
+</div>
+<br>
+・ユーザ権限の確認<br>
+<div class="srcdiv">
+<ol>
+<li>SHOW GRANTS FOR ユーザー名@ホスト名;</li>
+</ol>
+</div>
+<br>
+・文字コードをUTF-8にする<br>
+<div class="srcdiv">
+<ol>
+<li>SET NAMES UTF8;</li>
+</ol>
+</div>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+検索<br>
+<hr style="border:0.3px dashed #87CEEB;">
+・レコードの検索<br>
+<div class="srcdiv">
+<ol>
+<li>SELECT * FROM テーブル名;</li>
+</ol>
+</div>
+<br>
+・WHERE句での絞り込み<br>
+<div class="srcdiv">
+<ol>
+<li>SELECT * FROM point WHERE id = 10;<span class="span_js_comment">#pointテーブルのidが10のレコードだけを検索します。</span></li>
+</ol>
+</div>
+<br>
+・LIKEで文字列検索<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<br>
+・UPDATEでカラムのデータを更新する<br>
+<div class="srcdiv">
+<ol>
+<li>UPDATE テーブル名 SET カラム1=1, カラム2=10 WHERE id=1;<span class="span_js_comment"></span></li>
+</ol>
+</div>
+<br>
+・REPLACEで文字列を置換して更新<br>
+<div class="srcdiv">
+<ol>
+<li>UPDATE posts SET post_content = REPLACE(post_content, ' style="font-size: 12pt;"', '') WHERE post_content LIKE('% style="font-size: 12pt;"%');<span class="span_js_comment"></span></li>
+</ol>
+</div>
+<br>
+・DELETEでデータを削除する<br>
+<div class="srcdiv">
+<ol>
+<li>DELETE FROM テーブル名 WHERE 条件;<span class="span_js_comment"></span></li>
+</ol>
+</div>
+<br>
+・ポートを確認する<br>
+<div class="srcdiv">
+<ol>
+<li>show variables like 'port';<span class="span_js_comment">基本的に3306です</span></li>
+</ol>
+</div>
+<br>
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a4">データ型一覧 (数値型)</a><br>
+  <hr style="border:0.3px dashed #87CEEB;">
+<table border="1">
+  <tr>
+    <td style="text-align:left" width="50" bgcolor="#ddd">型名</td>
+    <td style="text-align:left" width="300"bgcolor="#ddd">値の範囲</td>
+    <td style="text-align:left" width="300"bgcolor="#ddd">UNSIGNEDを付与した場合の範囲</td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">TINYINT</td>
+    <td style="text-align:left"width="300">-128～+127</td>
+    <td style="text-align:left"width="300"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">SMALLINT</td>
+    <td style="text-align:left"width="300">-32768～+32767</td>
+    <td style="text-align:left"width="300">0～+65535</td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">MEDIUMINT</td>
+    <td style="text-align:left"width="300">-8388608～+8388607</td>
+    <td style="text-align:left"width="300">0～+16777215</td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">INT</td>
+    <td style="text-align:left"width="300">-2147483648～+2147483647</td>
+    <td style="text-align:left"width="300">0～+4294967295</td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">BIGINT</td>
+    <td style="text-align:left"width="300">-9223372036854775808～+9223372036854775807</td>
+    <td style="text-align:left"width="300">0～+18446744073709551615</td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">FLOAT</td>
+    <td style="text-align:left"width="300">-3.402823466E+38 ～ -1.175494351E-38,
+0,
+1.175494351E-38 ～ 3.402823466E+38</td>
+    <td style="text-align:left"width="300">負数は使用不可</td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">DOUBLE</td>
+    <td style="text-align:left"width="300">-1.7976931348623157E+308 ～ -2.2250738585072014E-308,
+0,
+2.2250738585072014E-308 ～ 1.7976931348623157E+308</td>
+    <td style="text-align:left"width="300">負数は使用不可</td>
+  </tr>
+</table>
+・TINYINT()は、UNSINGEDを指定することで0～255というRGBカラーコードやIPアドレスに使用される範囲になりますので、
+これらのデータを格納するときはTINYINT()を指定すると良いです。<br>
+<br>
+固定長の文字列の他にも、可変長の文字列、選択式の文字列、バイナリデータなどを格納できます。<br>
+よく使うのは、CHARとVARCHARです。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+データ型一覧 (文字列型)<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<table border="1">
+<tr>
+<td style="text-align:left" width="50" bgcolor="#ddd">型名</td>
+<td style="text-align:left" width="300 "bgcolor="#ddd">値の範囲(バイト)</td>
+<td style="text-align:left" width="300 "bgcolor="#ddd">挿入に必要なサイズ</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">CHAR</td>
+<td style="text-align:left" width="300">255</td>
+<td style="text-align:left" width="300">Mバイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">VARCHAR</td>
+<td style="text-align:left" width="300">255</td>
+<td style="text-align:left" width="300">X+1バイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">TINYBLOB</td>
+<td style="text-align:left" width="300">255</td>
+<td style="text-align:left" width="300">X+1バイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">BLOB</td>
+<td style="text-align:left" width="300">65535</td>
+<td style="text-align:left" width="300">X+2バイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">MEDIUMBLOB</td>
+<td style="text-align:left" width="300">16777215</td>
+<td style="text-align:left" width="300">X+3バイト</td>
+</tr>
+<td style="text-align:left" width="50">LONGBLOB</td>
+<td style="text-align:left" width="300">4294967295</td>
+<td style="text-align:left" width="300">X+4バイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">TINYTEXT</td>
+<td style="text-align:left" width="300">255</td>
+<td style="text-align:left" width="300">X+1バイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">TEXT</td>
+<td style="text-align:left" width="300">65535</td>
+<td style="text-align:left" width="300">X+2バイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">MEDIUMTEXT</td>
+<td style="text-align:left" width="300">16777215</td>
+<td style="text-align:left" width="300">X+3バイト</td>
+</tr>
+<tr>
+<td style="text-align:left" width="50">LONGTEXT</td>
+<td style="text-align:left" width="300">4294967295</td>
+<td style="text-align:left" width="300">X+4バイト</td>
+</tr>
+<tr>
+    <td style="text-align:left" width="50">ENUM("選択肢1","選択肢2",・・・)</td>
+    <td style="text-align:left" width="300">65535 選択肢</td>
+    <td style="text-align:left" width="300">1～2バイト</td>
+  </tr>
+  <tr>
+    <td style="text-align:left" width="50">SET("選択肢1","選択肢2",・・・)</td>
+    <td style="text-align:left" width="300">64選択肢</td>
+    <td style="text-align:left" width="300">1/2/4/8バイト</td>
+  </tr>
+</table>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+・CHAR型とVARCHAR型の違い<br>
+<hr style="border:0.3px dashed #87CEEB;">
+CHAR型の場合は<br>
+固定長なので文字の長さが一定です。指定した文字数以下の文字を格納した場合は文字列の末尾に空白を必要なだけ加えて指定の長さに揃えた文字として格納します。<br>
+ただし、値を取得する場合と比較する場合には末尾にある空白がすべて消えた状態で扱われます。<br>
+<br>
+VARCHAR型は末尾に空白を付ける事はしません。可変長なので、文字列別の長さとなります。<br>
+
+・テーブルの表示<br>
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+
+・<br>
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+・<br>
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+
+
+
+<div class="top_box">
+<a href="#top"align="right">トップへ戻る</a></div>
+<br>
+</div>
+
+<div class="contents" id="page3">
+<h2>基本操作</h2>
+
+<hr style="border:0.3px dashed #87CEEB;">
+ディレクトリ関連<br>
+<hr style="border:0.3px dashed #87CEEB;">
+・ディレクトリ移動<br>
+<div class="srcdiv">
+<ol>
+<li>cd /ディレクトリ名1/ディレクトリ名2...</li>
+</ol>
+</div>
+・上のディレクトリへ移動<br>
+<div class="srcdiv">
+<ol>
+<li>cd ../<span class="span_js_comment">#1つ上へ</span></li>
+<li>cd ../../<span class="span_js_comment">#2つ上へ</span></li>
+</ol>
+</div>
+・指定したディレクトリへ移動<br>
+<div class="srcdiv">
+<ol>
+<li>cd /var/www/html<span class="span_js_comment">#varの中のwwwの中のhtmlという場所へ移動します。</span></li>
+</ol>
+</div>
+<br>
+・GUI(グラフィックユーザーインターフェース)から開く方法<br>
+<img src="img/linux/k001.jpg"><br>
+<br>
+開きたいディレクトリに行き、▼をクリックすることでこのように端末で開くと表示されるので、<br>
+クリックしてターミナルを開く事もできます。以下のようにディレクトリが表示された状態で開かれます。<br>
+<br>
+<img src="img/linux/k002.jpg"><br>
+<br>
+・基本操作<br>
+<div class="srcdiv">
+  <ol>
+    <li>ls<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ディレクトリ内のファイルを表示。ディレクトリは青で表示されます。</span></li>
+    <li>pwd<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#現在のディレクトリの表示</span></li>
+    <li>mkdir 作成するディレクリ名<span class="span_js_comment">&nbsp;&nbsp;#ディレクトリ(フォルダ)の作成</span></li>
+    <li>rm ファイル名<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ファイルの削除</span></li>
+    <li>rm -r ディレクトリ名<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ディレクトリの削除(-rの部分はオプションで、ディレクトリ内のファイルも含め消えます。)</span></li>
+    <li>exit<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#管理者権限からログアウトできる。</span></li>
+    <li>cp　-r ファイル名 コピー先<span class="span_js_comment">&nbsp;&nbsp;&nbsp;#ファイルやディレクトリのコピー</span></li>
+    <li>find . -name html<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ファイル・ディレクトリの検索(現在のディレクトリは関係無く検索が行われます。)</span></li>
+    <li>コマンド --help<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#指定したコマンドの使用方法を表示する</span></li>
+    <li>vi (ファイル名)<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ファイルの新規作成</span></li>
+    <li>re -fr ディレクトリ名<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ディレクトリを強制的に削除</span></li>
+    <li>logout<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ログアウト(作業終了)</span></li>
+    <li>more ファイル名<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ファイルの中身を表示</span></li>
+    <li>cat ファイル名<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ファイルの中身を表示</span></li>
+    <li>sudo su -<span class="span_js_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#管理者権限(root)の付与コマンド。これにより左の文字にrootが付き、以降管理者権限で作業できる。</span></li>
+    <li><span class="span_js_comment">#</span></li>
+    <li><span class="span_js_comment">#</span></li>
+    <li><span class="span_js_comment">#</span></li>
+  </ol>
+</div>
+<br>
+・ファイル名、ディレクトリ名の変更・移動<br>
+<div class="srcdiv">
+<ol>
+<li>mv 変更前のファイル名 変更後のファイル名</li>
+<li>mv 変更前のディレクトリ名 変更後のディレクトリ名</li>
+<li>mv 移動させるディレクトリ 移動先ディレクトリ<span class="span_js_comment">#(以下は例)</span></li>
+<li>mv /var/www/html/html2 /home<span class="span_js_comment">#html2というディレクトリを/homeの中に移動させます。</span></li>
+</ol>
+</div>
+
+
+<hr style="border:0.3px dashed #87CEEB;">
+プロセス関連<br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+・実行中のプロセスを表示<br>
+<div class="srcdiv">
+<ol>
+<li>ps<span class="span_js_comment">#実行中のプロセスを表示</span></li>
+<li>ps aux<span class="span_js_comment">#オプションを追加、</span></li>
+<li><span class="span_js_comment">#a(自分以外のユーザのプロセスも表示)</span></li>
+<li><span class="span_js_comment">#u(ユーザ名と開始時刻も表示)</span></lI>
+<li><span class="span_js_comment">#x制御端末のないプロセス情報も表示する</span></li>
+<li>ps<span class="span_js_comment">#</span></li>
+<li>ps<span class="span_js_comment">#</span></li>
+</ol>
+</div>
+
+・実行中のプロセスを表示<br>
+<div class="srcdiv">
+<ol>
+<li>kill プロセスID<span class="span_js_comment">#実行中のプロセスを強制終了</span></li>
+</ol>
+</div>
+
+・実行中のサービスを確認する<br>
+<div class="srcdiv">
+<ol>
+<li>service --status-all<span class="span_js_comment">#サービスの稼働状況</span></li>
+</ol>
+</div>
+
+
+<div class="top_box">
+<a href="#top"align="right">トップへ戻る</a></div>
+<br>
+</div>
+
+<div class="contents" id="page4">
+<h2>ファイルサーバー</h2>
+<hr style="border:0.3px dashed #87CEEB;">
+ftpサーバー構築<br>
+<hr style="border:0.3px dashed #87CEEB;">
+FTPサーバーとは、File Transfer Protocol(ファイル転送プロトコル)を利用してファイルの送受信を行うサーバソフトウェア,
+または、FTPサーバーソフトが動作しているサーバコンピュータの事です。<br>
+今回は、FTPサーバーを構築して、ubuntuのファイルに別のマシンからアクセスします。<br>
+<br>
+aptパッケージのアップデートを済ませてから以下のコマンドを入力します。<br>
+<br>
+・インストールコマンド<br>
+<div class="srcdiv">
+<ol>
+<li>sudo apt install vsftpd</li>
+</ol>
+</div>
+
+次に設定ファイルを編集します。<br>
+・設定ファイルを開く<br>
+<div class="srcdiv">
+<ol>
+<li>sudo vi /etc/vsftpd.conf</li>
+</ol>
+</div>
+<div class="img_center">
+<img src="img/linux/f001.jpg"><br>
+</div>
+このような画面になれば、viというテキスト編集ツールを使って設定ファイルを開くことができました。<br>
+開けたら、次の行のコメントアウトを外します。<br>
+#を消すことで、コメントアウトが外れます。<br>
+・<br>
+<div class="srcdiv">
+<ol>
+<li>write_enable=YES</li>
+<li>ascii_upload_enable=YES</li>
+<li>ascii_download_enable=YES</li>
+<li>ftpd_banner=Welcome to blah FTP service.</li>
+</ol>
+</div>
+
+・次回以降自動起動・再起動<br>
+<div class="srcdiv">
+<ol>
+<li>sudo systemctl enable vsftpd</li>
+<li>sudo systemctl restart vsftpd</li>
+</ol>
+</div>
+
+・ftpユーザーの作成<br>
+<div class="srcdiv">
+<ol>
+<li>mkdir /home/ftpuser/ftp<span class="span_js_comment">#ftpファイルのやりとりをするため使用するftpフォルダの作成</span></li>
+<li>chown nobody:group /home/ftpuser/ftp<span class="span_js_comment">#ftpディレクトリに所有権ファイルを作成</span></li>
+<li>chmod a-w /home/ftpuser/ftp<span class="span_js_comment">#書き込み権限を取り消す</span></li>
+<li>ls -la　/home/ftpuser/ftp<span class="span_js_comment">#権限の確認</span></li>
+<li><span class="span_js_comment">#</span></li>
+</ol>
+</div>
+権限の確認コマンドを実行すると、以下の結果が得られます。<br>
+<img src="img/linux/cent_03.jpg"><br>
+
+・ftpユーザーの作成<br>
+<div class="srcdiv">
+<ol>
+<li>sudo vi /etc/vsftpd.conf<span class="span_js_comment">#設定ファイルを開く</span></li>
+<li><span class="span_js_comment">#以下の記述を設定ファイルの末尾に付け足します。</span></li>
+<li>userlist_enable = YES<span class="span_js_comment">#ユーザーリストを有効化</span></li>
+<li>userlist_file = / etc / vsftpd.userlist<span class="span_js_comment">#ディレクトリ参照</span></li>
+<li>userlist_deny = NO<span class="span_js_comment">#アクセス許可されるユーザーをリストにあるユーザのみに設定</span></li>
+<li><span class="span_js_comment">#</span></li>
+<li>echo"ftpuser" | sudo tee -a /etc/vsftpd.userlist<span class="span_js_comment">#ftpuserと書き込まれたvsftpd.userlistというファイルを作成</span></li>
+</ol>
+</div>
+
+・ftpユーザーの作成<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_comment">#</span></li>
+<li><span class="span_js_comment">#</span></li>
+</ol>
+</div>
+
+・確認方法<br>
+<div class="srcdiv">
+<ol>
+<li>ftp localhost</li>
+</ol>
+</div>
+ユーザー名とパスワードを問われれば成功です。<br>
+ログインして、<u>230 login successful</u>が表示されたらOKです。byeか、exitで抜け出しましょう。<br>
+これでFTPサーバーの構築が完了しました。<br>
+
+<hr style="border:0.3px dashed #87CEEB;">
+IP固定<br>
+<hr style="border:0.3px dashed #87CEEB;">
+FTPサーバーにはIPを指定して接続します。しかしubuntuではデフォルトで
+DHCPサーバーから取得したIPアドレスが自動設定されます。<br>
+そのため、再起動すると別のIPアドレスに変わることもあります。
+つまり、FTPサーバーに接続する際、IPが変わった際、毎度IPを確認しなければなりません。<br>
+そこで、今回はIPを固定化していきます。<br>
+<div class="img_center">
+<img src="img/linux/f002.jpg"><br>
+</div>
+画面右上からネットワークの設定を開きます。<br>
+<br>
+<img src="img/linux/f003.jpg"width="90%"height="60%"><br>
+この様な画面を開いたら歯車のアイコンをクリックします。
+<br>
+<div class="img_center">
+<img src="img/linux/f004.jpg"><br></div>
+すると、ネットワークに関する情報が出てきますので、IPv4のアドレスを覚えておきます。<br>
+<br>
+<div class="img_center">
+<img src="img/linux/f005.jpg"><br></div>
+IPv4の設定に行き、｢IPv4メソッド」を「手動」に切り替えると、IPアドレス・ネットマスク・ゲートウェイ・DNSなどを設定できます。<br>
+アドレスは確認したアドレスを入力します。<br>
+他の端末に設定されてないものを設定する必要があるので、重複させないために現在割り振られたアドレスを使用します。<br>
+<br>
+<div class="img_center">
+<img src="img/linux/f006.jpg"><br>
+</div>
+適用させたら、接続をオンオフします。これで、適用が完了しました。<br>
+一度、IPを変えてみてそのIPになってるかも確認してみましょう。<br>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+FFFTPからlinuxのファイルシステムに接続<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<br>
+<a href="https://forest.watch.impress.co.jp/library/software/ffftp/">ダウンロードリンク</a><br>
+<br>
+
+・<br>
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+
+    <div class="top_box">
+      <a href="#top"align="right">トップへ戻る</a></div>
+      <br>
+    </div>
+
+
+<div class="contents" id="page5">
+<h2>VI使用法</h2>
+VIはlinux系のOSでテキストファイルの内容を編集する際に使うテキストエディタです。<br>
+使い慣れるとかなり便利です。<br>
+<br>
+
+・ファイルを開く<br>
+<div class="srcdiv">
+<ol>
+<li>sudo vi abc.txt<span class="span_js_comment">#viでテキストファイルを開く</span></li>
+<li>sudo view abc.txt<span class="span_js_comment">#</span></li>
+<li>sudo vi abc.txt def.txt<span class="span_js_comment">#abc.txt def.txtの順番で開く</span></li>
+</ol>
+</div>
+
+・ファイルを閉じる<br>
+<div class="srcdiv">
+<ol>
+<li>ESCキーを押す<span class="span_js_comment">#閉じる</span></li>
+</ol>
+</div>
+
+・テキスト編集<br>
+<div class="srcdiv">
+<ol>
+<li>ESCキー -> u<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#直前の編集を取り消し</span></li>
+<li>ESCキー -> Ctrl + r<span class="span_js_comment">      &nbsp;#戻した操作を実行する</span></li>
+<li>ESCキー -> i<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#カーソルの前にテキストを挿入</span></li>
+<li>ESCキー -> yy<span class="span_js_comment">     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#カーソルの行をコピー</span></li>
+<li>ESCキー -> dd<span class="span_js_comment">     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#カーソルの行を削除</span></li>
+<li>ESCキー -> J<span class="span_js_comment">     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#カーソルある行とその下の行を連結</span></li>
+<li>ESCキー -> p<span class="span_js_comment">     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#コピー／削除した行をカーソルの下に行を追加してペースト</span></li>
+<li>ESCキー -> P<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#コピー／削除した行をカーソルの上に行を追加してペースト</span></li>
+<li>ESCキー -> I<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#行の先頭にテキストを挿入</span></li>
+<li>ESCキー -> A<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#行の末尾にテキストを挿入</span></li>
+<li>ESCキー -> o<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#カーソルの下に行を追加</span></li>
+<li>ESCキー -> O<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#カーソルの上に行を追加</span></li>
+<li>ESCキー -> G<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#最終行へジャンプ</span></li>
+<li>ESCキー -> 行番号 + G<span class="span_js_comment">      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#指定した行へジャンプ</span></li>
+<li>ESCキー -> :行番号<span class="span_js_comment">&nbsp;&nbsp;&nbsp;#コロンを入力してから行番号を入力してEnterキーを押すと、指定した行へジャンプ</span></li>
+<li>ESCキー -> :w<span class="span_js_comment">     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#編集中のファイルを保存</span></li>
+<li>ESCキー -> :wq<span class="span_js_comment">    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#編集中のファイルを保存してviを終了</span></li>
+<li>ESCキー -> :w!<span class="span_js_comment">    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#編集中のファイルを強制保存</span></li>
+<li>ESCキー -> :q<span class="span_js_comment">     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#viを終了</span></li>
+<li>ESCキー -> :q!<span class="span_js_comment">    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#編集中の内容を破棄してvi終了</span></li>
+<li>ESCキー -> :e!<span class="span_js_comment">    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#編集を最初からやり直す</span></li>
+<li>ESCキー -> SHIFT + V<span class="span_js_comment">    #行選択</span></li>
+<!-- <li>ESCキー -> <span class="span_js_comment">#</span></li> -->
+</ol>
+</div>
+
+・<br>
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+
+
+    <div class="top_box">
+      <a href="#top"align="right">トップへ戻る</a></div>
+      <br>
+    </div>
+
+
+<div class="contents" id="page6">
+
+
+<h2>ssh接続</h2>
+Ubuntuにssh接続してみます。<br>
+
+・ssh接続の設定
+<div class="srcdiv">
+<ol>
+<li>sudo apt-get install openssh-server<span class="span_js_comment">#sshサーバーパッケージのインストール</span></li>
+<li>ifconfig<span class="span_js_comment">#IPを確認する</span></li>
+<!-- <li><span class="span_js_comment">#</span></li>
+<li><span class="span_js_comment">#</span></li> -->
+</ol>
+</div>
+<br>
+IPを確認したらtera Termでssh接続を選び、ホスト名に調べたIPを入力し接続します。<br>
+接続出来たらコマンドラインで操作ができます！ファイルの操作や書き換えをしてみましょう。<br>
+
+<h2>telnet</h2>
+
+・telnetdパッケージのインストール<br>
+<div class="srcdiv">
+<ol>
+<li>sudo apt install telnetd xinetd -y</li>
+<li>sudo apt install inetutils-inetd -y</li>
+</ol>
+</div>
+
+・設定ファイルの編集<br>
+<div class="srcdiv">
+<ol>
+<li>sudo vi /etc/inetd.conf</li>
+<li><span class="span_js_comment">#行末に以下の文字を書き足します。</span></li>
+<li>telnet stream tcp nowait root /usr/sbin/tcpd /usr/sbin/in.telnetd</li>
+</ol>
+</div>
+
+・サービスの再起動<br>
+<div class="srcdiv">
+<ol>
+<li>sudo systemctl restart inetutils-inetd</li>
+</ol>
+</div>
+
+・ローカルで接続確認<br>
+<div class="srcdiv">
+<ol>
+<li>telnet localhost</li>
+<li><span class="span_js_comment">#最初に尋ねられるのはubuntuのユーザ名です</span></li>
+<li><span class="span_js_comment">#次にパスワードを入力します。(ここまで表示されれば成功)</span></li>
+<li><span class="span_js_comment">#色々表示され、抜け出します。</span></li>
+</ol>
+</div>
+
+・ローカルで接続確認<br>
+<div class="srcdiv">
+<ol>
+<li>telnet localhost</li>
+<li>sudo apt install ssh<span class="span_js_comment">#sshパッケージのインストール</span></li>
+<li>sudo status ssh<span class="span_js_comment">#sshの動作確認</span></li>
+<li>sudo start ssh<span class="span_js_comment">#sshの動作開始</span></li>
+<li>sudo enable ssh<span class="span_js_comment">#自動起動の有効化</span></li>
+</ol>
+</div>
+<div onclick="obj=document.getElementById('example1').style; obj.display=(obj.display=='none')?'block':'none';"><a class="open_button" style="cursor: pointer;"><div class="box3">クリックする所</div></a></div>
+<div id="example1" style="clear: both;">
+表示<br>
+</div>
+
+    <div class="top_box">
+      <a href="#top"align="right">トップへ戻る</a></div>
+      <br>
+    </div>
+
+
+
+
+<script>
+'use strict'
+document.getElementById("page1").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

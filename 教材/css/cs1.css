@@ -1,0 +1,661 @@
+body {
+  background-color: #aaa;
+  background-attachment: fixed;
+  /* margin-left: auto;
+  margin-right: auto; */
+  min-width: 100px;
+  background-color: #E1E1E1;/*全体背景色*/
+  font-size: 100%;
+  font-weight: 400;
+  /* font-family:'Noto Serif SC',"游明朝","ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif; */
+  height:100%;
+  letter-spacing: 1px;
+  margin: 0px;
+}
+/*あらかじめ決められた範囲に収まりきらない文章を...とし、纏める。*/
+.Predetermined_area {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -moz-text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+}
+/*-------------------------------------------------------------*/
+h1 a {
+text-decoration: none;
+color: #0000aa;
+}
+h1 a:hover {
+transition:0.3s;
+color: #4148fe;
+}
+.header_Zentriert{
+  margin-left: auto;
+  margin-right: auto;
+}
+header {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   /*background-color: rgba(255, 255, 255, 0.8);*/
+   background-color:  rgba(30, 30, 30, 0.5);
+   /*background-color: #E3E3F3;*/
+   display: flex;
+   position: absolute;
+}
+#logo{
+  position: absolute;
+  font-family: 'Charmonman', cursive;
+}
+/*ログの下線を消す*/
+/*.d1-1 a {
+  text-decoration: none;
+}*/
+/*全てのa要素の下線を消す*/
+a {
+  text-decoration: none;
+}
+h1 {
+   margin: 0; padding: 0;
+   font-size: 20px; /*サイトロゴの文字の大きさ*/
+}
+h1 a{
+   color: #95a5e8;     /*ロゴ色*/
+}
+#navdiv{
+
+}
+nav {
+  text-decoration: none;
+  color: #CCFFFF;
+  margin: 0 0 0 auto;
+}
+ul.ddmenu {
+   margin: 0px;
+   padding: 0px 0px 0px 15px;
+   background-color: var(--bg-color);
+}
+ul.ddmenu li {
+width: 125px;          /* メニュー項目の横幅*/
+display: inline-block; /* 横並びに配置する */
+list-style-type: none; /* リストの先頭記号を消す */
+position: relative;
+}
+ul.ddmenu a {
+   background-color: rgba(0,5,210,0.9);
+   color: white;              /* メニュー項目の文字色*/
+   line-height: 40px;         /* メニュー項目のリンクの高さ*/
+   text-align: center;        /* メインメニューの文字列の配置*/
+   text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
+   font-weight: bold;         /* 太字にする */
+   display: block;
+   border-left:solid 2px #188888;
+}
+ul.ddmenu a:hover {
+  transition:0.2s;
+   background-color: #009faf; /* メニュー項目にマウスが載ったときの背景色 */
+   color: #fff8ff;            /* メニュー項目にマウスが載ったときの文字色 */
+}
+
+/* ---------------------------------- */
+/* ▼サブメニューがある場合に開く処理 */   /* ※サブメニューが2階層以上ある場合の記述 */
+/* ---------------------------------- */
+ul.ddmenu li:hover > ul {
+   display: block;         /* マウスポインタが載っている項目の内部にあるリストを表示する */
+}
+
+/* -------------------- */
+/* ▼サブメニューの装飾 */
+/* -------------------- */
+ul.ddmenu ul {
+   margin: 0px;         /* サブメニュー外側の余白*/
+   padding: 0px;        /* サブメニュー内側の余白*/
+   display: none;       /* 標準では非表示にする */
+   position: absolute;  /* 絶対配置にする */
+}
+
+/* -------------------------------- */
+/* サブメニュー(以降の)項目の装飾 */
+/* -------------------------------- */
+ul.ddmenu ul li {
+   width: 135px;               /* サブメニュー1項目の横幅(135px) */
+   border-top: 1px solid pink; /* 項目上側の枠線(ピンク色で1pxの実線) */
+}
+ul.ddmenu ul li a {
+   line-height: 35px;   /* サブメニュー1項目の高さ(35px) */
+   text-align: left;    /* 文字列の配置(左寄せ) */
+   padding-left: 5px;   /* 文字列前方の余白(5px) */
+   font-weight: normal; /* 太字にはしない */
+}
+ul.ddmenu ul li a:hover {
+  transition:0.2s;
+   background-color: #ffffff; /* サブメニュー項目にマウスが載ったときの背景色 */
+   color: #005500;            /* サブメニュー項目にマウスが載ったときの文字色 */
+}
+
+/* ----------------------------------- */
+/* 3階層目以降(孫メニュー以降)の装飾 */   /* ※下ではなく横(右)に表示する */
+/* ----------------------------------- */
+ul.ddmenu ul ul {
+   margin: 0px;         /* サブメニュー外側の余白(ゼロ) */
+   padding: 0px;        /* サブメニュー内側の余白(ゼロ) */
+   display: none;       /* 標準では非表示にする */
+   position: absolute;  /* 絶対配置にする */
+   top: -1px;
+   left: 100%;          /* ★基準位置からの距離を親ボックスの幅100％にする */
+   border-left: 1px solid pink; /* 左側に引く枠線*/
+}
+audio {
+  display: none;
+}
+.d1 {
+  margin-bottom: 2px;
+  margin: 10px auto;
+  width:800px;
+  /*background-color: rgba(50, 50, 50, 0.7);*/
+    /*background: #FFFFFF;*/   /*中央揃え用divタグの背景色*/
+}
+.autoscrollbox{
+  font-size: 16.5px;
+  padding: 12px;
+  margin-bottom: 10px;
+  /*
+  border: 0.5px solid #633333;
+  border-radius: 10px;
+  background: #F5F5F5;
+  */
+  margin-left: auto;
+  margin-right: auto;
+  width:800px;
+  height: auto;
+}
+
+.d1-1{
+  font-size: 16.5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 0.5px solid #633333;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width:800px;
+  background: #F5F5F5;
+  /*background-color: rgba(255, 255, 255, 0.7);*//*透過単色背景*/
+}
+.side_box{
+  height: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 0.5px solid #633333;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  float:right;
+  width: 22%;
+    background: #F5F5F5;
+}
+.side_box strong{
+
+}
+/*トップへ戻るスタイルシート*/
+.top_box {
+  width:auto;
+  height:auto;
+  float: right;
+}
+/*両脇に水色の点線、背景が灰色のボックスのスタイルシートです。*/
+.box1 {
+    position: relative;
+    padding: 0.25em 1em;
+    margin: 2em 0;
+    top: 0;
+    background: #efefef;
+}
+.box1:before, .box1:after{
+    position: absolute;
+    top: 0;
+    content:'';
+    width: 10px;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.box1:before{
+    border-left: dotted 2px #15adc1;
+    border-top: dotted 2px #15adc1;
+    border-bottom: dotted 2px #15adc1;
+    left: 0;
+}
+.box1:after{
+    border-top: dotted 2px #15adc1;
+    border-right: dotted 2px #15adc1;
+    border-bottom: dotted 2px #15adc1;
+    right: 0;
+}
+.box1 p {
+    margin: 0;
+    padding: 0;
+}
+/*--------------------------------------------------------*/
+/*交差線のボックスを作ります。背景色は白色です。*/
+.box2{
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.box2:before, .box2:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.box2:before {left: 10px;}
+.box2:after {right: 10px;}
+.box2 p {
+    margin: 0;
+    padding: 0;
+}
+/*--------------------------------------------*/
+/*両脇に水色の2重線を表示します。背景色は灰色のボックスです。*/
+.box3{
+  float:left;
+    padding: 0.5em 1em;
+    margin: 1px;
+    color: #474747;
+    background: whitesmoke;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+}
+.box3 p {
+    margin: 0;
+    padding: 0;
+}
+/*--------------------------------------------------------*/
+/*boxの中でうまく切り分けるためのボックスを追加します。*/
+.box4{
+margin: 2px;
+font-size: 15px;
+}
+/*----------------------------------------------------*/
+.box5	{
+  padding:10px;
+  background:#DFE5EA;
+  font-size:90%;
+  border: 0.5px solid #633333;
+}
+.box5 dl{
+  margin:0px;
+  line-height:150%;
+}
+.box5 dl dt{
+  font-weight:bold;
+}
+.box6{
+  border: 0.5px solid #633333;;
+  background: #E7E7E7;
+}
+.box6{
+  border: 1px solid #633333;
+  background: #E7E7E7;
+}
+.mapbox1{
+  float: left;
+  width: 180px;
+  height: auto;
+  border: 0.5px solid #633333;
+  border-radius: 3px;
+  background-color:#EaEaEa;
+}
+.mapbox2{
+  float: left;
+  width: 90px;
+  height: auto;
+  border: 0.5px solid #633333;
+  border-radius: 3px;
+  background-color:#E1E1E1;
+}
+.mapbox1:hover {
+   background-color: #ffffff; /* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
+   color: #005500;            /* サブメニュー項目にマウスが載ったときの文字色(濃い緑色) */
+}
+.footer{
+  padding: 17.5;
+  color: #ffffff;
+  background-color: rgba(30, 30, 30, 0.5);
+}
+.follow-me {
+  list-style: none;
+  margin: 0 0 -8px;
+  overflow: hidden;
+  padding: 0;
+}
+.follow-me li {
+  float: left;
+  margin: 0 10px 0px 0;
+  padding: 0;
+}
+.follow-me li a::before {
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 16px;
+  height: 42px; /* Button height */
+  line-height: 42px; /* Button height */
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  width: 42px; /* Button width */
+}
+.follow-me li a[href*="twitter.com"]::before        { border-color: #55acee; background-color: #55acee; content: "\f099"; }
+.follow-me li a[href*="youtube.com"]::before        { border-color: #cd201f; background-color: #cd201f; content: "\f16a"; }
+.follow-me li a[href*="instagram.com"]::before      { background-color: #fd8500; content: "\f16d"; }
+.follow-me li a[href*="github.com"]::before         {  background-color: #111; content: "\f09b"; }
+.follow-me li a:hover::before {
+  background-color: #fff;
+}
+
+.follow-me li a[href*="twitter.com"]:hover::before        { color: #55acee; }
+.follow-me li a[href*="youtube.com"]:hover::before        { color: #cd201f; }
+.follow-me li a[href*="instagram.com"]:hover::before        { color:#fd85ff; }
+.follow-me li a[href*="github.com"]:hover::before        { color: #111; }
+
+.sign{
+  margin: 0 8px 8px 0;
+  padding: 10;
+  float: right;
+}
+/*外部リンクのスタイルシート*/
+ul {
+  list-style: none;
+}
+
+ul.link{
+	display:flex;
+	margin:10px 0px 15px;
+	font-size:90%;
+}
+
+ul.link li{
+	margin-right:4.5px;
+}
+
+ul.link li:last-child{
+	margin-right:0px;
+}
+
+ul.link li a{
+	display:block;
+	padding:3px 5px;
+	background:#567eaa;
+	color:#fff;
+	border-radius: 10px;/* CSS3草案 */
+	-webkit-border-radius: 10px;/* Safari,Google Chrome用 */
+	-moz-border-radius: 10px; /* Firefox用 */
+}
+
+ul.link li a:hover{
+  transition:0.3s;
+	background:#D9B9CB;
+	color:#fff;
+}
+h2{
+	margin:20px 0px;
+	padding: 1px 0 1px 5px;
+	background: #eaeaea;
+	color: #444;
+	border-left: 10px solid #567eaa;
+}
+/* h4{
+  padding: 5px;
+  margin: 5px;
+  -webkit-transform: skew(-15deg);
+  transform: skew(-15deg);
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+  background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+  background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+} */
+h5 {
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  position: relative;
+  margin: 3px;
+  padding: 1.5rem 1rem;
+  font-size: 20px;
+  -webkit-box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+}
+
+h5:before,
+h5:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+  background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+}
+
+h5:before {
+  top: 0;
+}
+
+h5:after {
+  bottom: 0;
+}
+
+#side:before, #side:after {
+  content: '';
+  position: relative;
+  display: block;
+	box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+#side h2 {
+  line-height: 1;
+  color: #482101;
+}
+
+#side h2:before {
+  margin-right: 10px;
+}
+
+#side h2:after {
+  margin-left: 10px;
+  background-position: 100% 0;
+}
+
+#side .inner {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 0 1px #fff inset, 0 0 0 2px #4261de inset;
+  box-shadow: 0 0 0 1px #fff inset, 0 0 0 2px #4261de inset;
+  border: 1px solid #826122;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 25px 20px;
+}
+
+#side .inner:before, #side .inner:after {
+  margin: auto;
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 37px;
+  background-size: 36px 37px !important;
+}
+
+#side .inner:before {
+  top: 0;
+  background: url("../img/868FBA62-F13B-411E-9752-6E4E0D90E233.png") no-repeat 0 0, url("../img/146AA423-2169-4CDC-A475-A741B0064CB1.png") no-repeat 100%;
+}
+
+#side .inner:after {
+  bottom: 0;
+  background: url("../img/5FED816B-FFA8-401C-95B1-962426C7A927.png") no-repeat 0 0, url("../img/BAF6E13C-043B-4DB7-AC2A-6897CC543FE9.png") no-repeat 100%;
+}
+
+.top_box a:hover{
+  transition:0.3s;
+  color: #a3a3fc;
+}
+
+h3 {
+  margin:10px 0px;
+	padding: 1px 0 1px 1px;
+	background: #eaeaea;
+	color: #322;
+	border-left: 10px solid #74be97;
+  font-size: 15px;
+}
+/* td {
+  background-color: #aaeaaa;
+  border: 0.5px solid #aaeaaa;
+  width: auto;
+} */
+.srcdiv {
+  border-radius: 13px;
+  border: solid 0.5px;
+  background-color: #1d1a1a;
+  color: #eaeaea;
+  margin: 5px;
+  padding: 5px;
+  font-family: 'Verdana';
+  font-size: 13px;
+  letter-spacing: 0px;
+}
+.span_py_yellow {
+color: #ffef00;
+}
+.span_py_skyblue {
+color: #8fefff;
+}
+.span_py_pink {
+color: #fd89fe;
+}
+.span_py_red {
+color: #f00;
+}
+.span_py_yellowgreen {
+color: #cfff85;
+}
+.span_py_oarnge {
+color: #ea3;
+}
+/*jsブロックのスタイルシート*/
+.span_js_yellow {
+color: #ffef00;
+}
+.span_js_skyblue {
+color: #8fefff;
+}
+.span_js_pink {
+color: #fa89fe;
+}
+.span_js_red {
+color: #ff6090;
+}
+.span_js_yellowgreen {
+color: #cfff85;
+}
+.span_js_oarnge {
+color: #ea3;
+}
+.span_js_comment {
+color: #828282;
+}
+.span_php_red {
+color: #c44;
+/* color: #8d2d2d; */
+}
+.line1 { text-decoration: underline solid black }
+.line2 { text-decoration: underline double black }
+.line3 { text-decoration: underline dotted black }
+.line4 { text-decoration: underline dashed black }
+.line5 { text-decoration: underline wavy black }
+.imgdiv{
+  width:500px;
+  height: 340px;
+}
+table {
+border-collapse: collapse; /* 隣接するセルの罫線を重ねて表示する */
+width: 99%; /* テーブルの横幅を指定する */
+margin: 5px;
+padding: 5px;
+border: 0.5px solid black;
+}
+td, th, tr{
+border: 0.5px solid #000000; /* 境界線を実線で指定する */
+/* background-color: rgba(255,255,255,255.255);/* 背景色を指定する */ */
+text-align: center; /* インライン要素の位置を指定する */
+padding: 3px; /* 要素の余白を指定する(上下左右) */
+}
+th {
+background-color: #31A9EE; /* 見出しの背景色を指定する */
+}
+.img_center {
+  text-align: center;
+}
+.table_of_contents {
+  width: 350px;
+  height: auto;
+  padding: 5px;
+  float:left;
+  margin: 5px;
+  /* border: 1px solid gray; */
+  box-sizing: border-box;
+}
+.table_of_contents li{
+  margin-top: 2px;
+    margin-left: 20px;
+}
+.table_of_contents2 {
+  margin: 5px;
+  width: 380px;
+  height: auto;
+  padding: 5px;
+  float:left;
+  /* border: 1px solid gray; */
+  box-sizing: border-box;
+}
+.table_of_contents2 li{
+  margin-top: 2px;
+    margin-left: 20px;
+}
+.box7 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #4071d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #4071d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    line-height: 40px;
+}
+.box7 p {
+    margin: 0;
+    padding: 0;
+}
+/* divタグの図形 */
+/* .rhombus_a {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 3px;
+  transform: rotate(45deg);
+  background: #dddd00;
+} */
+.Vertical_sensation {
+    line-height: 30px;
+}

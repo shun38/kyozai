@@ -1,0 +1,26 @@
+<button id="b1" onclick="clk()"></button>
+<button id="b2" onclick="clk()"></button>
+<button id="b3" onclick="clk()"></button>
+
+<script>
+function clk(e){
+  /// 要素IDを取得する
+  var e = e || window.event;
+  var elem = e.target || e.srcElement;
+  var elemId = elem.id;
+
+  /// 要素IDに応じて処理を変える...
+  switch(elemId){
+    case 'b1':
+      alert("b1")
+      break;
+    case 'b2':
+      alert("b2")
+      break;
+    case 'b3':
+      alert("b3")
+      break;
+    /// 以下略...
+  }
+}
+</script>

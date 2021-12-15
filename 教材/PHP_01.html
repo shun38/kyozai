@@ -1,0 +1,1397 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>PHPノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+<style>
+audio {
+  display: none;
+}
+</style>
+<audio controls src="">
+</audio>
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="PHP_01.html">PHP</a>
+  </div>
+
+  <div class="mapbox2"> <a href="#" onclick="disp('page1');">導入</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page2');">基礎</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page3');">応用</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page4');">開発</a>
+  </div>
+
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page5');"></a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+
+<div class="contents" id="page1">
+
+
+<h2>PHPとは</h2>
+PHPはHTMLのソースコードをサーバー側で生成し、ユーザーに渡すプログラムです。<br>
+phpタグを組み込み、主にhtmlのソースコードを
+何かのデータを元に、サーバー側で作成する部分の仕事をしてくれます。<br>
+拡張子が.phpのファイルを作り、以下の様にPHPのソースコードを記述すると、ユーザ側ではhtmlファイルとして2つ目のソースコードの様に表示されます<br>
+・サーバー側のソースコード<br>
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">html</span>&gt;</li>
+<li>&lt;<span class="span_js_red">meta</span> <span class="span_js_oarnge">charset</span>=<span class="span_js_yellowgreen">"utf-8</span>"&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">body</span>&gt;</li>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">'バナナ&lt;br&gt;'</span>);<span class="span_js_comment"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+<li>&lt;/<span class="span_js_red">body</span>&gt;</li>
+<li></li>
+<!-- <li>&lt;&gt;  <span class="span_js_comment"></span></li> -->
+<li>&lt;/<span class="span_js_red">html</span>&gt;</li>
+</ol>
+</div>
+・クライアント側で認識されるのソースコード<br>
+<div class="srcdiv">
+<ol>
+<li>&lt;<span class="span_js_red">html</span>&gt;</li>
+<li>&lt;<span class="span_js_red">meta</span> <span class="span_js_oarnge">charset</span>=<span class="span_js_yellowgreen">"utf-8</span>"&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">body</span>&gt;</li>
+<li>バナナ&lt;<span class="span_js_red">br</span>&gt</span></li>
+<li>&lt;/<span class="span_js_red">body</span>&gt;</li>
+<li></li>
+<!-- <li>&lt;&gt;  <span class="span_js_comment"></span></li> -->
+<li>&lt;/<span class="span_js_red">html</span>&gt;</li>
+</ol>
+</div>
+phpファイルを作成したら、XAMPPやlinuxなどで動かします。<br>
+<br>
+<h2>XAMPPでローカル環境を作る</h2>
+XAMPPはローカル環境です。apacheを動作させたらブラウザを開いて、URL欄にlocalhost/ファイル名.phpと入力するとその指定したファイルを読み込むことができます。<br>
+XAMPPをインストールしたときに指定したパスにxamppというフォルダが作られ、htdocsというフォルダが中にあります。その中にphpファイルを置くことでphpファイルを読み取らせることが出来ます。<br>
+htdocsの中にもフォルダを作ることが可能です。その場合パスの指定は、<br>
+<div class="srcdiv">
+<ol>
+<li>localhost/folder/index.php</li>
+</ol>
+</div>
+という様に指定します。<br>
+XAMPPでは別のPCからページを読み取ることはできません<br>
+<h2>Linuxでウェブサーバーを作る</h2>
+Linuxではウェブサーバーソフト(今回使うのはapache)とPHPをインストールし、var/www/htmlの下にファイルを配置し、IPを指定してブラウザから読み取ります。
+設定をすることで、別のPCから接続ができます。<br>
+<a href="linux_01.html">Linux</a>
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+PHPの中身はクライアント側からは見ることができません。<br>
+クライアントユーザー側には必ずhtmlソースが表示されます。<br>
+PHPではデータベースと接続したりクッキーやセッションを扱うことができます。<br>
+データベースと接続することによって、データの保存、抽出、それを基にページを生成する事ができます。<br>
+勿論自分でプログラムを考えてそれらを扱うことで、出来ることならできます。<br>
+これからPHPで具体的には何ができるかを知り、それを扱って便利なシステムを作ってみましょう！<br>
+<hr style="border:0.3px dashed #777E7B;">
+webサーバーソフト
+<hr style="border:0.3px dashed #777E7B;">
+webサーバーを構成するソフトウェアの総称。<br>
+webサーバーソフトは通信プロトコルのhttpを使って通信をし、
+webブラウザなどからのリクエストに応じてHTMLファイルや画像ファイルなどを送信する機能を持ちます。<br>
+webサイトを構築するにはwebサーバーソフトの機能が必須です。<br>
+apacheやngineXなどがあります。<br>
+公開ディレクトリに入れておいたファイルが公開されます。<br>
+
+<div class="srcdiv">
+<ol>
+
+</ol>
+</div>
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page2">
+  もくじ<br>
+  <hr style="border:0.3px dashed #87CEEB;">
+  &nbsp;&nbsp;第1章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+   第2章<br>
+  <ol class="table_of_contents">
+  <li><a href="#a1">文章を出力する</a><br></li>
+  <li><a href="#a2">計算結果を表示する</a><br></li>
+  <li><a href="#a3">日本の時間を表示する</a><br></li>
+  <li><a href="#a4">文字列の連結</a><br></li>
+  <li><a href="#a5">変数の展開</a><br></li>
+  <li><a href="#a6">演算処理</a><br></li>
+  <li><a href="#a7">条件分岐-if文-</a><br></li>
+  <li><a href="#a8">繰り返し処理 -for文-</a><br></li>
+  <li><a href="#a9">連想配列</a><br></li>
+  <li><a href="#a10">時間で表示を変える</a></li>
+  </ol>
+  <ol class="table_of_contents">
+  <li><a href="#a11">小数点の切り上げ、切り下げ</a><br></li>
+  <li><a href="#a12">書式を整える</a><br></li>
+  <li><a href="#a13">ファイルに書き込む</a><br></li>
+  <li><a href="#a14">ファイルの読み込み</a><br></li>
+  <li><a href="#a15">XML、Jsonの読み込み</a><br></li>
+  <li><a href="#a16">フォームに入力した情報を取得する</a><br></li>
+  <li><a href="#a17">オブジェクトから値を取得する</a><br></li>
+  <li><a href="#a18">数字であるかをチェックする</a><br></li>
+  <li><a href="#a19">別のページにジャンプする</a><br></li>
+  <li><a href="#a20">1行ごとにセルの色を変える</a><br></li>
+</ol>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+  <h2 id="a1">文章を出力する</h2>
+<!---------------------------------------------------->
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">'こんにちは世界！&lt;br&gt;'</span>);<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">echo</span>(<span class="span_js_yellowgreen">'ありがとう世界！'</span>);<span class="span_js_comment"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+・結果(HTML)<br>
+<div class="srcdiv">
+<ol>
+<li>こんにちは世界！<br></li>
+<li>ありがとう世界！</li>
+</ol>
+</div>
+PHPでは、<span style="color:#0077ff;">print</span>関数と<span style="color:#0077ff;">echo</span>関数が文字列を出力させる関数になります。<br>
+文字列は「" "」(ダブルクォーテーションマーク)か「' '」(シングルクォーテーションマーク)で囲います。そうすることで、文字列が関数から認識されます。<br>
+
+<!--
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table> -->
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a2">計算結果を表示する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">10+25*2/2</span>);<span class="span_js_comment"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+PHPでは計算をさせることができます。ちなみに「" "」か「' '」で囲むと、文字として認識され、そのまま10+25*2/2と表示されます。<br>
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">記号<br></td>
+    <td style="text-align:left"width="300">意味<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">+<br></td>
+    <td style="text-align:left"width="300">足し算<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">-<br></td>
+    <td style="text-align:left"width="300">引き算<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">*<br></td>
+    <td style="text-align:left"width="300">掛け算<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">/<br></td>
+    <td style="text-align:left"width="300">割り算<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">%<br></td>
+    <td style="text-align:left"width="300">剰余残 (割った余りが出ます。)<br></td>
+  </tr>
+</table>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a3">日本の時間を表示する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_js_skyblue">date_default_timezone_set</span>(<span class="span_js_yellowgreen">'Asia/Tokyo'</span>);</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"現在は"</span><span class="span_js_pink">.</span><span class="span_js_skyblue">date</span>(<span class="span_js_yellowgreen">"G時 i分 s秒"</span>)<span class="span_js_pink">.</span><span class="span_js_yellowgreen">'です'</span>);</li>
+<!-- <li><span class="span_js_comment"></span></li> -->
+</ol>
+</div>
+date関数はローカルの日付/時刻を書式化します。<br>
+<a href="https://www.php.net/manual/ja/function.date.php">><u>date関数の詳細</u></a>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+オブジェクトを使って現在の時刻を表示する。<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">date_default_timezone_set</span>(<span class="span_js_yellowgreen">'Asia/Tokyo'</span>);</li>
+<li>$<span class="span_js_red">today</span> <span class="span_js_pink">= new</span> <span class="span_js_yellow">DateTime</span>();</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"現在は"</span><span class="span_js_pink">.</span>$<span class="span_js_red">today</span><span class="span_js_pink">-></span><span class="span_js_skyblue">format</span>(<span class="span_js_yellowgreen">'G時 i分 s秒'</span>)<span class="span_js_pink">.</span><span class="span_js_yellowgreen">'です'</span>);</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+書き出し関数の中のデータは、.で区切ることで、文字列や数値、変数と異なるものでも繋げて配置させる事が出来ます。<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a4">文字列の連結例</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+  <ol>
+    <li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+    <li>$<span class="span_js_red">G</span> <span class="span_js_pink">= </span><span class="span_js_yellowgreen">"が"</span>;</li>
+    <li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"ポテト"</span><span class="span_js_pink">.</span>$<span class="span_js_red">G</span><span class="span_js_pink">.</span><span class="span_js_yellowgreen">'好きだー！'</span>);</li>
+    <li><span class="span_php_red">?&gt;</span></li>
+  </ol>
+</div>
+・.=演算子を使って連結<br>
+<div class="srcdiv">
+  <ol>
+    <li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+    <li>$<span class="span_js_red">name</span> <span class="span_js_pink">= </span><span class="span_js_yellowgreen">"山田"</span>;</li>
+    <li>$<span class="span_js_red">name</span> <span class="span_js_pink">.= </span><span class="span_js_yellowgreen">"太郎"</span>;<span class="span_js_comment">#.=と指定することで、文字列の連結演算子となります。</span></li>
+    <li><span class="span_js_skyblue">print</span>($<span class="span_js_red">name</span>);<span class="span_js_comment">#出力結果は、山田太郎</span></li>
+    <li>$<span class="span_js_red">name</span> <span class="span_js_pink">.= </span><span class="span_js_yellowgreen">"様"</span>;</li>
+    <li><span class="span_js_skyblue">print</span>($<span class="span_js_red">name</span>);<span class="span_js_comment">#出力結果は、山田太郎様</span></li>
+    <li><span class="span_php_red">?&gt;</span></li>
+  </ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a5">変数の展開</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+ダブルクォーテーションマークで文字列を囲んだ場合、{}の中に変数を入れると、変数の中身に置き換えられます。<br>
+シングルウォーテーションマークでは文字列として認識され、$変数名のままとなります。<br>
+<div class="srcdiv">
+  <ol>
+    <li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+    <li>$<span class="span_js_red">name</span> <span class="span_js_pink">= </span><span class="span_js_yellowgreen">"山田"</span>;</li>
+    <li>$<span class="span_js_red">name</span> <span class="span_js_pink">.= </span><span class="span_js_yellowgreen">"太郎"</span>;</li>
+    <li>$<span class="span_js_red">name</span> <span class="span_js_pink">.= </span><span class="span_js_yellowgreen">"様"</span>;</li>
+    <li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"こんにちは、</span>{$<span class="span_js_red">name</span>}<span class="span_js_yellowgreen">"</span>);<span class="span_js_comment">#出力結果は、こんにちは、山田太郎様</span></li>
+    <li><span class="span_php_red">?&gt;</span></li>
+  </ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+変数を使って税込みと税抜きの価格を表示させる。<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">sum</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">98</span><span class="span_js_pink">+</span><span class="span_js_oarnge">298</span><span class="span_js_pink">+</span><span class="span_js_oarnge">168</span>;</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+<li>合計金額は：<span class="span_php_red">&lt;?php</span> <span class="span_js_skyblue">print</span>($<span class="span_js_red">sum</span>); <span class="span_php_red">?&gt;</span>円です</li>
+<li>税込金額は：<span class="span_php_red">&lt;?php</span> <span class="span_js_skyblue">print</span>($<span class="span_js_red">sum</span> <span class="span_js_pink">*</span> <span class="span_js_oarnge">1</span>.<span class="span_js_oarnge">08</span>); <span class="span_php_red">?&gt;</span>円です</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+PHPで変数は頭にドルマークを付け、$<span class="span_js_red">変数名</span>と指定します。PHPでは文末を区切るために;を使います。
+=は代入を意味し、右の値、例えば0や100を、=の左で指定した変数名の変数に格納します。<br>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a6">演算処理</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+変数は以下のように同じ名前で複数指定すれば、沢山出現させられます。<br>
+例えば1.1という数が消費税の計算に使う数だった場合、変数名で英語で税という意味のtaxを指定することでそれが税金だという事をコードを見る人に伝えられます。<br>
+しかし、その英単語を知らない場合は、調べなければ理解できません。英語を勉強しておくとソースコードを読むときや変数名を決める時に便利です。<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">length</span><span class="span_js_pink">=</span><span class="span_js_oarnge">5</span>;<span class="span_js_comment">#変数の宣言</span></li>
+<li>$<span class="span_js_red">outdata</span><span class="span_js_pink">=</span>$<span class="span_js_red">length</span><span class="span_js_pink">*</span>$<span class="span_js_red">length</span>;<span class="span_js_comment">#outdataという変数の中にlength変数*length変数の数を格納</span></li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">outdata</span><span class="span_js_pink">.</span><span class="span_js_yellowgreen">"\n"</span>);<span class="span_js_comment">#5*5の演算をして結果は25</span></li>
+<li></li>
+<li>$<span class="span_js_red">outdata</span><span class="span_js_pink">=</span>$<span class="span_js_red">length</span><span class="span_js_pink">*</span>$<span class="span_js_red">length</span><span class="span_js_pink">*</span>$<span class="span_js_red">length</span>;<span class="span_js_comment">#再び変数に代入するコードを記述すれば何回でも代入できます。</span></li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">outdata</span><span class="span_js_pink">.</span><span class="span_js_yellowgreen">"\n"</span>);<span class="span_js_comment">#25*5の演算をして結果は125</span></li>
+<li></li>
+<li>$<span class="span_js_red">outdata</span><span class="span_js_pink">+=</span>$<span class="span_js_red">length</span>;<span class="span_js_comment">#+=とすることで、左の変数に、そのまま右の変数の中身が加算されます。</span></li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">outdata</span><span class="span_js_pink">.</span><span class="span_js_yellowgreen">"\n"</span>);<span class="span_js_comment">#125+5の演算をして結果は130</span></li>
+<li></li>
+<li>$<span class="span_js_red">outdata</span><span class="span_js_pink">-=</span>$<span class="span_js_red">length</span>;<span class="span_js_comment">#-=とすることで、左の変数に、そのまま右の変数の中身が減算されます。*=や/=や%=も同じです。</span></li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">outdata</span><span class="span_js_pink">.</span><span class="span_js_yellowgreen">"\n"</span>);<span class="span_js_comment">#130-5の演算をして結果は125</span></li>
+<li></li>
+<li>$<span class="span_js_red">outdata</span><span class="span_js_pink">++</span><span class="span_js_red"></span>;<span class="span_js_comment">#++とすると1が加算されます。--では1が減産されます。PHPでは**がありません。+=1を短くできます。</span></li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">outdata</span><span class="span_js_pink">.</span><span class="span_js_yellowgreen">"\n"</span>);<span class="span_js_comment">#125+1の演算をして結果は126</span></li>
+<li></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+ちなみに、変数名の指定にはルールがあります。PHPでは、数字で開始するとエラーが発生し、日本語の文字で指定したり、namaeやzeikinという様な
+名前を指定するのは望ましくありません。<br>
+userNameという様に英単語を用いて、2語以上の場合は、大文字で区切ると読みやすく望ましい変数名です。<br>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a7">条件分岐 ---if文---</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+  <li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+  <li>$<span class="span_js_red">x</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">2</span>;<span class="span_js_comment">#2は10より小さい</span></li>
+  <li><span class="span_js_pink">if</span> ($<span class="span_js_red">x</span> <span class="span_js_pink">></span> <span class="span_js_oarnge">10</span>) {<span class="span_js_comment">#x(2)>10は成り立たないので、if文の中の処理はされない。</span></li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"xは10より"</span> <span class="span_js_pink">.</span> <span class="span_js_yellowgreen">"大きい"</span>);</li>
+  <li>}</li>
+  <li><span class="span_js_pink">else</span>{<span class="span_js_comment">#x(2)>10は成り立たないので、例外処理を意味するelseの中身が処理されます。</span></li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"xは10より"</span> <span class="span_js_pink">.</span> <span class="span_js_yellowgreen">"小さい"</span>);</li>
+  <li>}</li>
+  <li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+  <li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+  <li>$<span class="span_js_red">x</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">777</span>;</li>
+  <li>$<span class="span_js_red">y</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">444</span>;</li>
+  <li><span class="span_js_pink">if</span> ($<span class="span_js_red">x</span> <span class="span_js_pink">></span> $<span class="span_js_red">y</span>) {</li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"xの方が大きい"</span>);</li>
+  <li>}</li>
+  <li><span class="span_js_pink">elseif</span> ($<span class="span_js_red">x</span> <span class="span_js_pink"><</span> $<span class="span_js_red">y</span>) {</li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"xの方が大きい"</span>);</li>
+  <li>}</li>
+  <li><span class="span_js_pink">elseif</span> ($<span class="span_js_red">x</span> <span class="span_js_pink">==</span> $<span class="span_js_red">y</span>) {</li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"引き分け！"</span>);</li>
+  <li>}</li>
+  <li><span class="span_php_red">?&gt;</span><span class="span_js_comment">結果はxの法が大きい</span></li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+  <li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+  <li>$<span class="span_js_red">x</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">333</span>;</li>
+  <li>$<span class="span_js_red">y</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">333</span>;</li>
+  <li><span class="span_js_pink">if</span> ($<span class="span_js_red">x</span> <span class="span_js_pink">></span> $<span class="span_js_red">y</span>) {</li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"xの方が大きい"</span>);</li>
+  <li>}</li>
+  <li><span class="span_js_pink">elseif</span> ($<span class="span_js_red">x</span> <span class="span_js_pink"><</span> $<span class="span_js_red">y</span>) {</li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"xの方が大きい"</span>);</li>
+  <li>}</li>
+  <li><span class="span_js_pink">elseif</span> ($<span class="span_js_red">x</span> <span class="span_js_pink">==</span> $<span class="span_js_red">y</span>) {</li>
+  <li>&nbsp;&nbsp&nbsp;&nbsp;<span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"引き分け！"</span>);</li>
+  <li>}</li>
+  <li><span class="span_php_red">?&gt;</span><span class="span_js_comment">結果は引き分け！</span></li>
+</ol>
+</div>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">比較演算子<br></td>
+    <td style="text-align:left"width="300">意味<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">&lt;<br></td>
+    <td style="text-align:left"width="300">右辺のほうが、大きいとき、True(成り立つ)<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">&lt;=<br></td>
+    <td style="text-align:left"width="300">右辺のほうが、大きいか、等しい場合、True(成り立つ)<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">&gt;<br></td>
+    <td style="text-align:left"width="300">左辺のほうが、大きいとき、True(成り立つ)<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">&gt;=<br></td>
+    <td style="text-align:left"width="300">左辺のほうが、大きいか、等しい場合、True(成り立つ)<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">==<br></td>
+    <td style="text-align:left"width="300">右辺と左辺が等しいとき、True(成り立つ)<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">!=<br></td>
+    <td style="text-align:left"width="300">右辺と左辺が等しくないとき、True(成り立つ)<br></td>
+  </tr>
+</table>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a8">繰り返し処理 ---for文---</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">for</span> ($<span class="span_js_red">i</span><span class="span_js_pink">=</span><span class="span_js_oarnge">0</span>; $<span class="span_js_red">i</span><span class="span_js_pink"><=</span><span class="span_js_oarnge">10</span>; $<span class="span_js_red">i</span><span class="span_js_pink">++</span>) {</li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">i</span> <span class="span_js_pink">.</span> <span class="span_js_yellowgreen">"\n"</span>);</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+for文は、指定した回数だけ繰り返し処理をしてくれる関数です。<br>
+<div class="srcdiv">
+  <ol>
+    <li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+    <li><span class="span_js_pink">for</span> ($<span class="span_js_red">変数名</span><span class="span_js_pink">=</span><span class="span_js_oarnge">初期値</span>; $<span class="span_js_red">変数名</span><span class="span_js_pink">比較演算子</span><span class="span_js_oarnge">抜け出す数</span>; $<span class="span_js_red">変数名</span><span class="span_js_pink">増分</span>) {</li>
+      <li><span class="span_js_comment">#繰り返す処理1</span>;</li>
+      <li><span class="span_js_comment">#繰り返す処理2</span>;</li>
+      <li><span class="span_js_comment">#...</span>;</li>
+      <li>}</li>
+      <li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+    </ol>
+  </div>
+・1年後までのカレンダーを表示する<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">week_name</span> <span class="span_js_pink">=</span> [<span class="span_js_yellowgreen">'日'</span>,<span class="span_js_yellowgreen">'月'</span>,<span class="span_js_yellowgreen">'火'</span>,<span class="span_js_yellowgreen">'水'</span>,<span class="span_js_yellowgreen">'木'</span>,<span class="span_js_yellowgreen">'金'</span>,<span class="span_js_yellowgreen">'土'</span>];</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">'今日は、'</span> <span class="span_js_pink">.</span> $<span class="span_js_red">week_name</span>[<span class="span_js_skyblue">date</span>(<span class="span_js_yellowgreen">'w'</span>)] <span class="span_js_pink">.</span> <span class="span_js_yellowgreen">"曜日です"</span>);</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!-- <div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">i</span> <span class="span_js_pink">.</span> <span class="span_js_yellowgreen">"\n"</span>);</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div> -->
+
+・date関数について<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">echo date</span>(<span class="span_js_yellowgreen">'w'</span>);</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+「date('フォーマット文字')」とすることで以下の通りの返り値が得られます。<br>
+
+<table border="1">
+<tr>
+<td style="text-align:left"width="50">取得内容<br></td>
+<td style="text-align:left"width="80">フォーマット<br></td>
+<td style="text-align:left"width="50">例<br></td>
+<td style="text-align:left"width="300">説明<br></td>
+</tr>
+<tr>
+<td style="text-align:left"width="50">曜日<br></td>
+<td style="text-align:left"width="50">D<br></td>
+<td style="text-align:left"width="50">Mon~Sun<br></td>
+<td style="text-align:left"width="300">	3文字のテキスト形式<br></td>
+</tr>
+<tr>
+<td style="text-align:left"width="50">曜日<br></td>
+<td style="text-align:left"width="50">I<br></td>
+<td style="text-align:left"width="50">Sunday~Saturday<br></td>
+<td style="text-align:left"width="300">	フルスペル形式<br></td>
+</tr>
+<tr>
+<td style="text-align:left"width="50">曜日<br></td>
+<td style="text-align:left"width="50">N<br></td>
+<td style="text-align:left"width="50">1~7<br></td>
+<td style="text-align:left"width="300">	数字　1(月曜) から 7(日曜)<br></td>
+</tr>
+<tr>
+<td style="text-align:left"width="50">曜日<br></td>
+<td style="text-align:left"width="50">w<br></td>
+<td style="text-align:left"width="50">0~6<br></td>
+<td style="text-align:left"width="300">	数字　0(日曜) から 6(土曜)<br></td>
+</tr>
+<tr>
+<td style="text-align:left"width="50">曜日<br></td>
+<td style="text-align:left"width="50">W<br></td>
+<td style="text-align:left"width="50">1<br></td>
+<td style="text-align:left"width="300">数字　月曜日に始まる年単位の週番号<br></td>
+</tr>
+</table>
+<a href="https://wepicks.net/phpsample-date-date_w/#:~:text=PHP%20date%20w%E3%80%8C%E6%9B%9C%E6%97%A5%E3%80%8D%E3%82%92%E5%8F%96%E5%BE%97%EF%BC%9C%E7%8F%BE%E5%9C%A8%EF%BC%8F%E9%81%8E%E5%8E%BB%EF%BC%8F%E6%9C%AA%E6%9D%A5%EF%BC%9E%20%7C%20WEPICKS%21%20date,%28%29%E9%96%A2%E6%95%B0%20%E3%81%AF%E3%80%81%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E6%97%A5%E4%BB%98%E3%82%84%E6%99%82%E5%88%BB%E3%81%AE%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%96%87%E5%AD%97%E5%88%97%E3%81%8B%E3%82%89%E3%80%81%E7%8F%BE%E5%9C%A8%E3%82%84%E4%BB%BB%E6%84%8F%E3%81%AE%E6%97%A5%E4%BB%98%E3%80%81%E6%99%82%E5%88%BB%E3%80%81%E6%9B%9C%E6%97%A5%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E8%BF%94%E3%81%97%E3%81%BE%E3%81%99%E3%80%8C%20%E6%97%A5%E6%99%82%E6%9B%9C%E6%97%A5%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%20%3D%20date%20%28%27%E6%97%A5%E4%BB%98%2F%E6%99%82%E5%88%BB%E3%81%AE%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E6%96%87%E5%AD%97%E5%88%97%27%29%3B%20%E3%80%8D%E3%80%82"><u>date関数について詳しく知る</u></a>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">data</span>[<span class="span_js_oarnge">0</span>] <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"Penguin"</span>;</li>
+<li>$<span class="span_js_red">data</span>[<span class="span_js_oarnge">1</span>] <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"Duck"</span>;</li>
+<li>$<span class="span_js_red">data</span>[<span class="span_js_oarnge">2</span>] <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"Camel"</span>;</li>
+<li>$<span class="span_js_red">data</span>[<span class="span_js_oarnge">3</span>] <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"Ant"</span>;</li>
+<li>$<span class="span_js_red">data</span>[<span class="span_js_oarnge">4</span>] <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">"Whale"</span>;</li>
+<li></li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"出力:"</span>);</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_skyblue">count</span>($<span class="span_js_red">data</span>));</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"&lt;br/&gt;"</span>);</li>
+<li></li>
+<li><span class="span_js_pink">for</span> ($<span class="span_js_red">i</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">0</span>; $<span class="span_js_red">i</span> <span class="span_js_pink"><</span> <span class="span_js_skyblue">count</span>($<span class="span_js_red">data</span>); $<span class="span_js_red">i</span>
+<span class="span_js_pink">++</span>) {</li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">data</span>[$<span class="span_js_red">i</span>]);</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">"&lt;br/&gt;"</span>);</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a9">連想配列</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+ダブルアロー演算子<br>
+アロー演算子<br>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<br>
+・foreach文は配列に対して反復処理を行います。<br>
+配列とオブジェクトだけにforeachが使えます。別のデータ型や初期化前の変数に対して使うとエラーになります。
+freach文の構文は2つあります。<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">foreach</span> (<span class="span_js_red">配列変数</span> <span class="span_js_pink">as</span> <span class="span_js_red">キー変数</span> <span class="span_js_pink">=></span> <span class="span_js_red">値変数</span>){</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;実行する処理1;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;実行する処理2;</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;...;</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">foreach</span> (<span class="span_js_red">配列変数</span> <span class="span_js_pink">as</span><span class="span_js_red">値変数</span>){</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;実行する処理n;</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+英単語と日本語の対応表を作る<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">fruits</span> <span class="span_js_pink">=</span> [</li>
+<li><span class="span_js_yellowgreen">'apple'</span> <span class="span_js_pink">=></span> <span class="span_js_yellowgreen">'りんご'</span>,</li>
+<li><span class="span_js_yellowgreen">'grape'</span> <span class="span_js_pink">=></span> <span class="span_js_yellowgreen">'ぶどう'</span>,</li>
+<li><span class="span_js_yellowgreen">'lemon'</span> <span class="span_js_pink">=></span> <span class="span_js_yellowgreen">'レモン'</span>,</li>
+<li><span class="span_js_yellowgreen">'tomato'</span> <span class="span_js_pink">=></span> <span class="span_js_yellowgreen">'トマト'</span>,</li>
+<li><span class="span_js_yellowgreen">'peach'</span> <span class="span_js_pink">=></span> <span class="span_js_yellowgreen">'もも'</span></li>
+<li>];</li>
+<li></li>
+<li><span class="span_js_pink">foreach</span> ($<span class="span_js_red">fruits</span> <span class="span_js_pink">as</span> $<span class="span_js_red">english</span> <span class="span_js_pink">=></span> $<span class="span_js_red">japanese</span>) {</li>
+<li><span class="span_js_skyblue">print</span> ($<span class="span_js_red">english</span> <span class="span_js_pink">.</span> <span class="span_js_yellowgreen">' : '</span> <span class="span_js_pink">.</span> $<span class="span_js_red">japanese</span> <span class="span_js_pink">.</span> <span class="span_js_yellowgreen">"\n"</span>);</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a10">時間で表示を変える</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">date_default_timezone_set</span>(<span class="span_js_yellowgreen">'Asia/Tokyo'</span>);</li>
+<li><span class="span_js_pink">if</span> (<span class="span_js_skyblue">date</span>(<span class="span_js_yellowgreen">'G'</span>) <span class="span_js_pink"><</span> <span class="span_js_oarnge">9</span>) {</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">'※ 現在受付時間外です'</span>);</li>
+<li>} <span class="span_js_pink">else</span> {</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">'ようこそ'</span>);</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+3行目のG < 9という部分で、時間が9時前だと<u>"※ 現在受付時間外です"</u>と警告を表示し、<br>
+9時以降は<u>"ようこそ"</u>と表示します。<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<h2>第2章</h2>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a11">小数点の切り上げ、切り下げ</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<!-- <li><span class="span_php_red">&lt;?php</span></li> -->
+<!-- <li><span class="span_js_comment"></span></li> -->
+<li>3,000円のものから、100円値引きした場合は、<span class="span_js_red">&lt;?php</span> <span class="span_js_skyblue">print</span>(<span class="span_js_skyblue">floor</span>(<span class="span_js_oarnge">100</span> <span class="span_js_pink">/</span> <span class="span_js_oarnge">3000</span> <span class="span_js_pink">*</span> <span class="span_js_oarnge">100</span>)); <span class="span_php_red">?&gt;</span>%引きです</li>
+<li></li>
+<li>元の計算式→<span class="span_js_red">&lt;?php</span> <span class="span_js_skyblue">print</span>(<span class="span_js_oarnge">100</span> <span class="span_js_pink">/</span> <span class="span_js_oarnge">3000</span> <span class="span_js_pink">*</span> <span class="span_js_oarnge">100</span>); <span class="span_js_red">?&gt;</span></li>
+<li></li>
+<li>切り上げ（ceil）→<span class="span_js_red">&lt;?php</span> <span class="span_js_skyblue">print</span>(<span class="span_js_skyblue">ceil</span>(<span class="span_js_oarnge">100</span> <span class="span_js_pink">/</span> <span class="span_js_oarnge">3000</span> <span class="span_js_pink">*</span> <span class="span_js_oarnge">100</span>)); <span class="span_js_red">?&gt;</span></li>
+<li></li>
+<li>四捨五入(round)→<span class="span_js_red">&lt;?php</span> <span class="span_js_skyblue">print</span>(<span class="span_js_skyblue">round</span>(<span class="span_js_oarnge">100</span> <span class="span_js_pink">/</span> <span class="span_js_oarnge">3000</span> <span class="span_js_pink">*</span> <span class="span_js_oarnge">100</span>, <span class="span_js_oarnge">1</span>)); <span class="span_js_red">?&gt;</span></li>
+<!-- <li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li> -->
+</ol>
+</div>
+PHPはhtmlのソースコードと組み合わせて記述できます。<br>
+
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a12">書式を整える</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li>$<span class="span_js_red">date</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">sprintf</span>(<span class="span_js_yellowgreen">'%04d年 %02d月 %02d日'</span>, <span class="span_js_oarnge">2018</span>, <span class="span_js_oarnge">1</span>, <span class="span_js_oarnge">23</span>);<li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">date</span>);<li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a13">ファイルに書き込む</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">success</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">file_put_contents</span>(<span class="span_js_yellowgreen">'./news_data/news.txt'</span>, <span class="span_js_yellowgreen">'2021-05-21 ホームページをリニューアルしました'</span>);</li>
+<li><span class="span_js_pink">if</span> ($<span class="span_js_red">success</span>) {</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">'ファイルへの書き込みが完了しました。'</span>);</li>
+<li>} <span class="span_js_pink">else</span> {</li>
+<li><span class="span_js_skyblue">print</span>(<span class="span_js_yellowgreen">'書き込みに失敗しました。フォルダの権限などを確認してください。'</span>);</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a14">ファイルの読み込み</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">news</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">file_get_contents</span>(<span class="span_js_yellowgreen">'./news_data/news.txt'</span>);</li>
+<li><span class="span_js_skyblue">print</span>($<span class="span_js_red">news</span>);</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a15">XML、Jsonの読み込み</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">file</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">file_get_contents</span>(<span class="span_js_yellowgreen">'data/h2o-space.comfeed.json'</span>);</li>
+<li>$<span class="span_js_red">json</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">json_decode</span>($<span class="span_js_red">file</span>);</li>
+<li></li>
+<li><span class="span_js_pink">foreach</span> ($<span class="span_js_red">json</span><span class="span_js_pink">-></span><span class="span_js_red">items</span> <span class="span_js_pink">as</span> $<span class="span_js_red">item</span>) :</li>
+<li><span class="span_php_red">?&gt;</span></li>
+<li>・&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"</span><span class="span_php_red">&lt;?php</span> <span class="span_js_skyblue">print</span>($<span class="span_js_red">item</span><span class="span_js_pink">-></span>
+<span class="span_js_red">url</span>); <span class="span_php_red">?></span><span class="span_js_yellowgreen">"</span>&gt;</span><span class="span_php_red">&lt;?php</span> <span class="span_js_skyblue">print</span>($<span class="span_js_red">item</span><span class="span_js_pink">-></span><span class="span_js_red">title</span>); <span class="span_php_red">?&gt;</span>&lt;/<span class="span_js_red">a</span>&gt;</li>
+<li><span class="span_php_red">&lt;?php</span></li>
+<li><span class="span_js_pink">endforeach;</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">xmlTree</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">simplexml_load_file</span></li>
+<li>(<span class="span_js_yellowgreen">'./data/h2o-space.comfeed.xml'</span>);</li>
+<li></li>
+<li><span class="span_js_pink">foreach</span>($<span class="span_js_red">xmlTree</span><span class="span_js_pink">-></span><span class="span_js_red">channel</span><span class="span_js_pink">-></span><span class="span_js_red">item</span> <span class="span_js_pink">as</span> $<span class="span_js_red">item</span>) :</li>
+<li><span class="span_php_red">?&gt;</span></li>
+<li>・&lt;<span class="span_js_red">a</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"</span><span class="span_php_red">&lt;?php</span> <span class="span_js_skyblue">print</span>($<span class="span_js_red">item</span><span class="span_js_pink">
+-&gt;</span><span class="span_js_red">link</span>); <span class="span_php_red">?&gt;</span><span class="span_js_yellowgreen">"</span>&gt;<span class="span_php_red">&lt;?php</span>
+<span class="span_js_skyblue">print</span>($<span class="span_js_red">item</span><span class="span_js_pink">-&gt;</span><span class="span_js_red">title</span>); <span class="span_php_red">?&gt;</span>&lt;/<span class="span_js_red">a</span>&gt;</li>
+<li><span class="span_php_red">&lt;?php</li>
+<li><span class="span_js_pink">endforeach</span>;</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a16">フォームに入力した情報を取得する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a17">チェックボックス、ラジオボタン、リストボックスの値を取得する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+複数選択可能なチェックボックス、、リストボックスの値を取得する<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a18">半角数字に直して数字であるかをチェックする</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+郵便番号を背チェックする<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a19">別のページにジャンプする</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a20">1行ごとにテーブルのセルの色を変える</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+  <div class="top_box">
+    <a href="#top"align="right">トップへ戻る</a></div>
+    <br>
+  </div>
+
+<div class="contents" id="page3">
+
+<hr style="border:0.3px dashed #87CEEB;">
+&nbsp;&nbsp;第3章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+ 第4章<br>
+<ol class="table_of_contents">
+<li><a href="#a21">cookieに値を保存する</a><br></li>
+<li><a href="#a22">セッションに値を保存する</a><br></li>
+<li><a href="#a23">電子メールを送信する</a><br></li>
+<li><a href="#a24">ランダム関数</a><br></li>
+<li><a href="#a25">ファイルを受信する</a><br></li>
+<li><a href="#a26">データベース接続</a><br></li>
+<li><a href="#a27">new演算子</a><br></li>
+<li><a href="#a28">クラスを初期化する</a><br></li>
+<li><a href="#a29">インスタンスを作成する</a><br></li>
+<li><a href="#a30">mysql関数</a><br></li>
+</ol>
+<ol class="table_of_contents">
+<li><a href="#a31">ログイン画面</a><br></li>
+<li><a href="#a32">会員登録画面</a><br></li>
+<li><a href="#a33"></a><br></li>
+<li><a href="#a34"></a><br></li>
+<li><a href="#a35"></a><br></li>
+<li><a href="#a36"></a><br></li>
+<li><a href="#a37"></a><br></li>
+<li><a href="#a38"></a><br></li>
+<li><a href="#a39"></a><br></li>
+<li><a href="#a40"></a><br></li>
+</ol>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<h2>応用編</h2>
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a21">cookieに値を保存する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a22">セッションに値を保存する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a23">電子メールを送信する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a24">ランダム関数</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a25">ファイルのアップロードを受信する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_oarnge"></span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a26">データベース接続<br>
+<hr style="border:0.3px dashed #87CEEB;">
+PFO (PHP Data Objects)とは、PHPからデータベースにアクセスする機能を提供する拡張モジュールです。<br>
+データベース固有のPDOドライバが使用され、接続するデータベースにかかわらず、同じ操作でデータにアクセスできます。<br>
+PDOクラスは、PHPとデータベースサーバーの間の接続を表します。<br>
+PDOクラスのインスタンスを作成することにより、データベースサーバーとの接続が確立されます。<br>
+以下のコードでは、PDO::__constructメソッドを使用してインスタンス(データ構造などの展開をし、実行できるようにしたもの)を生成します。<br>
+コンストラクタなので、直接呼び出すコードは書かずに、new演算子を用います。<br>
+
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>$<span class="span_js_red">pdo</span> <span class="span_js_pink">= new</span> <span class="span_js_yellow">PDO</span>($<span class="span_js_red">dsn</span>, $<span class="span_js_red">username</span>, $<span class="span_js_red">password</span>, $<span class="span_js_red">driver_options</span>);</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+データベース接続確認<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">try</span> {</li>
+<li>$<span class="span_js_red">db</span> <span class="span_js_pink">=</span> <span class="span_js_pink">new</span> <span class="span_js_yellow">PDO</span>(<span class="span_js_yellowgreen">'mysql:dname=mydb;host=127.0.0.1;charset=utf8'</span>, <span class="span_js_yellowgreen">'ユーザー名'</span>,<span class="span_js_yellowgreen">'パスワード'</span>);</li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'接続成功'</span>;</li>
+<li>} <span class="span_js_pink">catch</span> (<span class="span_js_yellow">PDOException</span> $<span class="span_js_red">e</span>) {</li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'DB接続エラー: '</span> . $<span class="span_js_red">e</span><span class="span_js_pink">-></span><span class="span_js_skyblue">getMessage</span>();</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+データーベース接続の例<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">try</span> {</li>
+<li>$<span class="span_js_red">db</span> <span class="span_js_pink">=</span> <span class="span_js_pink">new</span> <span class="span_js_yellow">PDO</span>(<span class="span_js_yellowgreen">'mysql:dname=mydb;host=127.0.0.1;port=3306;charset=utf8'</span>, <span class="span_js_yellowgreen">'rootssa'</span>,<span class="span_js_yellowgreen">'112038'</span>);</li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'接続成功'</span>;</li>
+<li>} <span class="span_js_pink">catch</span> (<span class="span_js_yellow">PDOException</span> $<span class="span_js_red">e</span>) {</li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'DB接続エラー: '</span> . $<span class="span_js_red">e</span><span class="span_js_pink">-></span><span class="span_js_skyblue">getMessage</span>();</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a27">new演算子</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+new演算子はインスタンスを生成する演算子です。あるクラスのオブジェクトを生成し初期化するには、newを使います。<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">class</span> <span class="span_js_yellow">NewClass</span> {</li>
+<li>// クラスの処理</li>
+<li>}</li>
+<li>$<span class="span_js_red">instance</span> <span class="span_js_pink">= new</span> <span class="span_js_yellow">NewClass</span>();</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a28">クラスを初期化する</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_pink">class</span> <span class="span_js_yellow">Person</span></li>
+<li>{</li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">private</span> $<span class="span_js_red">name</span>;</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">function</span> <span class="span_js_skyblue">__construct</span>($<span class="span_js_red">n</span>){</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;$<span class="span_js_red">this</span><span class="span_js_pink">-></span><span class="span_js_red">name</span> <span class="span_js_pink">=</span> $<span class="span_js_red">n</span>;</li>
+<li>&nbsp;&nbsp;}</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">function</span> <span class="span_js_skyblue">showName</span>() {</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="span_js_skyblue">echo</span> $<span class="span_js_red">this</span><span class="span_js_pink">-></span><span class="span_js_red">name</span>;</li>
+<li>&nbsp;&nbsp;}</li>
+<li>}</li>
+<li></li>
+<li>$<span class="span_js_red">person1</span> <span class="span_js_pink">=</span> <span class="span_js_pink">new</span> <span class="span_js_yellow">Person</span>(<span class="span_js_yellowgreen">'Tanaka'</span>);</li>
+<li>$<span class="span_js_red">person1</span><span class="span_js_pink">-></span><span class="span_js_skyblue">showName</span>();</li>
+<li></li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'&lt;br&gt;'</span>;</li>
+<li></li>
+<li>$<span class="span_js_red">person2</span> <span class="span_js_pink">= new</span> <span class="span_js_yellow">Person</span>(<span class="span_js_yellowgreen">'Suzuki'</span>);</li>
+<li>$<span class="span_js_red">person2</span><span class="span_js_pink">-></span><span class="span_js_skyblue">showName</span>();</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a29">mysqliオブジェクトのインスタンスを作成</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li>$<span class="span_js_red">id</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">10</span>;</li>
+<li>$<span class="span_js_red">host</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'localhost'</span>;</li>
+<li>$<span class="span_js_red">user</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'username'</span>;</li>
+<li>$<span class="span_js_red">password</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'password'</span>;</li>
+<li>$<span class="span_js_red">db</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'test'</span>;</li>
+<li></li>
+<li><span class="span_js_pink">try</span> {</li>
+<li></li>
+<li><span class="span_js_comment">// (1) データベースに接続</span></li>
+<li>$<span class="span_js_red">mysqli</span> <span class="span_js_pink">= new</span> <span class="span_js_yellow">mysqli</span>( $<span class="span_js_red">host</span>, $<span class="span_js_red">user</span>, $<span class="span_js_red">password</span>, $<span class="span_js_red">db</span>);</li>
+<li></li>
+<li><span class="span_js_comment">// (2) データを登録するSQL</li>
+<li>$<span class="span_js_red">stmt</span> <span class="span_js_pink">=</span> $<span class="span_js_red">mysqli</span>-></span><span class="span_js_skyblue">prepare</span>(<span class="span_js_yellowgreen">'</span><span class="span_js_pink">SELECT * FROM</span> users <span class="span_js_pink">WHERE</span> id <span class="span_js_pink">=</span> ?<span class="span_js_yellowgreen">'</span>);</li>
+<li></li>
+<li><span class="span_js_comment">// (3) 値をセット</span></li>
+<li>$<span class="span_js_red">stmt</span><span class="span_js_pink">-></span><span class="span_js_skyblue">bind_param</span>( <span class="span_js_yellowgreen">'i'</span>, $<span class="span_js_red">id</span>);</li>
+<li></li>
+<li><span class="span_js_comment">// (4) SQL実行</span></li>
+<li>$<span class="span_js_red">stmt</span><span class="span_js_pink">-></span><span class="span_js_skyblue">execute</span>();</li>
+<li></li>
+<li><span class="span_js_comment">// (5) 取得したデータをセットする変数を設定</span></li>
+<li>$<span class="span_js_red">stmt</span><span class="span_js_pink">-></span><span class="span_js_skyblue">bind_result</span>( $<span class="span_js_red">id</span>, $<span class="span_js_red">first_name</span>, $<span class="span_js_red">last_name</span>, $<span class="span_js_red">email</span>, $<span class="span_js_red">tel</span>);</li>
+<li></li>
+<li><span class="span_js_comment">// (6) 結果を取得</span></li>
+<li><span class="span_js_pink">if</span>( $<span class="span_js_red">stmt</span><span class="span_js_pink">-></span><span class="span_js_skyblue">fetch</span>() ) {</li>
+<li><span class="span_js_skyblue">var_dump</span>( $<span class="span_js_red">id</span>, $<span class="span_js_red">first_name</span>, $<span class="span_js_red">last_name</span> );</li>
+<li>}</li>
+<li></li>
+<li><span class="span_js_comment">// (7) データベースの接続解除</span></li>
+<li>$<span class="span_js_red">mysqli</span><span class="span_js_pink">-></span><span class="span_js_skyblue">close</span>();</li>
+<li>}</li>
+<li></li>
+<li><span class="span_js_pink">catch</span>(<span class="span_js_yellow">Exception</span> $<span class="span_js_red">e</span>) {</li>
+<li></li>
+<li><span class="span_js_comment">// (8) エラーメッセージを出力</span></li>
+<li><span class="span_js_skyblue">echo</span> $<span class="span_js_red">e</span><span class="span_js_pink">-></span><span class="span_js_skyblue">getMessage</span>();</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+(1)でmysqliオブジェクトのインスタンスを作成することでデータベースに接続します。<br>
+変数$mysqliには接続に成功するとデータベースへの接続状態を含めたmysqliオブジェクトが入り、接続に失敗したときはfalseが入ります。<br>
+<br>
+(2)ではデータを取得するSQLをプリペアドステートメントを使って登録します。<br>
+SQLのWHERE句にある「?」はプレースホルダーと呼び、続く(3)でbind_paramメソッドを使って検索したいidカラムの値をセットします。<br>
+<br>
+(4)でここまで用意したSQLクエリを実行して、(5)で取得したデータの値を各変数で受け取る設定をします。<br>
+データを受け取る変数はテーブルのカラムに応じて用意する必要があります。<br>
+<br>
+(6)でfetchメソッドを実行すると、(5)で設定した変数に取得したデータが先頭から順にカラムごとにセットされていきます。　<br>
+<br>
+(7)のcloseメソッドでデータベースとの接続を解除して終了です。<br>
+<br>
+(8)の箇所では(1)~(7)でエラーが起こったときにcatch文で受け取ってエラーメッセージを出力します。<br>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a30">mysqli関数の使用例</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li>$<span class="span_js_red">id</span> <span class="span_js_pink">=</span> <span class="span_js_oarnge">10</span>;</li>
+<li>$<span class="span_js_red">host</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'localhost'</span>;</li>
+<li>$<span class="span_js_red">user</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'username'</span>;</li>
+<li>$<span class="span_js_red">password</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'password'</span>;</li>
+<li>$<span class="span_js_red">db</span> <span class="span_js_pink">=</span> <span class="span_js_yellowgreen">'test'</span>;</li>
+<li></li>
+<li><span class="span_js_pink">try</span> {</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">// (1) データベースに接続</span></li>
+<li>&nbsp;&nbsp;$<span class="span_js_red">mysqli</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">mysqli_connect</span>( $<span class="span_js_red">host</span>, $<span class="span_js_red">user</span>, $<span class="span_js_red">password</span>, $<span class="span_js_red">db</span>);</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">// (2) データを登録するSQL</span></li>
+<li>&nbsp;&nbsp;$<span class="span_js_red">stmt</span> <span class="span_js_pink">=</span> <span class="span_js_skyblue">mysqli_prepare</span>( $<span class="span_js_red">mysqli</span>, <span class="span_js_yellowgreen">'</span><span class="span_js_pink">SELECT * FROM</span> users <span class="span_js_pink">WHERE</span> id <span class="span_js_pink">=</span> ?<span class="span_js_yellowgreen">'</span>);</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">// (3) 値をセット</span></li>
+<li>&nbsp;&nbsp;<span class="span_js_skyblue">mysqli_stmt_bind_param</span>( $<span class="span_js_red">stmt</span>, <span class="span_js_yellowgreen">'i'</span>, $<span class="span_js_red">id</span>);</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">// (4) SQL実行</span></li>
+<li>&nbsp;&nbsp;<span class="span_js_skyblue">mysqli_stmt_execute</span>($<span class="span_js_red">stmt</span>);</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">// (5) 取得したデータをセットする変数を設定</span></li>
+<li>&nbsp;&nbsp;<span class="span_js_skyblue">mysqli_stmt_bind_result</span>( $<span class="span_js_red">stmt</span>, $<span class="span_js_red">id</span>, $<span class="span_js_red">first_name</span>, $<span class="span_js_red">last_name</span>, $<span class="span_js_red">email</span>, $<span class="span_js_red">tel</span>);</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">// (6) 結果を取得</span></li>
+<li>&nbsp;&nbsp;<span class="span_js_pink">if</span>( <span class="span_js_skyblue">mysqli_stmt_fetch</span>($<span class="span_js_red">stmt</span>) ) {</li>
+<li>&nbsp;&nbsp;<span class="span_js_skyblue">var_dump</span>( $<span class="span_js_red">id</span>, $<span class="span_js_red">first_name</span>, $<span class="span_js_red">last_name</span> );</li>
+<li>&nbsp;&nbsp;}</li>
+<li></li>
+<li>&nbsp;&nbsp;<span class="span_js_comment">// (7) データベースの接続解除</span></li>
+<li>&nbsp;&nbsp;<span class="span_js_skyblue">mysqli_close</span>($<span class="span_js_red">mysqli</span>);</li>
+<li>}</li>
+<li><span class="span_js_pink">catch</span>(<span class="span_js_yellow">Exception</span> $<span class="span_js_red">e</span>) {</li>
+<li></li>
+<li><span class="span_js_comment">// (8) エラーメッセージを出力</span></li>
+<li><span class="span_js_skyblue">echo</span> $<span class="span_js_red">e</span><span class="span_js_pink">-></span><span class="span_js_skyblue">getMessage</span>();</li>
+}<li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+全体的な流れはオブジェクトを使ったときと同様です。<br>
+大きな違いはオブジェクトのメソッドではなく関数のみ使用するため、接続情報の入ったmysqliオブジェクトやプリペアドステートメントのmysqli_stmtオブジェクトは変数を経由して関数に渡して実行する必要があります。<br>
+こちらの例では(1)で作成したmysqliオブジェクトを変数$mysqliに入れて、mysqli_stmtオブジェクトは変数$stmtに入れてそれぞれ関数に渡して実行しています。<br>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a31">ログイン画面</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+・login.php<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li><span class="span_js_skyblue">session_start</span>();<span class="span_js_comment">//セッション開始</span></li>
+<li></li>
+<li><span class="span_js_comment">//----------------ログインボタン押されたときの処理-------------------------------------------</span></li>
+<li><span class="span_js_pink">if</span>(<span class="span_js_pink">!</span><span class="span_js_skyblue">empty</span>($<span class="span_js_red">_POST</span>[<span class="span_js_yellowgreen">"login"</span>])){</li>
+<li><span class="span_js_pink">try</span> {</li>
+<li>$<span class="span_js_red">db</span>
+<span class="span_js_pink">=</span> <span class="span_js_pink">new</span> <span class="span_js_yellow">PDO</span>(<span class="span_js_yellowgreen">'mysql:dbname=UserInformationDB;host=127.0.0.1;charset=utf8'</span>, <span class="span_js_yellowgreen">'root'</span>, <span class="span_js_yellowgreen">''</span>);<span class="span_js_comment">//PDO生成</span></li>
+<li>$<span class="span_js_red">stmt</span>
+<span class="span_js_pink">=</span> $<span class="span_js_red">db</span>
+<span class="span_js_pink">-></span><span class="span_js_skyblue">prepare</span>(<span class="span_js_yellowgreen">'select * from user_info where user_id = ?'</span>);<span class="span_js_comment">//sqlでユーザIDとパスワード取得</span></li>
+<li>$<span class="span_js_red">stmt</span>
+<span class="span_js_pink">-></span><span class="span_js_skyblue">execute</span>([$<span class="span_js_red">_POST</span>[<span class="span_js_yellowgreen">'user_id'</span>]]);</li>
+<li>$<span class="span_js_red">row</span>
+<span class="span_js_pink">=</span> $<span class="span_js_red">stmt</span>
+<span class="span_js_pink">-></span><span class="span_js_skyblue">fetch</span>(<span class="span_js_yellow">PDO</span><span class="span_js_pink">::</span><span class="span_js_oarnge">FETCH_ASSOC</span>);<span class="span_js_comment">//$rowへ取り出し</span></li>
+<li>} <span class="span_js_pink">catch</span> (\<span class="span_js_yellow">Exception</span> $<span class="span_js_red">e</span>) {<span class="span_js_comment">//DB接続失敗時の処理</span></li>
+<li><span class="span_js_skyblue">echo</span> $<span class="span_js_red">e</span><span class="span_js_pink">-></span><span class="span_js_skyblue">getMessage</span>() <span class="span_js_pink">.</span> <span class="span_js_oarnge">PHP_EOL</span>;</li>
+<li>}</li>
+<li><span class="span_js_pink">if</span> (<span class="span_js_pink">!</span><span class="span_js_skyblue">isset</span>($<span class="span_js_red">row</span>[<span class="span_js_yellowgreen">'user_id'</span>])) {<span class="span_js_comment">//未登録のIDを受け取った時の処理</span></li>
+<li><span class="span_js_skyblue">echo</span> <span class="span_js_yellowgreen">'ID又はパスワードが間違っています。'</span>;</li>
+<li><span class="span_js_pink">@</span><span class="span_js_skyblue">session_destroy</span>();</li>
+<li><span class="span_js_pink">return</span> <span class="span_js_oarnge">false</span>;</li>
+<li>}</li>
+<li><span class="span_js_pink">if</span> (<span class="span_js_skyblue">password_verify</span>($<span class="span_js_red">_POST</span>[<span class="span_js_yellowgreen">'user_pass'</span>], $<span class="span_js_red">row</span>[<span class="span_js_yellowgreen">'passwd'</span>])) {<span class="span_js_comment">//IDとパスワードが一致したときの処理</span></li>
+<li>$<span class="span_js_red">stmt</span> <span class="span_js_pink">=</span> $<span class="span_js_red">db</span><span class="span_js_pink">-></span><span class="span_js_skyblue">prepare</span>(<span class="span_js_yellowgreen">'</span><span class="span_js_pink">UPDATE</span> user_info <span class="span_js_pink">SET</span> last_login<span class="span_js_pink">=</span>NOW() <span class="span_js_pink">WHERE</span> user_id<span class="span_js_pink">=</span>?<span class="span_js_yellowgreen">'</span>);</li>
+<li>$<span class="span_js_red">stmt</span><span class="span_js_pink">-></span><span class="span_js_skyblue">execute</span>([$<span class="span_js_red">_POST</span>[<span class="span_js_yellowgreen">'user_id'</span>]]);<span class="span_js_comment">//最終ログイン時間を記録</span></li>
+<li><span class="span_js_skyblue">setcookie</span>(<span class="span_js_yellowgreen">"user_name"</span>,$<span class="span_js_red">row</span>[<span class="span_js_yellowgreen">"user_name"</span>],<span class="span_js_skyblue">time</span>()<span class="span_js_pink">+</span><span class="span_js_oarnge">60</span><span class="span_js_pink">*</span><span class="span_js_oarnge">60</span><span class="span_js_pink">*</span><span class="span_js_oarnge">3</span>);<span class="span_js_comment">//利用者の名前を表示するためにCookieへ</span></li>
+<li><span class="span_js_skyblue">setcookie</span>(<span class="span_js_yellowgreen">"user_level"</span>,$<span class="span_js_red">row</span>[<span class="span_js_yellowgreen">"level_id"</span>],<span class="span_js_skyblue">time</span>()<span class="span_js_pink">+</span><span class="span_js_oarnge">60</span><span class="span_js_pink">*</span><span class="span_js_oarnge">60</span><span class="span_js_pink">*</span><span class="span_js_oarnge">3</span>);<span class="span_js_comment">//利用者権限管理のためにCookieへ</span></li>
+<li><span class="span_js_skyblue">setcookie</span>(<span class="span_js_yellowgreen">"sess_id"</span>,<span class="span_js_skyblue">session_id</span>(),<span class="span_js_skyblue">time</span>()<span class="span_js_pink">+</span><span class="span_js_oarnge">60</span><span class="span_js_pink">*</span><span class="span_js_oarnge">60</span><span class="span_js_pink">*</span><span class="span_js_oarnge">3</span>);<span class="span_js_comment">//セッションID</span></li>
+<li><span class="span_js_skyblue">header</span>(<span class="span_js_yellowgreen">"Location:index.php");<span class="span_js_comment">//メインページへ</span></li>
+<li>} <span class="span_js_pink">else</span> {</li>
+<li><span class="span_js_skyblue">echo</span></span> <span class="span_js_yellowgreen">'ID又はパスワードが間違っています。'</span>;<span class="span_js_comment">//パスワード違う時の処理</span></li>
+<li><span class="span_js_pink">@</span><span class="span_js_skyblue">session_destroy</span>();</li>
+<li><span class="span_js_pink">return</span> <span class="span_js_oarnge">false</span>;</li>
+<li>}</li>
+<li>}</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+<li><li>
+<li>&lt;!DOCTYPE html&gt;</li>
+<li>&lt;<span class="span_js_red">html</span> <span class="span_js_oarnge">lang</span>=<span class="span_js_yellowgreen">"ja"</span>&gt;</li>
+<li>&lt;<span class="span_js_red">head</span>&gt;</li>
+<li>  &lt;<span class="span_js_red">meta</span> <span class="span_js_oarnge">charset</span>=<span class="span_js_yellowgreen">"utf-8"</span>&gt;</li>
+<li>  &lt;<span class="span_js_red">meta</span> <span class="span_js_oarnge">name</span>=<span class="span_js_yellowgreen">"viewport"</span> <span class="span_js_oarnge">content</span>=<span class="span_js_yellowgreen">"initial-scale=1</span>, <span class="span_js_yellowgreen">user-scalable=no"</span>&gt;</li>
+<li>  &lt;<span class="span_js_red">link</span> <span class="span_js_oarnge">rel</span>=<span class="span_js_yellowgreen">"stylesheet"</span> <span class="span_js_oarnge">href</span>=<span class="span_js_yellowgreen">"style/style.css"</span>&gt;</li>
+<li>  &lt;<span class="span_js_red">title</span>>ログイン画面&lt;/<span class="span_js_red">title</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">head</span>&gt;</li>
+<li></li>
+<li>&lt;<span class="span_js_red">body</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"login"</span>&gt;</li>
+<li>  &lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"login_logo"</span>&gt;&lt;<span class="span_js_red">img</span> <span class="span_js_oarnge">src</span>=<span class="span_js_yellowgreen">"media\header.png"</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"login_logo"</span>&gt;&lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>  &lt;<span class="span_js_red">div</span> <span class="span_js_skyblue">id</span>=<span class="span_js_yellowgreen">"login_main"</span>&gt;</li>
+<li>    &lt;<span class="span_js_red">h2</span>>ログイン画面&lt;/<span class="span_js_red">h2</span>&gt;</li>
+<li>    &lt;<span class="span_js_red">form</span> <span class="span_js_oarnge">method</span>=<span class="span_js_yellowgreen">"post"</span> <span class="span_js_oarnge">action</span>=<span class="span_js_yellowgreen">"login.php"</span>&gt;</li>
+<li>    &lt;<span class="span_js_red">input</span> <span class="span_js_oarnge">required type</span>=<span class="span_js_yellowgreen">"text"</span> <span class="span_js_oarnge">name</span>=<span class="span_js_yellowgreen">"user_id"</span> <span class="span_js_oarnge">placeholder</span>=<span class="span_js_yellowgreen">"ID"</span>&gt;</li>
+<li>    &lt;<span class="span_js_red">input</span> <span class="span_js_oarnge">required type</span>=<span class="span_js_yellowgreen">"password"</span> <span class="span_js_oarnge">name</span>=<span class="span_js_yellowgreen">"user_pass"</span> <span class="span_js_oarnge">placeholder</span>=<span class="span_js_yellowgreen">"パスワード"</span>&gt;</li>
+<li>    &lt;<span class="span_js_red">input</span> <span class="span_js_oarnge">class</span>=<span class="span_js_yellowgreen">"login"</span> <span class="span_js_oarnge">type</span>=<span class="span_js_yellowgreen">"submit"</span> <span class="span_js_oarnge">name</span>=<span class="span_js_yellowgreen">"login"</span> <span class="span_js_oarnge">value</span>=<span class="span_js_yellowgreen">"ログイン"</span>&gt;</li>
+<li>  &lt;/<span class="span_js_red">form</span>&gt;</li>
+<li>  &lt;/<span class="span_js_red">div</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">body</span>&gt;</li>
+<li>&lt;/<span class="span_js_red">html</span>&gt;</li>
+</ol>
+</div>
+・logout_act.php<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li><span class="span_js_skyblue">setcookie</span>(<span class="span_js_yellowgreen">"sess_id"</span>,<span class="span_js_yellowgreen">""</span>,<span class="span_js_oarnge">0</span>);<span class="span_js_comment">//ログアウト処理　正常ログアウトも不正ログイン時のログアウトもここで行う</span></li>
+<li>
+<span class="span_js_pink">@</span><span class="span_js_skyblue">session_destroy</span>();</li>
+<li><span class="span_js_skyblue">header</span>(<span class="span_js_yellowgreen">"Location: login.php"</span>);</li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+・index.php<br>
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li>  <span class="span_js_skyblue">session_start</span>();                    <span class="span_js_comment">//セッション開始</span></li>
+<li></li>
+<li><span class="span_js_comment">//--------不正な接続は問答無用で強制ログアウト-------</span></li>
+<li>  <span class="span_js_pink">if</span>(<span class="span_js_skyblue">session_id</span>() <span class="span_js_pink">!=</span> $<span class="span_js_red">_COOKIE</span>[<span class="span_js_yellowgreen">"sess_id"</span>]){</li>
+<li>    <span class="span_js_skyblue">header</span>(<span class="span_js_yellowgreen">"Location: logout_act.php"</span>);</li>
+<li>  }</li>
+<li></li>
+<li><span class="span_js_comment">//-----------ボタン押したときの各動作----------------</span></li>
+<li>  <span class="span_js_pink">if</span>(<span class="span_js_pink">!</span><span class="span_js_skyblue">empty</span>($<span class="span_js_red">_GET</span>[<span class="span_js_yellowgreen">"logout"</span>])){<span class="span_js_comment">//ログアウトボタン</span></li>
+<li>    <span class="span_js_skyblue">header</span>(<span class="span_js_yellowgreen">"Location: logout_act.php"</span>);</li>
+<li>  }</li>
+<li>  <span class="span_js_pink">if</span>(<span class="span_js_pink">!</span><span class="span_js_skyblue">empty</span>($<span class="span_js_red">_GET</span>[<span class="span_js_yellowgreen">"user_act"</span>])){<span class="span_js_comment">//管理ボタン</span></li>
+<li>    <span class="span_js_skyblue">header</span>(<span class="span_js_yellowgreen">"Location: ./user_manage/index.php"</span>);</li>
+<li>  }</li>
+<li><span class="span_js_comment">//-------------------------------------------------</span></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a32">会員登録画面</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a33"></span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a34"></span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a35"></span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="a36"></span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+<div class="srcdiv">
+<ol>
+<li><span class="span_php_red">&lt;?php<span class="span_js_comment"></span></li>
+<li></li>
+<li><span class="span_php_red">?&gt;</span><span class="span_js_comment"></span></li>
+</ol>
+</div>
+<!---------------------------------------------------->
+
+<div class="srcdiv">
+<ol>
+
+</ol>
+</div>
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page4">
+
+  <hr style="border:0.3px dashed #87CEEB;">
+  &nbsp;&nbsp;第5章 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+   第6章<br>
+  <ol class="table_of_contents">
+  <li><a href="#a41">クラウドストレージ</a><br></li>
+  <li><a href="#a42">掲示板サイト</a><br></li>
+  <li><a href="#a43">書籍サイト</a><br></li>
+  <li><a href="#a44">イラスト投稿サイト</a><br></li>
+  <li><a href="#a45">クイズサイト</a><br></li>
+  <li><a href="#a46">マリオ風ブラウザゲーム</a><br></li>
+  <li><a href="#a47">ブラウザRPGゲーム</a><br></li>
+  <li><a href="#a48">ブロック消しブラウザゲーム</a><br></li>
+  <li><a href="#a49">シューティングブラウザゲーム</a><br></li>
+  <li><a href="#a50">ショッピングサイト</a><br></li>
+  </ol>
+  <ol class="table_of_contents">
+  <li><a href="#a51">フレームワーク</a><br></li>
+  <li><a href="#a52">レンタルサーバー</a><br></li>
+  <li><a href="#a53"></a><br></li>
+  <li><a href="#a54"></a><br></li>
+  <li><a href="#a55"></a><br></li>
+  <li><a href="#a56"></a><br></li>
+  <li><a href="#a57"></a><br></li>
+  <li><a href="#a58"></a><br></li>
+  <li><a href="#a59"></a><br></li>
+  <li><a href="#a60"></a><br></li>
+</ol>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<h2>開発</h2>
+
+<div class="srcdiv">
+<ol>
+
+</ol>
+</div>
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<script>
+'use strict'
+document.getElementById("page2").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

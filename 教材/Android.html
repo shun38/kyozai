@@ -1,0 +1,193 @@
+<html>
+<head>
+<link rel="shortcut icon" href="./favicon.ico">
+<link href="css/cs1.css" rel="stylesheet">
+<link href="css/cs2.css" rel="stylesheet">
+<script type="text/javascript" src="js/js_header.js"></script>
+<script type="text/javascript" src="js/js_footer.js"></script>
+<title>ノート</title>
+</head>
+<body>
+<script type="text/javascript">header()</script>
+
+<div class="d1">
+  <div style="padding : 20px;"></div>
+  <div class="d1-1">
+  <a href="index.html">ホーム</a>
+  &raquo;
+  <a href="linux_01.html">Android</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page0');">環境構築</a>
+  </div>
+  <div class="mapbox2">
+   <a href="#" onclick="disp('page1');">基礎</a>
+  </div>
+  <!--<div class="mapbox2">
+   <a href="#" onclick="disp('page4');">atom</a>
+ </div>-->
+  <div class="autoscrollbox">
+  </div>
+  <div class="d1-1">
+<div class="contents" id="page0">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents">
+<li><a href="#set1">Android studioのインストール</a><br></li>
+<li><a href="#set2">SDKのインストール</a><br></li>
+<li><a href="#set3">アプリの作成</a><br></li>
+<li><a href="#set4">プロジェクトテンプレート</a><br></li>
+<li><a href="#set5">仮想マシンの作成</a><br></li>
+<li><a href="#set6"></a><br></li>
+<li><a href="#set7"></a><br></li>
+<li><a href="#set8"></a><br></li>
+<li><a href="#set9"></a><br></li>
+<!-- <li><a href="#set10"></a><br></li> -->
+</ol>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="set1">Android studioのインストール</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="set2">SDKのインストール</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="set3">アプリの作成</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<hr style="border:0.3px dashed #87CEEB;">
+<span id="set4">プロジェクトテンプレート</span><br>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50">選択肢<br></td>
+    <td style="text-align:left"width="300">内容<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">No Activity<br></td>
+    <td style="text-align:left"width="300">画面を必要としないアプリを作成するためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Basic Activity<br></td>
+    <td style="text-align:left"width="300">アクションバーが表示され、フローティングアクションボタンが組み込まれたもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Button Navigation Activity<br></td>
+    <td style="text-align:left"width="300">画面下部にナビゲーションのように並べたアプリをさくせいするためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Empty Activity<br></td>
+    <td style="text-align:left"width="300">あらかじめソースコードがほとんど記述されておらず、いちからアプリを作成するためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Fullscreen Activity<br></td>
+    <td style="text-align:left"width="300">ステータスバーやアクションバーが表示されないフルスクリーンのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Google AdMob Ads Activity<br></td>
+    <td style="text-align:left"width="300">広告バナーを表示するアプリを作成するためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Google Maps Activity<br></td>
+    <td style="text-align:left"width="300">Googleマップを表示するためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Login Activity<br></td>
+    <td style="text-align:left"width="300">非同期通信でログイン処理を行うためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Master/Detail Flow<br></td>
+    <td style="text-align:left"width="300">スマートフォンでは一覧表示→詳細表示と画面遷移を行うのに対し、タブレットでは左に一覧、右に詳細を表示する画面構成を1つのアプリで実現するためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Navigation Drawer Activty<br></td>
+    <td style="text-align:left"width="300">スライド式メニューを使うためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Setting Activity<br></td>
+    <td style="text-align:left"width="300">スライド式メニューすぉ使うためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Scrolling Activity<br></td>
+    <td style="text-align:left"width="300">アプリの設定画面を作成するためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Tabbled Activity<br></td>
+    <td style="text-align:left"width="300">タブを使った画面を作成するもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Fragment + ViewModel<br></td>
+    <td style="text-align:left"width="300">各フラグメント間でデータ共有をしたいアプリを作成するためのもの<br></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"width="50">Native C++<br></td>
+    <td style="text-align:left"width="300">C++でアプリ開発する場合<br></td>
+  </tr>
+</table>
+
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+<div class="contents" id="page1">
+
+もくじ<br>
+<hr style="border:0.3px dashed #87CEEB;">
+<ol class="table_of_contents">
+<li><a href="#web1"></a><br></li>
+<li><a href="#web2"></a><br></li>
+<li><a href="#web3"></a><br></li>
+<li><a href="#web4"></a><br></li>
+</ol>
+<br><br><br><br><br><br>
+
+<table border="1">
+  <tr>
+    <td style="text-align:left"width="50"><br></td>
+    <td style="text-align:left"width="300"><br></td>
+  </tr>
+</table>
+
+<img src="img/temp/001.jpg">
+
+<div class="srcdiv">
+<ol>
+<li></li>
+</ol>
+</div>
+<hr style="border:0.3px dashed #87CEEB;">
+
+<div class="top_box">
+  <a href="#top"align="right">トップへ戻る</a></div>
+  <br>
+</div>
+
+
+
+
+<script>
+'use strict'
+document.getElementById("page0").style.display = "block";
+let disp = function(value){
+	let contents = document.getElementsByClassName("contents");
+	for(let content of contents){
+			content.style.display = "none";
+	}
+	let dispitem = document.getElementById(value);
+	dispitem.style.display = "block";
+}
+</script>
+
+</div>
+</div>
+<script type="text/javascript">footer()</script>
+</body>
+</html>

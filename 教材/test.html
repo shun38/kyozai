@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>sample</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      border-color: blue;
+      border-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">div1</div>
+  赤(R)：<input id="r" type="text" value="255"><br>
+  緑(G)：<input id="g" type="text" value="0"><br>
+  青(B)：<input id="b" type="text" value="0">
+  <input type="button" id="button1" value="背景色を指定" onclick="func1()">
+
+  <script language="javascript" type="text/javascript">
+    const r = document.getElementById('r');
+    const g = document.getElementById('g');
+    const b = document.getElementById('b');
+
+    const func1 = () => {
+      const red = Number.parseInt(r.value);
+      const green = Number.parseInt(g.value);
+      const blue = Number.parseInt(b.value);
+      document.getElementById('div1').style.backgroundColor = `rgb(${red}, ${green}, ${blue}`;
+    }
+
+    func1();
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+.contents{
+    display: none;
+}
+.dictionary_box{
+    display: none;
+}
+.Commentary_contents{
+    display: none;
+}
+em{
+    font-weight:bold;
+    font-size: 1.4em;
+    display: block;
+    text-align: center;
+}
+.mapbox2:hover{
+  transition:0.3s;
+  background-color: #dee;
+  color: #a3a3fc;
+}
